@@ -65,6 +65,12 @@ WHERE [Measures].[Cantidad Siniestros]"),
 SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales] } ON COLUMNS,
        [Tiempo].[Dia de la Semana].[Dia de la Semana].MEMBERS ON ROWS
 FROM [Siniestros Viales]"),
+            ("Gravedad por categoría y tipo de vía", @"
+SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales],
+         [Measures].[Victimas por Siniestro] } ON COLUMNS,
+       FILTER(DESCENDANTS([Tipo de Via].[Categoria - Tipo de Via].[All], 1, SELF_AND_AFTER),
+              [Tipo de Via].[Categoria - Tipo de Via].CurrentMember.Name <> ""SIN DATO"") ON ROWS
+FROM [Siniestros Viales]"),
         };
 
         public static void Ejecutar(string servidor)
