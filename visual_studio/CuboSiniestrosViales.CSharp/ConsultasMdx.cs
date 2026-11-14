@@ -75,6 +75,12 @@ FROM [Siniestros Viales]"),
 SELECT [Tiempo].[Tipo de Dia].[Tipo de Dia].MEMBERS * { [Measures].[Cantidad Siniestros], [Measures].[% Graves o Mortales] } ON COLUMNS,
        FILTER([Hora].[Hora Pico].[Hora Pico].MEMBERS, [Hora].[Hora Pico].CurrentMember.Name <> ""SIN DATO"") ON ROWS
 FROM [Siniestros Viales]"),
+            ("Letalidad por vehículo de la víctima (mínimo 100 víctimas)", @"
+SELECT { [Measures].[Cantidad Victimas], [Measures].[Cantidad Fallecidos], [Measures].[Letalidad %] } ON COLUMNS,
+       ORDER(FILTER([Vehiculo Victima].[Vehiculo].[Vehiculo].MEMBERS,
+                    [Vehiculo Victima].[Vehiculo].CurrentMember.Name <> ""SIN DATO"" AND [Measures].[Cantidad Victimas] >= 100),
+             [Measures].[Letalidad %], BDESC) ON ROWS
+FROM [Siniestros Viales]"),
         };
 
         public static void Ejecutar(string servidor)
