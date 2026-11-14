@@ -56,6 +56,11 @@ SELECT { [Measures].[Victimas Mortales], [Measures].[Cantidad Siniestros], [Meas
        TOPCOUNT(FILTER([Contraparte].[Vehiculo].[Vehiculo].MEMBERS, [Contraparte].[Vehiculo].CurrentMember.Name <> ""SIN DATO""),
                 5, [Measures].[Victimas Mortales]) ON ROWS
 FROM [Siniestros Viales]"),
+            ("Evolución anual de siniestros por zona", @"
+SELECT [Tiempo].[Calendario].[Anio].MEMBERS ON COLUMNS,
+       FILTER([Comuna].[Zona].[Zona].MEMBERS, [Comuna].[Zona].CurrentMember.Name <> ""SIN DATO"") ON ROWS
+FROM [Siniestros Viales]
+WHERE [Measures].[Cantidad Siniestros]"),
         };
 
         public static void Ejecutar(string servidor)
