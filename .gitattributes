@@ -1,2 +1,16 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Estadistica de lenguajes de GitHub (Linguist):
+# se cuentan el Data Warehouse (SQL) y el cubo + mineria de datos (C#), que son el nucleo del proyecto.
+# Los scripts auxiliares (ETL, graficos, armado del Excel, versiones PowerShell) siguen en el repositorio
+# pero no se cuentan en la barra de lenguajes.
+scripts/** linguist-detectable=false
+ssas/*.ps1 linguist-detectable=false
+excel/*.ps1 linguist-detectable=false
+datos_originales/*.ps1 linguist-detectable=false
+
+# Datos y resultados: no son codigo
+*.csv linguist-generated=true
+*.json linguist-generated=true
+*.xmla linguist-generated=true
