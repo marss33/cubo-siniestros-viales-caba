@@ -42,6 +42,11 @@ FROM [Siniestros Viales]"),
 SELECT [Sexo].[Sexo].[Sexo].MEMBERS * { [Measures].[Letalidad %] } ON COLUMNS,
        [Rango Etario].[Rango Etario].[Rango Etario].MEMBERS ON ROWS
 FROM [Siniestros Viales]"),
+            ("Impacto de la pandemia: pre-pandemia, ASPO y post-ASPO", @"
+SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales],
+         [Measures].[Victimas por Siniestro] } ON COLUMNS,
+       [Tiempo].[Contexto].[Contexto].MEMBERS ON ROWS
+FROM [Siniestros Viales]"),
         };
 
         public static void Ejecutar(string servidor)
