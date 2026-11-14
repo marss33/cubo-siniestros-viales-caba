@@ -61,6 +61,10 @@ SELECT [Tiempo].[Calendario].[Anio].MEMBERS ON COLUMNS,
        FILTER([Comuna].[Zona].[Zona].MEMBERS, [Comuna].[Zona].CurrentMember.Name <> ""SIN DATO"") ON ROWS
 FROM [Siniestros Viales]
 WHERE [Measures].[Cantidad Siniestros]"),
+            ("Siniestralidad por día de la semana", @"
+SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales] } ON COLUMNS,
+       [Tiempo].[Dia de la Semana].[Dia de la Semana].MEMBERS ON ROWS
+FROM [Siniestros Viales]"),
         };
 
         public static void Ejecutar(string servidor)
