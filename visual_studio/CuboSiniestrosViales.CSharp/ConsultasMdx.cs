@@ -71,6 +71,10 @@ SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Meas
        FILTER(DESCENDANTS([Tipo de Via].[Categoria - Tipo de Via].[All], 1, SELF_AND_AFTER),
               [Tipo de Via].[Categoria - Tipo de Via].CurrentMember.Name <> ""SIN DATO"") ON ROWS
 FROM [Siniestros Viales]"),
+            ("Hora pico vs. fuera de hora pico, día hábil vs. fin de semana", @"
+SELECT [Tiempo].[Tipo de Dia].[Tipo de Dia].MEMBERS * { [Measures].[Cantidad Siniestros], [Measures].[% Graves o Mortales] } ON COLUMNS,
+       FILTER([Hora].[Hora Pico].[Hora Pico].MEMBERS, [Hora].[Hora Pico].CurrentMember.Name <> ""SIN DATO"") ON ROWS
+FROM [Siniestros Viales]"),
         };
 
         public static void Ejecutar(string servidor)
