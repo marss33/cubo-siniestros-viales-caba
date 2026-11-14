@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AnalysisServices.AdomdClient;
@@ -28,6 +28,11 @@ FROM [Siniestros Viales]"),
             ("Jerarquía Zona > Comuna", @"
 SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales] } ON COLUMNS,
        NON EMPTY [Comuna].[Zona - Comuna].MEMBERS ON ROWS
+FROM [Siniestros Viales]"),
+            ("Top 5 comunas con mayor % de siniestros graves o mortales", @"
+SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales] } ON COLUMNS,
+       TOPCOUNT(FILTER([Comuna].[Comuna].[Comuna].MEMBERS, [Comuna].[Comuna].CurrentMember.Name <> ""SIN DATO""),
+                5, [Measures].[% Graves o Mortales]) ON ROWS
 FROM [Siniestros Viales]"),
             ("Vehículo de la víctima x Gravedad", @"
 SELECT [Gravedad].[Gravedad].[Gravedad].MEMBERS * { [Measures].[Cantidad Siniestros] } ON COLUMNS,
