@@ -1,0 +1,1991 @@
+{
+ "kpi": {
+  "siniestros": 65818,
+  "victimas": 75193,
+  "victimas_leves": 71308,
+  "victimas_graves": 3182,
+  "victimas_mortales": 703,
+  "pct_grave_mortal": 5.5364793825397305,
+  "desde": "2019-01-01",
+  "hasta": "2025-12-31",
+  "promedio_diario": 25.74032068830661
+ },
+ "anual": [
+  {
+   "Anio": 2019,
+   "GRAVE": 373,
+   "LEVE": 9679,
+   "MORTAL": 103,
+   "Total": 10155,
+   "VictimasMortales": 104,
+   "IndiceBase2019": 100.0,
+   "PctGraveMortal": 4.687346134908911
+  },
+  {
+   "Anio": 2020,
+   "GRAVE": 143,
+   "LEVE": 5839,
+   "MORTAL": 79,
+   "Total": 6061,
+   "VictimasMortales": 82,
+   "IndiceBase2019": 59.6848842934515,
+   "PctGraveMortal": 3.6627619204751687
+  },
+  {
+   "Anio": 2021,
+   "GRAVE": 358,
+   "LEVE": 7364,
+   "MORTAL": 96,
+   "Total": 7818,
+   "VictimasMortales": 96,
+   "IndiceBase2019": 76.98670605612999,
+   "PctGraveMortal": 5.807111793297519
+  },
+  {
+   "Anio": 2022,
+   "GRAVE": 522,
+   "LEVE": 8907,
+   "MORTAL": 107,
+   "Total": 9536,
+   "VictimasMortales": 111,
+   "IndiceBase2019": 93.90448055145248,
+   "PctGraveMortal": 6.596057046979865
+  },
+  {
+   "Anio": 2023,
+   "GRAVE": 356,
+   "LEVE": 9467,
+   "MORTAL": 104,
+   "Total": 9927,
+   "VictimasMortales": 106,
+   "IndiceBase2019": 97.75480059084195,
+   "PctGraveMortal": 4.633826936637454
+  },
+  {
+   "Anio": 2024,
+   "GRAVE": 516,
+   "LEVE": 9943,
+   "MORTAL": 110,
+   "Total": 10569,
+   "VictimasMortales": 113,
+   "IndiceBase2019": 104.0768094534712,
+   "PctGraveMortal": 5.922982306746145
+  },
+  {
+   "Anio": 2025,
+   "GRAVE": 687,
+   "LEVE": 10975,
+   "MORTAL": 90,
+   "Total": 11752,
+   "VictimasMortales": 91,
+   "IndiceBase2019": 115.72624322993599,
+   "PctGraveMortal": 6.6116405718175635
+  }
+ ],
+ "olap_comuna": [
+  {
+   "Comuna": "Comuna 01",
+   "Siniestros": 7241,
+   "Victimas": 8128,
+   "Graves": 268,
+   "Mortales": 75,
+   "PctGraveMortal": 4.39,
+   "PctSiniestros": 11.0
+  },
+  {
+   "Comuna": "Comuna 15",
+   "Siniestros": 5214,
+   "Victimas": 5841,
+   "Graves": 213,
+   "Mortales": 45,
+   "PctGraveMortal": 4.78,
+   "PctSiniestros": 7.92
+  },
+  {
+   "Comuna": "Comuna 03",
+   "Siniestros": 4858,
+   "Victimas": 5413,
+   "Graves": 147,
+   "Mortales": 43,
+   "PctGraveMortal": 3.62,
+   "PctSiniestros": 7.38
+  },
+  {
+   "Comuna": "Comuna 04",
+   "Siniestros": 4562,
+   "Victimas": 5418,
+   "Graves": 208,
+   "Mortales": 75,
+   "PctGraveMortal": 5.81,
+   "PctSiniestros": 6.93
+  },
+  {
+   "Comuna": "Comuna 14",
+   "Siniestros": 4496,
+   "Victimas": 5080,
+   "Graves": 254,
+   "Mortales": 42,
+   "PctGraveMortal": 5.85,
+   "PctSiniestros": 6.83
+  },
+  {
+   "Comuna": "Comuna 09",
+   "Siniestros": 4450,
+   "Victimas": 5335,
+   "Graves": 171,
+   "Mortales": 56,
+   "PctGraveMortal": 4.81,
+   "PctSiniestros": 6.76
+  },
+  {
+   "Comuna": "Comuna 07",
+   "Siniestros": 4368,
+   "Victimas": 5033,
+   "Graves": 171,
+   "Mortales": 55,
+   "PctGraveMortal": 4.74,
+   "PctSiniestros": 6.64
+  },
+  {
+   "Comuna": "Comuna 12",
+   "Siniestros": 4310,
+   "Victimas": 4983,
+   "Graves": 227,
+   "Mortales": 43,
+   "PctGraveMortal": 5.78,
+   "PctSiniestros": 6.55
+  },
+  {
+   "Comuna": "Comuna 13",
+   "Siniestros": 3965,
+   "Victimas": 4421,
+   "Graves": 210,
+   "Mortales": 45,
+   "PctGraveMortal": 5.9,
+   "PctSiniestros": 6.02
+  },
+  {
+   "Comuna": "Comuna 10",
+   "Siniestros": 3776,
+   "Victimas": 4332,
+   "Graves": 134,
+   "Mortales": 53,
+   "PctGraveMortal": 4.61,
+   "PctSiniestros": 5.74
+  },
+  {
+   "Comuna": "SIN DATO",
+   "Siniestros": 3552,
+   "Victimas": 3981,
+   "Graves": 614,
+   "Mortales": 0,
+   "PctGraveMortal": 16.72,
+   "PctSiniestros": 5.4
+  },
+  {
+   "Comuna": "Comuna 11",
+   "Siniestros": 3531,
+   "Victimas": 3985,
+   "Graves": 167,
+   "Mortales": 31,
+   "PctGraveMortal": 5.27,
+   "PctSiniestros": 5.36
+  },
+  {
+   "Comuna": "Comuna 05",
+   "Siniestros": 3285,
+   "Victimas": 3652,
+   "Graves": 100,
+   "Mortales": 31,
+   "PctGraveMortal": 3.84,
+   "PctSiniestros": 4.99
+  },
+  {
+   "Comuna": "Comuna 08",
+   "Siniestros": 3088,
+   "Victimas": 3884,
+   "Graves": 116,
+   "Mortales": 65,
+   "PctGraveMortal": 5.6,
+   "PctSiniestros": 4.69
+  },
+  {
+   "Comuna": "Comuna 06",
+   "Siniestros": 2772,
+   "Victimas": 3125,
+   "Graves": 82,
+   "Mortales": 20,
+   "PctGraveMortal": 3.57,
+   "PctSiniestros": 4.21
+  },
+  {
+   "Comuna": "Comuna 02",
+   "Siniestros": 2350,
+   "Victimas": 2582,
+   "Graves": 100,
+   "Mortales": 24,
+   "PctGraveMortal": 4.98,
+   "PctSiniestros": 3.57
+  }
+ ],
+ "olap_zona": [
+  {
+   "Zona": "Centro",
+   "Siniestros": 18156,
+   "Victimas": 20318,
+   "Graves": 597,
+   "Mortales": 169,
+   "PctGraveMortal": 3.96,
+   "PctSiniestros": 27.59
+  },
+  {
+   "Zona": "Sur",
+   "Siniestros": 16468,
+   "Victimas": 19670,
+   "Graves": 666,
+   "Mortales": 251,
+   "PctGraveMortal": 5.22,
+   "PctSiniestros": 25.02
+  },
+  {
+   "Zona": "Norte",
+   "Siniestros": 15121,
+   "Victimas": 17066,
+   "Graves": 791,
+   "Mortales": 154,
+   "PctGraveMortal": 5.71,
+   "PctSiniestros": 22.97
+  },
+  {
+   "Zona": "Oeste",
+   "Siniestros": 12521,
+   "Victimas": 14158,
+   "Graves": 514,
+   "Mortales": 129,
+   "PctGraveMortal": 4.86,
+   "PctSiniestros": 19.02
+  },
+  {
+   "Zona": "SIN DATO",
+   "Siniestros": 3552,
+   "Victimas": 3981,
+   "Graves": 614,
+   "Mortales": 0,
+   "PctGraveMortal": 16.72,
+   "PctSiniestros": 5.4
+  }
+ ],
+ "olap_vehiculo_victima": [
+  {
+   "VehiculoVictima": "MOTO",
+   "Siniestros": 24555,
+   "Victimas": 26885,
+   "Graves": 1641,
+   "Mortales": 288,
+   "PctGraveMortal": 7.5,
+   "PctSiniestros": 37.31
+  },
+  {
+   "VehiculoVictima": "SIN DATO",
+   "Siniestros": 10929,
+   "Victimas": 12428,
+   "Graves": 35,
+   "Mortales": 0,
+   "PctGraveMortal": 0.24,
+   "PctSiniestros": 16.6
+  },
+  {
+   "VehiculoVictima": "PEATON",
+   "Siniestros": 9415,
+   "Victimas": 10097,
+   "Graves": 796,
+   "Mortales": 273,
+   "PctGraveMortal": 10.95,
+   "PctSiniestros": 14.3
+  },
+  {
+   "VehiculoVictima": "BICICLETA",
+   "Siniestros": 7091,
+   "Victimas": 7299,
+   "Graves": 230,
+   "Mortales": 54,
+   "PctGraveMortal": 3.89,
+   "PctSiniestros": 10.77
+  },
+  {
+   "VehiculoVictima": "AUTO",
+   "Siniestros": 7073,
+   "Victimas": 9399,
+   "Graves": 305,
+   "Mortales": 60,
+   "PctGraveMortal": 4.21,
+   "PctSiniestros": 10.75
+  },
+  {
+   "VehiculoVictima": "TRANSPORTE PUBLICO",
+   "Siniestros": 3633,
+   "Victimas": 4695,
+   "Graves": 82,
+   "Mortales": 6,
+   "PctGraveMortal": 2.01,
+   "PctSiniestros": 5.52
+  },
+  {
+   "VehiculoVictima": "TAXI",
+   "Siniestros": 810,
+   "Victimas": 1071,
+   "Graves": 15,
+   "Mortales": 1,
+   "PctGraveMortal": 1.11,
+   "PctSiniestros": 1.23
+  },
+  {
+   "VehiculoVictima": "UTILITARIO",
+   "Siniestros": 697,
+   "Victimas": 958,
+   "Graves": 27,
+   "Mortales": 8,
+   "PctGraveMortal": 4.3,
+   "PctSiniestros": 1.06
+  },
+  {
+   "VehiculoVictima": "MOVIL",
+   "Siniestros": 531,
+   "Victimas": 681,
+   "Graves": 4,
+   "Mortales": 3,
+   "PctGraveMortal": 1.32,
+   "PctSiniestros": 0.81
+  },
+  {
+   "VehiculoVictima": "MIXTO",
+   "Siniestros": 498,
+   "Victimas": 975,
+   "Graves": 24,
+   "Mortales": 4,
+   "PctGraveMortal": 4.82,
+   "PctSiniestros": 0.76
+  },
+  {
+   "VehiculoVictima": "CAMION",
+   "Siniestros": 250,
+   "Victimas": 334,
+   "Graves": 9,
+   "Mortales": 5,
+   "PctGraveMortal": 5.2,
+   "PctSiniestros": 0.38
+  },
+  {
+   "VehiculoVictima": "MONOPATIN",
+   "Siniestros": 207,
+   "Victimas": 214,
+   "Graves": 10,
+   "Mortales": 1,
+   "PctGraveMortal": 5.31,
+   "PctSiniestros": 0.31
+  },
+  {
+   "VehiculoVictima": "OTRO",
+   "Siniestros": 129,
+   "Victimas": 157,
+   "Graves": 4,
+   "Mortales": 0,
+   "PctGraveMortal": 3.1,
+   "PctSiniestros": 0.2
+  }
+ ],
+ "olap_contraparte": [
+  {
+   "Contraparte": "AUTO",
+   "Siniestros": 29996,
+   "Victimas": 33872,
+   "Graves": 1682,
+   "Mortales": 203,
+   "PctGraveMortal": 5.9,
+   "PctSiniestros": 45.57
+  },
+  {
+   "Contraparte": "SIN DATO",
+   "Siniestros": 14067,
+   "Victimas": 15831,
+   "Graves": 140,
+   "Mortales": 10,
+   "PctGraveMortal": 0.86,
+   "PctSiniestros": 21.37
+  },
+  {
+   "Contraparte": "TRANSPORTE PUBLICO",
+   "Siniestros": 6035,
+   "Victimas": 7283,
+   "Graves": 367,
+   "Mortales": 145,
+   "PctGraveMortal": 7.9,
+   "PctSiniestros": 9.17
+  },
+  {
+   "Contraparte": "UTILITARIO",
+   "Siniestros": 3649,
+   "Victimas": 4135,
+   "Graves": 136,
+   "Mortales": 35,
+   "PctGraveMortal": 4.52,
+   "PctSiniestros": 5.54
+  },
+  {
+   "Contraparte": "MOTO",
+   "Siniestros": 3496,
+   "Victimas": 4084,
+   "Graves": 278,
+   "Mortales": 52,
+   "PctGraveMortal": 9.07,
+   "PctSiniestros": 5.31
+  },
+  {
+   "Contraparte": "TAXI",
+   "Siniestros": 2624,
+   "Victimas": 2891,
+   "Graves": 70,
+   "Mortales": 7,
+   "PctGraveMortal": 2.67,
+   "PctSiniestros": 3.99
+  },
+  {
+   "Contraparte": "CAMION",
+   "Siniestros": 2579,
+   "Victimas": 2978,
+   "Graves": 148,
+   "Mortales": 125,
+   "PctGraveMortal": 10.2,
+   "PctSiniestros": 3.92
+  },
+  {
+   "Contraparte": "OBJETO FIJO",
+   "Siniestros": 1521,
+   "Victimas": 1823,
+   "Graves": 269,
+   "Mortales": 87,
+   "PctGraveMortal": 22.02,
+   "PctSiniestros": 2.31
+  },
+  {
+   "Contraparte": "MOVIL",
+   "Siniestros": 804,
+   "Victimas": 977,
+   "Graves": 29,
+   "Mortales": 7,
+   "PctGraveMortal": 4.1,
+   "PctSiniestros": 1.22
+  },
+  {
+   "Contraparte": "BICICLETA",
+   "Siniestros": 390,
+   "Victimas": 423,
+   "Graves": 21,
+   "Mortales": 6,
+   "PctGraveMortal": 6.92,
+   "PctSiniestros": 0.59
+  },
+  {
+   "Contraparte": "MULTIPLE",
+   "Siniestros": 347,
+   "Victimas": 524,
+   "Graves": 14,
+   "Mortales": 13,
+   "PctGraveMortal": 7.49,
+   "PctSiniestros": 0.53
+  },
+  {
+   "Contraparte": "OTRO",
+   "Siniestros": 204,
+   "Victimas": 254,
+   "Graves": 17,
+   "Mortales": 2,
+   "PctGraveMortal": 8.82,
+   "PctSiniestros": 0.31
+  },
+  {
+   "Contraparte": "MONOPATIN",
+   "Siniestros": 57,
+   "Victimas": 60,
+   "Graves": 1,
+   "Mortales": 1,
+   "PctGraveMortal": 3.51,
+   "PctSiniestros": 0.09
+  },
+  {
+   "Contraparte": "PEATON",
+   "Siniestros": 36,
+   "Victimas": 44,
+   "Graves": 8,
+   "Mortales": 0,
+   "PctGraveMortal": 19.44,
+   "PctSiniestros": 0.05
+  },
+  {
+   "Contraparte": "TREN",
+   "Siniestros": 13,
+   "Victimas": 14,
+   "Graves": 2,
+   "Mortales": 10,
+   "PctGraveMortal": 92.31,
+   "PctSiniestros": 0.02
+  }
+ ],
+ "olap_tipo_via": [
+  {
+   "TipoVia": "AVENIDA",
+   "Siniestros": 30525,
+   "Victimas": 34747,
+   "Graves": 1510,
+   "Mortales": 426,
+   "PctGraveMortal": 6.02,
+   "PctSiniestros": 46.38
+  },
+  {
+   "TipoVia": "CALLE",
+   "Siniestros": 18794,
+   "Victimas": 21039,
+   "Graves": 710,
+   "Mortales": 150,
+   "PctGraveMortal": 4.33,
+   "PctSiniestros": 28.55
+  },
+  {
+   "TipoVia": "SIN DATO",
+   "Siniestros": 12542,
+   "Victimas": 14556,
+   "Graves": 722,
+   "Mortales": 0,
+   "PctGraveMortal": 5.25,
+   "PctSiniestros": 19.06
+  },
+  {
+   "TipoVia": "AV. GRAL. PAZ",
+   "Siniestros": 2916,
+   "Victimas": 3569,
+   "Graves": 165,
+   "Mortales": 56,
+   "PctGraveMortal": 6.82,
+   "PctSiniestros": 4.43
+  },
+  {
+   "TipoVia": "AUTOPISTA",
+   "Siniestros": 1041,
+   "Victimas": 1282,
+   "Graves": 75,
+   "Mortales": 71,
+   "PctGraveMortal": 13.06,
+   "PctSiniestros": 1.58
+  }
+ ],
+ "olap_franja": [
+  {
+   "FranjaHoraria": "1. Madrugada (00-05)",
+   "Siniestros": 5257,
+   "Victimas": 6256,
+   "Graves": 483,
+   "Mortales": 138,
+   "PctGraveMortal": 10.96,
+   "PctSiniestros": 7.99
+  },
+  {
+   "FranjaHoraria": "2. Manana (06-11)",
+   "Siniestros": 16086,
+   "Victimas": 18554,
+   "Graves": 772,
+   "Mortales": 202,
+   "PctGraveMortal": 5.59,
+   "PctSiniestros": 24.44
+  },
+  {
+   "FranjaHoraria": "3. Tarde (12-17)",
+   "Siniestros": 26474,
+   "Victimas": 29959,
+   "Graves": 1035,
+   "Mortales": 200,
+   "PctGraveMortal": 4.36,
+   "PctSiniestros": 40.22
+  },
+  {
+   "FranjaHoraria": "4. Noche (18-23)",
+   "Siniestros": 17920,
+   "Victimas": 20328,
+   "Graves": 864,
+   "Mortales": 162,
+   "PctGraveMortal": 5.5,
+   "PctSiniestros": 27.23
+  },
+  {
+   "FranjaHoraria": "SIN DATO",
+   "Siniestros": 81,
+   "Victimas": 96,
+   "Graves": 28,
+   "Mortales": 1,
+   "PctGraveMortal": 35.8,
+   "PctSiniestros": 0.12
+  }
+ ],
+ "olap_dia_semana": [
+  {
+   "DiaSemanaNombre": "Lunes",
+   "Siniestros": 9670,
+   "Victimas": 11050,
+   "Graves": 447,
+   "Mortales": 96,
+   "PctGraveMortal": 5.29,
+   "PctSiniestros": 14.69
+  },
+  {
+   "DiaSemanaNombre": "Martes",
+   "Siniestros": 10319,
+   "Victimas": 11692,
+   "Graves": 439,
+   "Mortales": 107,
+   "PctGraveMortal": 5.03,
+   "PctSiniestros": 15.68
+  },
+  {
+   "DiaSemanaNombre": "Miercoles",
+   "Siniestros": 10391,
+   "Victimas": 11641,
+   "Graves": 424,
+   "Mortales": 90,
+   "PctGraveMortal": 4.75,
+   "PctSiniestros": 15.79
+  },
+  {
+   "DiaSemanaNombre": "Jueves",
+   "Siniestros": 10678,
+   "Victimas": 12081,
+   "Graves": 503,
+   "Mortales": 124,
+   "PctGraveMortal": 5.55,
+   "PctSiniestros": 16.22
+  },
+  {
+   "DiaSemanaNombre": "Viernes",
+   "Siniestros": 11120,
+   "Victimas": 12560,
+   "Graves": 537,
+   "Mortales": 97,
+   "PctGraveMortal": 5.37,
+   "PctSiniestros": 16.9
+  },
+  {
+   "DiaSemanaNombre": "Sabado",
+   "Siniestros": 7791,
+   "Victimas": 9038,
+   "Graves": 423,
+   "Mortales": 107,
+   "PctGraveMortal": 6.28,
+   "PctSiniestros": 11.84
+  },
+  {
+   "DiaSemanaNombre": "Domingo",
+   "Siniestros": 5849,
+   "Victimas": 7131,
+   "Graves": 409,
+   "Mortales": 82,
+   "PctGraveMortal": 7.52,
+   "PctSiniestros": 8.89
+  }
+ ],
+ "olap_contexto": [
+  {
+   "Contexto": "1. Pre-pandemia",
+   "Siniestros": 12022,
+   "Victimas": 13976,
+   "Graves": 507,
+   "Mortales": 125,
+   "PctGraveMortal": 4.5,
+   "PctSiniestros": 18.27
+  },
+  {
+   "Contexto": "2. ASPO (cuarentena)",
+   "Siniestros": 2939,
+   "Victimas": 3354,
+   "Graves": 82,
+   "Mortales": 33,
+   "PctGraveMortal": 3.47,
+   "PctSiniestros": 4.47
+  },
+  {
+   "Contexto": "3. Post-ASPO",
+   "Siniestros": 50857,
+   "Victimas": 57863,
+   "Graves": 2593,
+   "Mortales": 545,
+   "PctGraveMortal": 5.9,
+   "PctSiniestros": 77.27
+  }
+ ],
+ "olap_estacion": [
+  {
+   "Estacion": "Primavera",
+   "Siniestros": 17565,
+   "Victimas": 20059,
+   "Graves": 799,
+   "Mortales": 157,
+   "PctGraveMortal": 5.22,
+   "PctSiniestros": 26.69
+  },
+  {
+   "Estacion": "Invierno",
+   "Siniestros": 16687,
+   "Victimas": 18947,
+   "Graves": 865,
+   "Mortales": 173,
+   "PctGraveMortal": 5.7,
+   "PctSiniestros": 25.35
+  },
+  {
+   "Estacion": "Otono",
+   "Siniestros": 16240,
+   "Victimas": 18548,
+   "Graves": 779,
+   "Mortales": 181,
+   "PctGraveMortal": 5.54,
+   "PctSiniestros": 24.67
+  },
+  {
+   "Estacion": "Verano",
+   "Siniestros": 15326,
+   "Victimas": 17639,
+   "Graves": 739,
+   "Mortales": 192,
+   "PctGraveMortal": 5.72,
+   "PctSiniestros": 23.29
+  }
+ ],
+ "victimas_sexo_edad": [
+  {
+   "RangoEtario": "00-14",
+   "Femenino": 658,
+   "Masculino": 824
+  },
+  {
+   "RangoEtario": "15-24",
+   "Femenino": 2497,
+   "Masculino": 5626
+  },
+  {
+   "RangoEtario": "25-34",
+   "Femenino": 4449,
+   "Masculino": 11065
+  },
+  {
+   "RangoEtario": "35-44",
+   "Femenino": 3347,
+   "Masculino": 7721
+  },
+  {
+   "RangoEtario": "45-54",
+   "Femenino": 2540,
+   "Masculino": 4515
+  },
+  {
+   "RangoEtario": "55-64",
+   "Femenino": 1791,
+   "Masculino": 2293
+  },
+  {
+   "RangoEtario": "65 y mas",
+   "Femenino": 2055,
+   "Masculino": 1650
+  },
+  {
+   "RangoEtario": "SIN DATO",
+   "Femenino": 2541,
+   "Masculino": 4527
+  }
+ ],
+ "fallecidos_sexo_edad": [
+  {
+   "RangoEtario": "00-14",
+   "Femenino": 3,
+   "Masculino": 8,
+   "SIN DATO": 0
+  },
+  {
+   "RangoEtario": "15-24",
+   "Femenino": 19,
+   "Masculino": 79,
+   "SIN DATO": 0
+  },
+  {
+   "RangoEtario": "25-34",
+   "Femenino": 23,
+   "Masculino": 127,
+   "SIN DATO": 0
+  },
+  {
+   "RangoEtario": "35-44",
+   "Femenino": 18,
+   "Masculino": 105,
+   "SIN DATO": 0
+  },
+  {
+   "RangoEtario": "45-54",
+   "Femenino": 19,
+   "Masculino": 58,
+   "SIN DATO": 0
+  },
+  {
+   "RangoEtario": "55-64",
+   "Femenino": 26,
+   "Masculino": 43,
+   "SIN DATO": 0
+  },
+  {
+   "RangoEtario": "65 y mas",
+   "Femenino": 65,
+   "Masculino": 79,
+   "SIN DATO": 0
+  },
+  {
+   "RangoEtario": "SIN DATO",
+   "Femenino": 5,
+   "Masculino": 25,
+   "SIN DATO": 1
+  }
+ ],
+ "fallecidos_por_vehiculo": {
+  "MOTO": 289,
+  "PEATON": 275,
+  "AUTO": 61,
+  "BICICLETA": 54,
+  "UTILITARIO": 8,
+  "TRANSPORTE PUBLICO": 6,
+  "CAMION": 5,
+  "MOVIL": 3,
+  "MONOPATIN": 1,
+  "TAXI": 1
+ },
+ "regresion": {
+  "pendiente_mensual": 2.7805774993189867,
+  "intercepto": 699.3842277308635,
+  "r2": 0.1865669199495088,
+  "p_valor": 0.00010907360479754438,
+  "aumento_anual_estimado": 33.36692999182784
+ },
+ "estacionalidad": {
+  "1": -101.83043981481474,
+  "2": -99.25405092592594,
+  "3": 31.55844907407411,
+  "4": -36.49710648148155,
+  "5": -45.23321759259265,
+  "6": -20.823495370370402,
+  "7": 5.155671296296252,
+  "8": 47.52372685185183,
+  "9": 40.593171296296354,
+  "10": 97.52372685185185,
+  "11": 18.384837962963008,
+  "12": 62.89872685185186
+ },
+ "pronostico": {
+  "mape_test_2025": 7.568008688084037,
+  "mape_naive": 9.939314457686292,
+  "total_2026": 13059.963267131454,
+  "real_2025": 11752.0,
+  "pred_2025": 12254.238863328204,
+  "mensual_2026": {
+   "2026-01": 965.9829799503076,
+   "2026-02": 976.6578012690007,
+   "2026-03": 1112.450449678365,
+   "2026-04": 1056.8831839795344,
+   "2026-05": 1065.5941594972153,
+   "2026-06": 1071.3500767936366,
+   "2026-07": 1094.2868186962496,
+   "2026-08": 1132.1498376858813,
+   "2026-09": 1116.3100461987651,
+   "2026-10": 1189.1920075803587,
+   "2026-11": 1117.5705904229817,
+   "2026-12": 1161.5353153791575
+  }
+ },
+ "sesgo_sin_dato": {
+  "n_completos": 39403,
+  "n_incompletos": 26415,
+  "pct_gm_completos": 6.908103443900211,
+  "pct_gm_incompletos": 3.4904410372894192,
+  "pct_gm_vehiculo_sd": 0.23789916735291428,
+  "pct_gm_comuna_sd": 16.722972972972975
+ },
+ "clasificacion": [
+  {
+   "Modelo": "Arbol de decision",
+   "Accuracy": 0.7166,
+   "Precision": 0.1315,
+   "Recall": 0.5532,
+   "F1": 0.2125,
+   "AUC_test": 0.6874,
+   "AUC_CV5_media": 0.6891,
+   "AUC_CV5_desvio": 0.0178
+  },
+  {
+   "Modelo": "Random Forest",
+   "Accuracy": 0.6915,
+   "Precision": 0.1288,
+   "Recall": 0.601,
+   "F1": 0.2121,
+   "AUC_test": 0.716,
+   "AUC_CV5_media": 0.7152,
+   "AUC_CV5_desvio": 0.0162
+  },
+  {
+   "Modelo": "Regresion logistica",
+   "Accuracy": 0.6741,
+   "Precision": 0.1243,
+   "Recall": 0.6144,
+   "F1": 0.2068,
+   "AUC_test": 0.7095,
+   "AUC_CV5_media": 0.7144,
+   "AUC_CV5_desvio": 0.0148
+  }
+ ],
+ "clasif_particion": {
+  "train": 27582,
+  "test": 11821,
+  "positivos_pct": 6.908103443900211
+ },
+ "matriz_confusion_arbol": [
+  [
+   8019,
+   2985
+  ],
+  [
+   365,
+   452
+  ]
+ ],
+ "importancia_variables": {
+  "VehiculoVictima": 37.89,
+  "Contraparte": 18.8,
+  "HoraKey": 9.99,
+  "Comuna": 5.82,
+  "FranjaHoraria": 5.69,
+  "Contexto": 5.03,
+  "TipoVia": 4.79,
+  "DiaSemanaNombre": 4.44,
+  "Estacion": 3.51,
+  "TotalVictimas": 2.55,
+  "TipoDia": 1.5
+ },
+ "importancia_top_categorias": {
+  "VehiculoVictima_PEATON": 14.92,
+  "HoraKey": 9.99,
+  "VehiculoVictima_TRANSPORTE PUBLICO": 6.85,
+  "VehiculoVictima_MOTO": 6.52,
+  "VehiculoVictima_AUTO": 5.38,
+  "Contraparte_OBJETO FIJO": 4.58,
+  "Contraparte_AUTO": 3.88,
+  "Contexto_1. Pre-pandemia": 3.53,
+  "Contraparte_TRANSPORTE PUBLICO": 3.32,
+  "VehiculoVictima_BICICLETA": 3.02,
+  "Contraparte_CAMION": 2.93,
+  "FranjaHoraria_1. Madrugada (00-05)": 2.9
+ },
+ "odds_ratio_top": {
+  "Contraparte_TREN": 13.17,
+  "VehiculoVictima_PEATON": 5.09,
+  "VehiculoVictima_MOTO": 2.74,
+  "Contraparte_OBJETO FIJO": 2.34,
+  "Contraparte_PEATON": 1.96,
+  "Contexto_1. Pre-pandemia": 1.86,
+  "FranjaHoraria_1. Madrugada (00-05)": 1.7,
+  "VehiculoVictima_OTRO": 1.59,
+  "VehiculoVictima_BICICLETA": 1.58,
+  "TipoVia_AUTOPISTA": 1.54
+ },
+ "odds_ratio_bottom": {
+  "Contraparte_MONOPATIN": 0.48,
+  "Contraparte_UTILITARIO": 0.43,
+  "VehiculoVictima_TAXI": 0.38,
+  "VehiculoVictima_TRANSPORTE PUBLICO": 0.38,
+  "Contraparte_TAXI": 0.31,
+  "VehiculoVictima_MOVIL": 0.25
+ },
+ "arbol_simple_reglas": "|--- VehiculoVictima_PEATON <= 0.50\n|   |--- VehiculoVictima_MOTO <= 0.50\n|   |   |--- Contraparte_OBJETO FIJO <= 0.50\n|   |   |   |--- class: 0\n|   |   |--- Contraparte_OBJETO FIJO >  0.50\n|   |   |   |--- class: 1\n|   |--- VehiculoVictima_MOTO >  0.50\n|   |   |--- HoraKey <= 6.50\n|   |   |   |--- class: 1\n|   |   |--- HoraKey >  6.50\n|   |   |   |--- class: 0\n|--- VehiculoVictima_PEATON >  0.50\n|   |--- Contraparte_TRANSPORTE PUBLICO <= 0.50\n|   |   |--- Comuna_Comuna 06 <= 0.50\n|   |   |   |--- class: 1\n|   |   |--- Comuna_Comuna 06 >  0.50\n|   |   |   |--- class: 0\n|   |--- Contraparte_TRANSPORTE PUBLICO >  0.50\n|   |   |--- HoraKey <= 16.50\n|   |   |   |--- class: 1\n|   |   |--- HoraKey >  16.50\n|   |   |   |--- class: 1\n",
+ "victima_fatal": {
+  "n": 33747,
+  "fallecidos": 671,
+  "auc": 0.7043879253470655,
+  "recall": 0.5223880597014925,
+  "precision": 0.05167322834645669,
+  "accuracy": 0.8001975308641975,
+  "importancia": {
+   "HoraKey": 30.48,
+   "Vehiculo_PEATON": 26.4,
+   "Edad": 15.43,
+   "TipoVia_AUTOPISTA": 11.62,
+   "Sexo_Masculino": 3.83,
+   "Vehiculo_MOTO": 3.17,
+   "Vehiculo_TRANSPORTE PUBLICO": 2.55,
+   "Sexo_Femenino": 2.36
+  },
+  "edad_media_fallecidos": 45.132637853949326,
+  "edad_media_resto": 37.723878340790904,
+  "tasa_letalidad_por_vehiculo": {
+   "PEATON": 4.58,
+   "CAMION": 3.4,
+   "MOTO": 1.87,
+   "UTILITARIO": 1.31,
+   "AUTO": 1.29,
+   "BICICLETA": 1.19,
+   "MOVIL": 1.13,
+   "MONOPATIN": 0.81,
+   "TRANSPORTE PUBLICO": 0.27,
+   "TAXI": 0.19,
+   "MIXTO": 0.0,
+   "OTRO": 0.0
+  },
+  "tasa_letalidad_por_rango": {
+   "00-14": 1.14,
+   "15-24": 1.79,
+   "25-34": 1.44,
+   "35-44": 1.7,
+   "45-54": 1.63,
+   "55-64": 2.68,
+   "65 y mas": 5.86
+  },
+  "tasa_letalidad_por_sexo": {
+   "Femenino": 1.52,
+   "Masculino": 2.23
+  }
+ },
+ "kmeans_z_centroides": {
+  "0": {
+   "SiniestrosAnuales": -0.11,
+   "PctMoto": 0.84,
+   "PctPeaton": -1.17,
+   "PctBicicleta": -0.32,
+   "PctNocturno": -1.29,
+   "PctFinde": -0.2,
+   "PctViaRapida": 1.15,
+   "PctTransportePesado": -0.55,
+   "PctGraveMortal": 0.26
+  },
+  "1": {
+   "SiniestrosAnuales": 0.94,
+   "PctMoto": -0.76,
+   "PctPeaton": 0.8,
+   "PctBicicleta": -0.62,
+   "PctNocturno": 0.11,
+   "PctFinde": -0.33,
+   "PctViaRapida": -0.57,
+   "PctTransportePesado": 0.87,
+   "PctGraveMortal": -0.33
+  },
+  "2": {
+   "SiniestrosAnuales": -0.4,
+   "PctMoto": -0.01,
+   "PctPeaton": 0.46,
+   "PctBicicleta": 0.95,
+   "PctNocturno": 0.67,
+   "PctFinde": -0.06,
+   "PctViaRapida": -0.67,
+   "PctTransportePesado": -0.34,
+   "PctGraveMortal": -0.1
+  },
+  "3": {
+   "SiniestrosAnuales": -0.91,
+   "PctMoto": -0.27,
+   "PctPeaton": -1.26,
+   "PctBicicleta": -1.89,
+   "PctNocturno": 0.67,
+   "PctFinde": 2.52,
+   "PctViaRapida": 1.7,
+   "PctTransportePesado": 0.77,
+   "PctGraveMortal": 0.87
+  }
+ },
+ "kmeans": {
+  "k": 4,
+  "inercias": {
+   "2": 94.67939884652878,
+   "3": 76.53328389333731,
+   "4": 61.46449945744226,
+   "5": 48.63263873603664,
+   "6": 39.829914497002974,
+   "7": 31.564310496898617
+  },
+  "siluetas": {
+   "2": 0.23399169818434365,
+   "3": 0.20526770328022598,
+   "4": 0.16980274736110426,
+   "5": 0.15513212086016284,
+   "6": 0.16537470700247484,
+   "7": 0.19211003956603145
+  },
+  "asignacion": {
+   "Comuna 01": "C2: alto volumen + transporte pesado",
+   "Comuna 02": "C3: ciclistas + nocturnidad",
+   "Comuna 03": "C2: alto volumen + transporte pesado",
+   "Comuna 04": "C2: alto volumen + transporte pesado",
+   "Comuna 05": "C3: ciclistas + nocturnidad",
+   "Comuna 06": "C3: ciclistas + nocturnidad",
+   "Comuna 07": "C2: alto volumen + transporte pesado",
+   "Comuna 08": "C4: fin de semana + vías rápidas",
+   "Comuna 09": "C1: vías rápidas + motos",
+   "Comuna 10": "C1: vías rápidas + motos",
+   "Comuna 11": "C1: vías rápidas + motos",
+   "Comuna 12": "C1: vías rápidas + motos",
+   "Comuna 13": "C3: ciclistas + nocturnidad",
+   "Comuna 14": "C3: ciclistas + nocturnidad",
+   "Comuna 15": "C3: ciclistas + nocturnidad"
+  },
+  "centroides": [
+   {
+    "Cluster": 0,
+    "SiniestrosAnuales": 573.82,
+    "PctMoto": 40.85,
+    "PctPeaton": 11.99,
+    "PctBicicleta": 10.11,
+    "PctNocturno": 21.74,
+    "PctFinde": 20.42,
+    "PctViaRapida": 14.18,
+    "PctTransportePesado": 11.48,
+    "PctGraveMortal": 5.12,
+    "Perfil": "C1: vías rápidas + motos"
+   },
+   {
+    "Cluster": 1,
+    "SiniestrosAnuales": 751.04,
+    "PctMoto": 34.08,
+    "PctPeaton": 15.93,
+    "PctBicicleta": 9.24,
+    "PctNocturno": 24.8,
+    "PctFinde": 20.23,
+    "PctViaRapida": 1.97,
+    "PctTransportePesado": 15.24,
+    "PctGraveMortal": 4.64,
+    "Perfil": "C2: alto volumen + transporte pesado"
+   },
+   {
+    "Cluster": 2,
+    "SiniestrosAnuales": 525.76,
+    "PctMoto": 37.27,
+    "PctPeaton": 15.23,
+    "PctBicicleta": 13.81,
+    "PctNocturno": 26.04,
+    "PctFinde": 20.62,
+    "PctViaRapida": 1.27,
+    "PctTransportePesado": 12.02,
+    "PctGraveMortal": 4.82,
+    "Perfil": "C3: ciclistas + nocturnidad"
+   },
+   {
+    "Cluster": 3,
+    "SiniestrosAnuales": 441.14,
+    "PctMoto": 36.14,
+    "PctPeaton": 11.82,
+    "PctBicicleta": 5.54,
+    "PctNocturno": 26.04,
+    "PctFinde": 24.32,
+    "PctViaRapida": 18.1,
+    "PctTransportePesado": 14.96,
+    "PctGraveMortal": 5.6,
+    "Perfil": "C4: fin de semana + vías rápidas"
+   }
+  ]
+ },
+ "pca_varianza": [
+  0.3382344271728369,
+  0.21904909859298147
+ ],
+ "dbscan": {
+  "puntos": 3194,
+  "clusters": 58,
+  "ruido": 2751,
+  "top": [
+   {
+    "Hotspot": 19,
+    "Siniestros": 15,
+    "Mortales": 5,
+    "Lat": -34.53965,
+    "Lon": -58.47529,
+    "Comuna": "Comuna 12",
+    "Direccion": "PAZ, GRAL. AV. y CABILDO AV.",
+    "VehiculoPredominante": "PEATON"
+   },
+   {
+    "Hotspot": 35,
+    "Siniestros": 15,
+    "Mortales": 2,
+    "Lat": -34.57905,
+    "Lon": -58.42462,
+    "Comuna": "Comuna 14",
+    "Direccion": "SANTA FE AV. y GODOY CRUZ",
+    "VehiculoPredominante": "PEATON"
+   },
+   {
+    "Hotspot": 6,
+    "Siniestros": 13,
+    "Mortales": 2,
+    "Lat": -34.60475,
+    "Lon": -58.45931,
+    "Comuna": "Comuna 15",
+    "Direccion": "JUSTO, JUAN B. AV. y SAN MARTIN AV.",
+    "VehiculoPredominante": "PEATON"
+   },
+   {
+    "Hotspot": 13,
+    "Siniestros": 11,
+    "Mortales": 4,
+    "Lat": -34.54842,
+    "Lon": -58.49302,
+    "Comuna": "Comuna 12",
+    "Direccion": "PAZ, GRAL. AV. y GOYENECHE, ROBERTO PARQUE AV.",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 1,
+    "Siniestros": 11,
+    "Mortales": 1,
+    "Lat": -34.55813,
+    "Lon": -58.46016,
+    "Comuna": "Comuna 13",
+    "Direccion": "CABILDO AV. y MONROE",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 24,
+    "Siniestros": 11,
+    "Mortales": 4,
+    "Lat": -34.53614,
+    "Lon": -58.46664,
+    "Comuna": "Comuna 13",
+    "Direccion": "PAZ, GRAL. AV. y DEL LIBERTADOR AV.",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 23,
+    "Siniestros": 10,
+    "Mortales": 2,
+    "Lat": -34.59451,
+    "Lon": -58.44408,
+    "Comuna": "Comuna 15",
+    "Direccion": "CORRIENTES AV. y JUSTO, JUAN B. AV.",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 9,
+    "Siniestros": 10,
+    "Mortales": 4,
+    "Lat": -34.69105,
+    "Lon": -58.47933,
+    "Comuna": "Comuna 08",
+    "Direccion": "FERNANDEZ DE LA CRUZ, F., GRAL. AV. y PAZ, GRAL. AV.",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 38,
+    "Siniestros": 10,
+    "Mortales": 3,
+    "Lat": -34.54947,
+    "Lon": -58.5005,
+    "Comuna": "Comuna 12",
+    "Direccion": "PAZ, GRAL. AV. y BALBIN, RICARDO, DR. AV.",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 3,
+    "Siniestros": 9,
+    "Mortales": 2,
+    "Lat": -34.54385,
+    "Lon": -58.48564,
+    "Comuna": "Comuna 12",
+    "Direccion": "PAZ, GRAL. AV. y SUPERI",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 25,
+    "Siniestros": 9,
+    "Mortales": 3,
+    "Lat": -34.65047,
+    "Lon": -58.40543,
+    "Comuna": "Comuna 04",
+    "Direccion": "ALCORTA, AMANCIO AV. y BONAVENA, OSCAR NATALIO",
+    "VehiculoPredominante": "MOTO"
+   },
+   {
+    "Hotspot": 20,
+    "Siniestros": 9,
+    "Mortales": 2,
+    "Lat": -34.5698,
+    "Lon": -58.50915,
+    "Comuna": "Comuna 12",
+    "Direccion": "PAZ, GRAL. AV. y DE LOS CONSTITUYENTES AV.",
+    "VehiculoPredominante": "AUTO"
+   }
+  ]
+ },
+ "apriori_itemsets": 3765,
+ "reglas_generales": [
+  {
+   "antecedentes": "Gravedad=LEVE + Victima=TRANSPORTE PUBLICO",
+   "consecuentes": "Contraparte=TRANSPORTE PUBLICO",
+   "support": 0.038,
+   "confidence": 0.7028,
+   "lift": 7.6649,
+   "leverage": 0.0331,
+   "conviction": 3.0563
+  },
+  {
+   "antecedentes": "Dia=Dia habil + Gravedad=LEVE + Victima=TRANSPORTE PUBLICO",
+   "consecuentes": "Contraparte=TRANSPORTE PUBLICO",
+   "support": 0.0316,
+   "confidence": 0.7021,
+   "lift": 7.6574,
+   "leverage": 0.0275,
+   "conviction": 3.0493
+  },
+  {
+   "antecedentes": "Victima=TRANSPORTE PUBLICO",
+   "consecuentes": "Contraparte=TRANSPORTE PUBLICO",
+   "support": 0.0386,
+   "confidence": 0.6989,
+   "lift": 7.6219,
+   "leverage": 0.0335,
+   "conviction": 3.0163
+  },
+  {
+   "antecedentes": "Dia=Dia habil + Victima=TRANSPORTE PUBLICO",
+   "consecuentes": "Contraparte=TRANSPORTE PUBLICO",
+   "support": 0.032,
+   "confidence": 0.6988,
+   "lift": 7.6216,
+   "leverage": 0.0278,
+   "conviction": 3.016
+  },
+  {
+   "antecedentes": "Dia=Fin de semana + Gravedad=LEVE + Victima=MOTO",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0452,
+   "confidence": 0.6706,
+   "lift": 1.4716,
+   "leverage": 0.0145,
+   "conviction": 1.6525
+  },
+  {
+   "antecedentes": "Contraparte=AUTO + Franja=Tarde + Via=AVENIDA",
+   "consecuentes": "Victima=MOTO",
+   "support": 0.0426,
+   "confidence": 0.549,
+   "lift": 1.4715,
+   "leverage": 0.0137,
+   "conviction": 1.3901
+  },
+  {
+   "antecedentes": "Contraparte=AUTO + Franja=Noche + Via=AVENIDA",
+   "consecuentes": "Victima=MOTO",
+   "support": 0.0321,
+   "confidence": 0.5484,
+   "lift": 1.4699,
+   "leverage": 0.0103,
+   "conviction": 1.3882
+  },
+  {
+   "antecedentes": "Contraparte=AUTO + Dia=Dia habil + Via=AVENIDA",
+   "consecuentes": "Victima=MOTO",
+   "support": 0.0821,
+   "confidence": 0.5468,
+   "lift": 1.4658,
+   "leverage": 0.0261,
+   "conviction": 1.3835
+  },
+  {
+   "antecedentes": "Gravedad=LEVE + Victima=MOTO + Zona=Norte",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0538,
+   "confidence": 0.6649,
+   "lift": 1.459,
+   "leverage": 0.0169,
+   "conviction": 1.6242
+  },
+  {
+   "antecedentes": "Victima=MOTO + Zona=Norte",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0578,
+   "confidence": 0.6624,
+   "lift": 1.4535,
+   "leverage": 0.018,
+   "conviction": 1.6123
+  },
+  {
+   "antecedentes": "Dia=Fin de semana + Victima=MOTO",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0495,
+   "confidence": 0.6608,
+   "lift": 1.4499,
+   "leverage": 0.0154,
+   "conviction": 1.6045
+  },
+  {
+   "antecedentes": "Gravedad=LEVE + Victima=MOTO + Zona=Oeste",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0487,
+   "confidence": 0.6601,
+   "lift": 1.4484,
+   "leverage": 0.0151,
+   "conviction": 1.6011
+  },
+  {
+   "antecedentes": "Contraparte=AUTO + Via=AVENIDA",
+   "consecuentes": "Victima=MOTO",
+   "support": 0.1065,
+   "confidence": 0.539,
+   "lift": 1.4447,
+   "leverage": 0.0328,
+   "conviction": 1.3599
+  },
+  {
+   "antecedentes": "Contraparte=AUTO + Gravedad=LEVE + Via=AVENIDA",
+   "consecuentes": "Victima=MOTO",
+   "support": 0.0993,
+   "confidence": 0.5373,
+   "lift": 1.4403,
+   "leverage": 0.0304,
+   "conviction": 1.355
+  },
+  {
+   "antecedentes": "Dia=Dia habil + Victima=MOTO + Zona=Norte",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0456,
+   "confidence": 0.6552,
+   "lift": 1.4378,
+   "leverage": 0.0139,
+   "conviction": 1.5787
+  },
+  {
+   "antecedentes": "Gravedad=LEVE + Via=CALLE + Victima=MOTO",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0579,
+   "confidence": 0.6548,
+   "lift": 1.4367,
+   "leverage": 0.0176,
+   "conviction": 1.5765
+  },
+  {
+   "antecedentes": "Victima=MOTO + Zona=Oeste",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0515,
+   "confidence": 0.654,
+   "lift": 1.435,
+   "leverage": 0.0156,
+   "conviction": 1.573
+  },
+  {
+   "antecedentes": "Via=CALLE + Victima=MOTO",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0616,
+   "confidence": 0.652,
+   "lift": 1.4307,
+   "leverage": 0.0185,
+   "conviction": 1.5641
+  },
+  {
+   "antecedentes": "Contraparte=AUTO + Dia=Dia habil + Zona=Oeste",
+   "consecuentes": "Victima=MOTO",
+   "support": 0.0413,
+   "confidence": 0.5322,
+   "lift": 1.4266,
+   "leverage": 0.0123,
+   "conviction": 1.3402
+  },
+  {
+   "antecedentes": "Dia=Dia habil + Victima=MOTO + Zona=Oeste",
+   "consecuentes": "Contraparte=AUTO",
+   "support": 0.0413,
+   "confidence": 0.6495,
+   "lift": 1.4251,
+   "leverage": 0.0123,
+   "conviction": 1.5526
+  }
+ ],
+ "reglas_grave_mortal": [
+  {
+   "antecedentes": "Contraparte=TRANSPORTE PUBLICO + Via=AVENIDA + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0026,
+   "confidence": 0.2648,
+   "lift": 4.7828,
+   "leverage": 0.002,
+   "conviction": 1.2849
+  },
+  {
+   "antecedentes": "Contraparte=OBJETO FIJO + Victima=MOTO",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0031,
+   "confidence": 0.2645,
+   "lift": 4.7777,
+   "leverage": 0.0025,
+   "conviction": 1.2844
+  },
+  {
+   "antecedentes": "Contraparte=OBJETO FIJO",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0051,
+   "confidence": 0.2202,
+   "lift": 3.9782,
+   "leverage": 0.0038,
+   "conviction": 1.2115
+  },
+  {
+   "antecedentes": "Contraparte=TRANSPORTE PUBLICO + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0037,
+   "confidence": 0.2196,
+   "lift": 3.9664,
+   "leverage": 0.0027,
+   "conviction": 1.2105
+  },
+  {
+   "antecedentes": "Contraparte=TRANSPORTE PUBLICO + Dia=Dia habil + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.003,
+   "confidence": 0.2099,
+   "lift": 3.7915,
+   "leverage": 0.0022,
+   "conviction": 1.1956
+  },
+  {
+   "antecedentes": "Contraparte=OBJETO FIJO + Dia=Dia habil",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0032,
+   "confidence": 0.2065,
+   "lift": 3.7302,
+   "leverage": 0.0023,
+   "conviction": 1.1905
+  },
+  {
+   "antecedentes": "Dia=Fin de semana + Franja=Madrugada + Victima=MOTO",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.002,
+   "confidence": 0.1705,
+   "lift": 3.0803,
+   "leverage": 0.0014,
+   "conviction": 1.1389
+  },
+  {
+   "antecedentes": "Franja=Madrugada + Victima=MOTO",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0049,
+   "confidence": 0.157,
+   "lift": 2.836,
+   "leverage": 0.0031,
+   "conviction": 1.1206
+  },
+  {
+   "antecedentes": "Dia=Dia habil + Franja=Madrugada + Victima=MOTO",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0029,
+   "confidence": 0.1487,
+   "lift": 2.6864,
+   "leverage": 0.0018,
+   "conviction": 1.1097
+  },
+  {
+   "antecedentes": "Contraparte=CAMION + Via=AVENIDA",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0022,
+   "confidence": 0.1454,
+   "lift": 2.6265,
+   "leverage": 0.0014,
+   "conviction": 1.1054
+  },
+  {
+   "antecedentes": "Franja=Noche + Via=AVENIDA + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0029,
+   "confidence": 0.1414,
+   "lift": 2.5535,
+   "leverage": 0.0018,
+   "conviction": 1.1002
+  },
+  {
+   "antecedentes": "Via=AVENIDA + Victima=PEATON + Zona=Sur",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0025,
+   "confidence": 0.1406,
+   "lift": 2.539,
+   "leverage": 0.0015,
+   "conviction": 1.0991
+  },
+  {
+   "antecedentes": "Via=AVENIDA + Victima=PEATON + Zona=Norte",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0022,
+   "confidence": 0.1369,
+   "lift": 2.4729,
+   "leverage": 0.0013,
+   "conviction": 1.0945
+  },
+  {
+   "antecedentes": "Via=AVENIDA + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0095,
+   "confidence": 0.133,
+   "lift": 2.4031,
+   "leverage": 0.0055,
+   "conviction": 1.0896
+  },
+  {
+   "antecedentes": "Contraparte=CAMION + Victima=MOTO",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0022,
+   "confidence": 0.131,
+   "lift": 2.3658,
+   "leverage": 0.0013,
+   "conviction": 1.087
+  },
+  {
+   "antecedentes": "Dia=Dia habil + Via=AVENIDA + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0075,
+   "confidence": 0.1307,
+   "lift": 2.3603,
+   "leverage": 0.0043,
+   "conviction": 1.0866
+  },
+  {
+   "antecedentes": "Via=AUTOPISTA",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0021,
+   "confidence": 0.1306,
+   "lift": 2.3597,
+   "leverage": 0.0012,
+   "conviction": 1.0866
+  },
+  {
+   "antecedentes": "Contraparte=AUTO + Franja=Madrugada + Victima=MOTO",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0024,
+   "confidence": 0.1266,
+   "lift": 2.2873,
+   "leverage": 0.0013,
+   "conviction": 1.0816
+  },
+  {
+   "antecedentes": "Franja=Manana + Via=AVENIDA + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0022,
+   "confidence": 0.1249,
+   "lift": 2.2558,
+   "leverage": 0.0012,
+   "conviction": 1.0795
+  },
+  {
+   "antecedentes": "Franja=Tarde + Via=AVENIDA + Victima=PEATON",
+   "consecuentes": "Gravedad=GRAVE_O_MORTAL",
+   "support": 0.0035,
+   "confidence": 0.1215,
+   "lift": 2.1937,
+   "leverage": 0.0019,
+   "conviction": 1.0752
+  }
+ ],
+ "base_grave_mortal": 0.05536479382539731,
+ "anomalias": {
+  "mu": -0.005647790573624339,
+  "sd": 6.494128829622434,
+  "n_altas": 4,
+  "n_bajas": 17,
+  "n_if": 26,
+  "top": [
+   {
+    "Fecha": "2019-04-19",
+    "DiaSemanaNombre": "Viernes",
+    "Siniestros": 7,
+    "Esperado": 37.49,
+    "Z": -4.69,
+    "Mortales": 0,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2024-12-24",
+    "DiaSemanaNombre": "Martes",
+    "Siniestros": 10,
+    "Esperado": 34.35,
+    "Z": -3.75,
+    "Mortales": 1,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2025-12-25",
+    "DiaSemanaNombre": "Jueves",
+    "Siniestros": 17,
+    "Esperado": 41.13,
+    "Z": -3.72,
+    "Mortales": 0,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2025-06-16",
+    "DiaSemanaNombre": "Lunes",
+    "Siniestros": 10,
+    "Esperado": 33.93,
+    "Z": -3.68,
+    "Mortales": 1,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2021-12-17",
+    "DiaSemanaNombre": "Viernes",
+    "Siniestros": 55,
+    "Esperado": 31.45,
+    "Z": 3.63,
+    "Mortales": 0,
+    "AnomaliaGauss": "ALTA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2024-12-17",
+    "DiaSemanaNombre": "Martes",
+    "Siniestros": 63,
+    "Esperado": 39.63,
+    "Z": 3.6,
+    "Mortales": 2,
+    "AnomaliaGauss": "ALTA",
+    "AnomaliaIsolationForest": "SI"
+   },
+   {
+    "Fecha": "2025-11-21",
+    "DiaSemanaNombre": "Viernes",
+    "Siniestros": 22,
+    "Esperado": 45.19,
+    "Z": -3.57,
+    "Mortales": 0,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2019-08-21",
+    "DiaSemanaNombre": "Miercoles",
+    "Siniestros": 54,
+    "Esperado": 30.92,
+    "Z": 3.55,
+    "Mortales": 0,
+    "AnomaliaGauss": "ALTA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2024-12-25",
+    "DiaSemanaNombre": "Miercoles",
+    "Siniestros": 11,
+    "Esperado": 33.76,
+    "Z": -3.5,
+    "Mortales": 0,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2019-03-05",
+    "DiaSemanaNombre": "Martes",
+    "Siniestros": 10,
+    "Esperado": 32.74,
+    "Z": -3.5,
+    "Mortales": 0,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2024-05-02",
+    "DiaSemanaNombre": "Jueves",
+    "Siniestros": 55,
+    "Esperado": 33.04,
+    "Z": 3.38,
+    "Mortales": 1,
+    "AnomaliaGauss": "ALTA",
+    "AnomaliaIsolationForest": "SI"
+   },
+   {
+    "Fecha": "2022-05-18",
+    "DiaSemanaNombre": "Miercoles",
+    "Siniestros": 8,
+    "Esperado": 29.54,
+    "Z": -3.32,
+    "Mortales": 0,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2019-05-01",
+    "DiaSemanaNombre": "Miercoles",
+    "Siniestros": 14,
+    "Esperado": 35.33,
+    "Z": -3.28,
+    "Mortales": 1,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2023-05-25",
+    "DiaSemanaNombre": "Jueves",
+    "Siniestros": 12,
+    "Esperado": 33.08,
+    "Z": -3.25,
+    "Mortales": 0,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   },
+   {
+    "Fecha": "2025-11-24",
+    "DiaSemanaNombre": "Lunes",
+    "Siniestros": 18,
+    "Esperado": 39.0,
+    "Z": -3.23,
+    "Mortales": 1,
+    "AnomaliaGauss": "BAJA",
+    "AnomaliaIsolationForest": ""
+   }
+  ],
+  "dias_con_mas_mortales": [
+   {
+    "Fecha": "2024-10-01",
+    "DiaSemanaNombre": "Martes",
+    "Mortales": 3,
+    "Siniestros": 48
+   },
+   {
+    "Fecha": "2024-04-04",
+    "DiaSemanaNombre": "Jueves",
+    "Mortales": 3,
+    "Siniestros": 42
+   },
+   {
+    "Fecha": "2020-12-05",
+    "DiaSemanaNombre": "Sabado",
+    "Mortales": 3,
+    "Siniestros": 21
+   },
+   {
+    "Fecha": "2023-01-13",
+    "DiaSemanaNombre": "Viernes",
+    "Mortales": 3,
+    "Siniestros": 31
+   },
+   {
+    "Fecha": "2022-06-20",
+    "DiaSemanaNombre": "Lunes",
+    "Mortales": 3,
+    "Siniestros": 17
+   }
+  ]
+ },
+ "correlacion_mensual": {
+  "Siniestros": {
+   "Siniestros": 1.0,
+   "Victimas": 0.988,
+   "Graves": 0.776,
+   "Mortales": 0.254,
+   "Motos": 0.848,
+   "Peatones": 0.806,
+   "Bicicletas": 0.62,
+   "Nocturnos": 0.951,
+   "FinDeSemana": 0.882
+  },
+  "Victimas": {
+   "Siniestros": 0.988,
+   "Victimas": 1.0,
+   "Graves": 0.757,
+   "Mortales": 0.247,
+   "Motos": 0.808,
+   "Peatones": 0.768,
+   "Bicicletas": 0.584,
+   "Nocturnos": 0.946,
+   "FinDeSemana": 0.879
+  },
+  "Graves": {
+   "Siniestros": 0.776,
+   "Victimas": 0.757,
+   "Graves": 1.0,
+   "Mortales": 0.152,
+   "Motos": 0.681,
+   "Peatones": 0.65,
+   "Bicicletas": 0.465,
+   "Nocturnos": 0.779,
+   "FinDeSemana": 0.718
+  },
+  "Mortales": {
+   "Siniestros": 0.254,
+   "Victimas": 0.247,
+   "Graves": 0.152,
+   "Mortales": 1.0,
+   "Motos": 0.124,
+   "Peatones": 0.097,
+   "Bicicletas": 0.099,
+   "Nocturnos": 0.267,
+   "FinDeSemana": 0.227
+  },
+  "Motos": {
+   "Siniestros": 0.848,
+   "Victimas": 0.808,
+   "Graves": 0.681,
+   "Mortales": 0.124,
+   "Motos": 1.0,
+   "Peatones": 0.911,
+   "Bicicletas": 0.734,
+   "Nocturnos": 0.822,
+   "FinDeSemana": 0.719
+  },
+  "Peatones": {
+   "Siniestros": 0.806,
+   "Victimas": 0.768,
+   "Graves": 0.65,
+   "Mortales": 0.097,
+   "Motos": 0.911,
+   "Peatones": 1.0,
+   "Bicicletas": 0.703,
+   "Nocturnos": 0.77,
+   "FinDeSemana": 0.645
+  },
+  "Bicicletas": {
+   "Siniestros": 0.62,
+   "Victimas": 0.584,
+   "Graves": 0.465,
+   "Mortales": 0.099,
+   "Motos": 0.734,
+   "Peatones": 0.703,
+   "Bicicletas": 1.0,
+   "Nocturnos": 0.589,
+   "FinDeSemana": 0.5
+  },
+  "Nocturnos": {
+   "Siniestros": 0.951,
+   "Victimas": 0.946,
+   "Graves": 0.779,
+   "Mortales": 0.267,
+   "Motos": 0.822,
+   "Peatones": 0.77,
+   "Bicicletas": 0.589,
+   "Nocturnos": 1.0,
+   "FinDeSemana": 0.873
+  },
+  "FinDeSemana": {
+   "Siniestros": 0.882,
+   "Victimas": 0.879,
+   "Graves": 0.718,
+   "Mortales": 0.227,
+   "Motos": 0.719,
+   "Peatones": 0.645,
+   "Bicicletas": 0.5,
+   "Nocturnos": 0.873,
+   "FinDeSemana": 1.0
+  }
+ },
+ "correlacion_hora": {
+  "pearson": -0.8571445362889816,
+  "p": 8.863089892111177e-08,
+  "spearman": -0.8973913043478261,
+  "p_s": 2.826744197737165e-09
+ },
+ "correlacion_viarapida_gravedad_comuna": {
+  "pearson": 0.38574850290352425,
+  "p": 0.1555909822189113
+ }
+}

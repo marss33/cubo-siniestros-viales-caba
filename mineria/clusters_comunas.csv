@@ -1,0 +1,16 @@
+﻿Comuna,SiniestrosAnuales,PctMoto,PctPeaton,PctBicicleta,PctNocturno,PctFinde,PctViaRapida,PctTransportePesado,PctGraveMortal,Cluster,Perfil
+Comuna 01,1034.43,31.38,16.53,9.25,24.83,20.23,2.54,15.55,4.39,1,C2: alto volumen + transporte pesado
+Comuna 02,335.71,28.68,14.68,11.06,25.23,19.53,0.55,11.57,4.98,2,C3: ciclistas + nocturnidad
+Comuna 03,694.0,31.95,15.99,9.3,25.01,20.58,0.66,11.42,3.62,1,C2: alto volumen + transporte pesado
+Comuna 04,651.71,35.16,15.06,9.14,24.73,19.33,2.15,20.23,5.81,1,C2: alto volumen + transporte pesado
+Comuna 05,469.29,39.15,15.16,13.82,27.25,21.67,1.0,9.16,3.84,2,C3: ciclistas + nocturnidad
+Comuna 06,396.0,38.13,16.05,13.74,25.9,19.34,0.04,12.81,3.57,2,C3: ciclistas + nocturnidad
+Comuna 07,624.0,37.82,16.12,9.25,24.63,20.79,2.52,13.74,4.74,1,C2: alto volumen + transporte pesado
+Comuna 08,441.14,36.14,11.82,5.54,26.04,24.32,18.1,14.96,5.6,3,C4: fin de semana + vías rápidas
+Comuna 09,635.71,38.61,11.8,6.9,22.47,21.93,18.52,12.61,4.81,0,C1: vías rápidas + motos
+Comuna 10,539.43,40.57,12.24,10.35,22.64,19.41,11.36,11.2,4.61,0,C1: vías rápidas + motos
+Comuna 11,504.43,39.96,13.99,11.16,19.74,19.77,8.78,11.75,5.27,0,C1: vías rápidas + motos
+Comuna 12,615.71,44.25,9.95,12.02,22.11,20.58,18.05,10.37,5.78,0,C1: vías rápidas + motos
+Comuna 13,566.43,36.65,14.96,14.55,24.36,21.69,5.09,13.24,5.9,2,C3: ciclistas + nocturnidad
+Comuna 14,642.29,38.1,16.21,14.44,28.78,22.22,0.89,13.86,5.85,2,C3: ciclistas + nocturnidad
+Comuna 15,744.86,42.94,14.33,15.27,24.7,19.28,0.06,11.49,4.78,2,C3: ciclistas + nocturnidad

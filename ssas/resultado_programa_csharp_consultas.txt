@@ -1,0 +1,173 @@
+﻿
+====================================================================================================
+CUBO OLAP Y MINERIA DE DATOS - SINIESTROS VIALES CABA 2019-2025
+====================================================================================================
+Servidor OLAP: localhost\SSAS2019   |   Data Warehouse: localhost / SiniestrosVialesDW
+
+====================================================================================================
+3) CONSULTAS MDX SOBRE EL CUBO
+====================================================================================================
+
+--- Totales por año con índice base 2019 = 100 y variación interanual
+                                 Cantidad Siniestros          Total Victimas       Victimas Mortales     % Graves o Mortales  Indice Anual Base 2019  Variacion Interanual %
+2019                                          10.155                  11.886                     104                   4,69%                  100,00                        
+2020                                           6.061                   6.936                      82                   3,66%                   59,68                 -40,32%
+2021                                           7.818                   9.053                      96                   5,81%                   76,99                  28,99%
+2022                                           9.536                  10.647                     111                   6,60%                   93,90                  21,97%
+2023                                           9.927                  11.075                     106                   4,63%                   97,75                   4,10%
+2024                                          10.569                  12.481                     113                   5,92%                  104,08                   6,47%
+2025                                          11.752                  13.115                      91                   6,61%                  115,73                  11,19%
+
+--- Serie mensual: valor, ACUMULADO e ÍNDICE BASE 100 (enero 2019 = 100) - primeros 13 meses
+                                 Cantidad Siniestros   Siniestros Acumulados         Indice Base 100  Indice Acumulado Base 
+Enero 2019                                       750                     750                  100,00                  100,00
+Febrero 2019                                     801                   1.551                  106,80                  206,80
+Marzo 2019                                       960                   2.511                  128,00                  334,80
+Abril 2019                                       967                   3.478                  128,93                  463,73
+Mayo 2019                                      1.049                   4.527                  139,87                  603,60
+Junio 2019                                       896                   5.423                  119,47                  723,07
+Julio 2019                                       937                   6.360                  124,93                  848,00
+Agosto 2019                                      912                   7.272                  121,60                  969,60
+Septiembre 2019                                  895                   8.167                  119,33                 1088,93
+Octubre 2019                                     891                   9.058                  118,80                 1207,73
+Noviembre 2019                                   555                   9.613                   74,00                 1281,73
+Diciembre 2019                                   542                  10.155                   72,27                 1354,00
+Enero 2020                                       679                  10.834                   90,53                 1444,53
+
+--- Últimos 3 meses (la última fila del acumulado = total del período)
+                                 Cantidad Siniestros   Siniestros Acumulados         Indice Base 100  Indice Acumulado Base 
+Octubre 2025                                   1.125                  63.580                  150,00                 8477,33
+Noviembre 2025                                 1.099                  64.679                  146,53                 8623,87
+Diciembre 2025                                 1.139                  65.818                  151,87                 8775,73
+
+--- Jerarquía Zona > Comuna
+                                 Cantidad Siniestros       Victimas Mortales     % Graves o Mortales
+All                                           65.818                     703                   5,54%
+Centro                                        18.156                     169                   3,96%
+Comuna 01                                      7.241                      75                   4,39%
+Comuna 03                                      4.858                      43                   3,62%
+Comuna 05                                      3.285                      31                   3,84%
+Comuna 06                                      2.772                      20                   3,57%
+Norte                                         15.121                     154                   5,71%
+Comuna 02                                      2.350                      24                   4,98%
+Comuna 12                                      4.310                      43                   5,78%
+Comuna 13                                      3.965                      45                   5,90%
+Comuna 14                                      4.496                      42                   5,85%
+Oeste                                         12.521                     129                   4,86%
+Comuna 10                                      3.776                      53                   4,61%
+Comuna 11                                      3.531                      31                   5,27%
+Comuna 15                                      5.214                      45                   4,78%
+SIN DATO                                       3.552                       0                  16,72%
+SIN DATO                                       3.552                       0                  16,72%
+Sur                                           16.468                     251                   5,22%
+Comuna 04                                      4.562                      75                   5,81%
+Comuna 07                                      4.368                      55                   4,74%
+Comuna 08                                      3.088                      65                   5,60%
+Comuna 09                                      4.450                      56                   4,81%
+
+--- Vehículo de la víctima x Gravedad
+                              LEVE / Cantidad Sinies  GRAVE / Cantidad Sinie  MORTAL / Cantidad Sini
+AUTO                                           6.775                     242                      56
+BICICLETA                                      6.815                     222                      54
+CAMION                                           237                       9                       4
+MIXTO                                            474                      22                       2
+MONOPATIN                                        196                      10                       1
+MOTO                                          22.713                   1.557                     285
+MOVIL                                            524                       4                       3
+OTRO                                             125                       4                        
+PEATON                                         8.384                     762                     269
+SIN DATO                                      10.903                      26                        
+TAXI                                             801                       8                       1
+TRANSPORTE PUBLICO                             3.560                      67                       6
+UTILITARIO                                       667                      22                       8
+
+--- Letalidad por rango etario y sexo (grupo de medida Victimas)
+                              Femenino / Letalidad %  Masculino / Letalidad   SIN DATO / Letalidad %
+SIN DATO                                       0,20%                   0,55%                   0,01%
+00-14                                          0,46%                   0,97%                   0,00%
+15-24                                          0,76%                   1,40%                   0,00%
+25-34                                          0,52%                   1,15%                   0,00%
+35-44                                          0,54%                   1,36%                   0,00%
+45-54                                          0,75%                   1,28%                   0,00%
+55-64                                          1,45%                   1,88%                   0,00%
+65 y mas                                       3,16%                   4,79%                   0,00%
+
+====================================================================================================
+4) CONSULTAS DMX SOBRE LOS MODELOS DE MINERIA
+====================================================================================================
+
+--- Precisión de los clasificadores sobre el 30% de prueba (SystemGetAccuracyResults)
+Arbol de Decision - Gravedad       TP=0      FP=0      TN=11033   FN=787    LogScore=-0,2295
+Naive Bayes - Gravedad             TP=34     FP=48     TN=10985   FN=753    LogScore=-0,2277
+Regresion Logistica - Gravedad     TP=13     FP=9      TN=11024   FN=774    LogScore=-0,225
+Red Neuronal - Gravedad            TP=2      FP=4      TN=11029   FN=785    LogScore=-0,2264
+Nota: con umbral 50% la clase minoritaria (7% de graves) casi no se predice; los modelos se usan por su probabilidad (PredictProbability).
+
+--- Árbol de decisión: hojas con mayor probabilidad de siniestro GRAVE O MORTAL
+    41,7%  (   24 casos)  VehiculoVictima = 'TRANSPORTE PUBLICO' and Contraparte = 'OBJETO FIJO'
+    24,2%  (  607 casos)  VehiculoVictima = 'PEATON' and Contraparte = 'TRANSPORTE PUBLICO'
+    21,5%  (  395 casos)  VehiculoVictima = 'MOTO' and Contraparte = 'OBJETO FIJO'
+    16,5%  (  532 casos)  VehiculoVictima = 'MOTO' and Contraparte = 'CAMION'
+    14,7%  (  123 casos)  VehiculoVictima = 'BICICLETA' and Contraparte = 'CAMION'
+    14,5%  (  193 casos)  VehiculoVictima = 'AUTO' and Contraparte = 'OBJETO FIJO'
+    13,1%  (  995 casos)  VehiculoVictima = 'MOTO' and Contraparte not = 'OBJETO FIJO' and Contraparte not = 'CAMION' and TotalVictimas not = 1
+    12,3%  (  746 casos)  VehiculoVictima = 'MOTO' and Contraparte not = 'OBJETO FIJO' and Contraparte not = 'CAMION' and TotalVictimas = 1 and FranjaHoraria = '1. Madrugada (00-05)'
+
+--- Predicción de escenarios (consulta DMX singleton con PREDICTION JOIN)
+                                                    Arbol de Decision          Naive Bayes  Regresion Logistica         Red Neuronal
+Peatón vs colectivo, avenida, madrugada                         24,2%                27,7%                28,3%                37,1%
+Moto vs objeto fijo, fin de semana, madrugada                   21,5%                36,5%                29,2%                26,6%
+Moto vs auto, Gral. Paz, noche                                   6,8%                 7,6%                 6,4%                 3,3%
+Ciclista vs auto, calle, tarde hábil                             3,5%                 1,9%                 2,8%                 1,4%
+Auto vs auto, avenida, tarde hábil                               3,3%                 2,7%                 1,9%                 1,2%
+
+--- Clustering de siniestros: % de graves por cluster y características
+  Cluster 5    4437 casos    9,1% graves  | Zona=Sur, Comuna=Comuna 07, Comuna=Comuna 04, Comuna=Comuna 09, Comuna=Comuna 08
+  Cluster 2    5713 casos    8,7% graves  | TipoDia=Fin de semana, DiaSemana=Domingo, DiaSemana=Sabado, FranjaHoraria=1. Madrugada (00-05), VehiculoVictima=AUTO
+  Cluster 6    2709 casos    6,8% graves  | FranjaHoraria=2. Manana (06-11), Hora=8, Hora=9, Hora=11, Hora=7
+  Cluster 1    5546 casos    6,6% graves  | Zona=Norte, Comuna=Comuna 12, Comuna=Comuna 14, Comuna=Comuna 13, Comuna=Comuna 02
+  Cluster 3    4876 casos    5,9% graves  | Zona=Oeste, Comuna=Comuna 15, FranjaHoraria=4. Noche (18-23), Comuna=Comuna 10, Comuna=Comuna 11
+  Cluster 4    4302 casos    5,0% graves  | Zona=Centro, Comuna=Comuna 01, Comuna=Comuna 03, Comuna=Comuna 06, Comuna=Comuna 05
+
+--- Reglas de asociación: 4511 conjuntos frecuentes y 12860 reglas. Top reglas -> GRAVE O MORTAL:
+  prob  26,3%  importancia 0,60  Contraparte = TRANSPORTE PUBLICO, VehiculoVictima = PEATON, TipoVia = AVENIDA -> Gravedad = GRAVE O MORTAL
+  prob  24,1%  importancia 0,57  Contraparte = TRANSPORTE PUBLICO, VehiculoVictima = PEATON -> Gravedad = GRAVE O MORTAL
+  prob  23,0%  importancia 0,54  Contraparte = TRANSPORTE PUBLICO, VehiculoVictima = PEATON, TipoDia = Dia habil -> Gravedad = GRAVE O MORTAL
+  prob  23,3%  importancia 0,54  Contraparte = OBJETO FIJO, TipoDia = Fin de semana -> Gravedad = GRAVE O MORTAL
+  prob  22,3%  importancia 0,52  Contraparte = OBJETO FIJO, VehiculoVictima = MOTO -> Gravedad = GRAVE O MORTAL
+  prob  18,0%  importancia 0,44  Contraparte = OBJETO FIJO -> Gravedad = GRAVE O MORTAL
+  prob  18,4%  importancia 0,44  Contraparte = OBJETO FIJO, TipoVia = AVENIDA -> Gravedad = GRAVE O MORTAL
+  prob  18,0%  importancia 0,43  FranjaHoraria = 1. Madrugada (00-05), TipoDia = Fin de semana, VehiculoVictima = MOTO -> Gravedad = GRAVE O MORTAL
+
+--- Pronóstico 2026 (Microsoft Time Series, PredictTimeSeries a 12 meses)
+  2026-01   siniestros   1.084   víctimas fatales   8,4
+  2026-02   siniestros   1.150   víctimas fatales   8,1
+  2026-03   siniestros   1.132   víctimas fatales   8,6
+  2026-04   siniestros   1.187   víctimas fatales   8,1
+  2026-05   siniestros   1.153   víctimas fatales   8,5
+  2026-06   siniestros   1.210   víctimas fatales   8,2
+  2026-07   siniestros   1.179   víctimas fatales   8,6
+  2026-08   siniestros   1.236   víctimas fatales   8,1
+  2026-09   siniestros   1.192   víctimas fatales   8,5
+  2026-10   siniestros   1.257   víctimas fatales   8,1
+  2026-11   siniestros   1.226   víctimas fatales   8,5
+  2026-12   siniestros   1.276   víctimas fatales   8,1
+  TOTAL 2026: 14.282 siniestros y 100 víctimas fatales
+
+--- Perfil de víctima fatal: hojas del árbol con mayor probabilidad de FALLECER
+    10,4%  (  397 víctimas)  Edad < 50 and TipoVia = 'AUTOPISTA' and Zona not = 'SIN DATO' and Hora not = 15
+    10,0%  (  827 víctimas)  Edad >= 70 and Vehiculo not = 'TRANSPORTE PUBLICO' and Vehiculo not = 'AUTO'
+     9,1%  (   55 víctimas)  Edad < 50 and TipoVia = 'CALLE' and Hora = 3
+     6,0%  (  903 víctimas)  Edad >= 50 and < 70 and Vehiculo = 'PEATON'
+     4,2%  ( 1028 víctimas)  Edad < 50 and TipoVia = 'AVENIDA' and FranjaHoraria = '1. Madrugada (00-05)'
+     2,5%  (  162 víctimas)  Edad >= 70 and Vehiculo = 'AUTO'
+
+--- Segmentación de comunas (Microsoft Clustering, 4 clusters)
+  Cluster 1    9 comunas | Zona=Norte, Zona=Oeste, PctViaRapida >17,14204591
+  Cluster 2    4 comunas | 9,1176200025 <=PctBicicleta <=9,3558390247, 24,5203730747 <=PctNocturno <=25,0800338135, 0,424502746 <=PctViaRapida <=3,5086414606
+  Cluster 3    1 comunas | SiniestrosAnuales =635,7142857143, PctMoto =38,606741573, PctPeaton =11,797752809
+  Cluster 4    1 comunas | SiniestrosAnuales =441,1428571429, PctMoto =36,1398963731, PctPeaton =11,8199481865
+
+====================================================================================================
+FIN - todo OK
+====================================================================================================

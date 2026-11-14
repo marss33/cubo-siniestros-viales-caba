@@ -1,0 +1,22 @@
+|--- VehiculoVictima_PEATON <= 0.50
+|   |--- VehiculoVictima_MOTO <= 0.50
+|   |   |--- Contraparte_OBJETO FIJO <= 0.50
+|   |   |   |--- class: 0
+|   |   |--- Contraparte_OBJETO FIJO >  0.50
+|   |   |   |--- class: 1
+|   |--- VehiculoVictima_MOTO >  0.50
+|   |   |--- HoraKey <= 6.50
+|   |   |   |--- class: 1
+|   |   |--- HoraKey >  6.50
+|   |   |   |--- class: 0
+|--- VehiculoVictima_PEATON >  0.50
+|   |--- Contraparte_TRANSPORTE PUBLICO <= 0.50
+|   |   |--- Comuna_Comuna 06 <= 0.50
+|   |   |   |--- class: 1
+|   |   |--- Comuna_Comuna 06 >  0.50
+|   |   |   |--- class: 0
+|   |--- Contraparte_TRANSPORTE PUBLICO >  0.50
+|   |   |--- HoraKey <= 16.50
+|   |   |   |--- class: 1
+|   |   |--- HoraKey >  16.50
+|   |   |   |--- class: 1

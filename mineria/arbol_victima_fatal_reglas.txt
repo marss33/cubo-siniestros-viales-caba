@@ -1,0 +1,88 @@
+|--- Vehiculo_PEATON <= 0.50
+|   |--- HoraKey <= 7.50
+|   |   |--- Sexo_Femenino <= 0.50
+|   |   |   |--- HoraKey <= 1.50
+|   |   |   |   |--- Edad <= 22.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Edad >  22.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- HoraKey >  1.50
+|   |   |   |   |--- HoraKey <= 6.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- HoraKey >  6.50
+|   |   |   |   |   |--- class: 1
+|   |   |--- Sexo_Femenino >  0.50
+|   |   |   |--- Vehiculo_MOTO <= 0.50
+|   |   |   |   |--- Edad <= 50.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Edad >  50.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- Vehiculo_MOTO >  0.50
+|   |   |   |   |--- TipoVia_CALLE <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- TipoVia_CALLE >  0.50
+|   |   |   |   |   |--- class: 0
+|   |--- HoraKey >  7.50
+|   |   |--- TipoVia_AUTOPISTA <= 0.50
+|   |   |   |--- Edad <= 70.50
+|   |   |   |   |--- Sexo_Masculino <= 0.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Sexo_Masculino >  0.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- Edad >  70.50
+|   |   |   |   |--- Vehiculo_TRANSPORTE PUBLICO <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Vehiculo_TRANSPORTE PUBLICO >  0.50
+|   |   |   |   |   |--- class: 0
+|   |   |--- TipoVia_AUTOPISTA >  0.50
+|   |   |   |--- Vehiculo_MOTO <= 0.50
+|   |   |   |   |--- HoraKey <= 16.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- HoraKey >  16.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- Vehiculo_MOTO >  0.50
+|   |   |   |   |--- TipoDia_Fin de semana <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- TipoDia_Fin de semana >  0.50
+|   |   |   |   |   |--- class: 0
+|--- Vehiculo_PEATON >  0.50
+|   |--- Edad <= 50.50
+|   |   |--- HoraKey <= 7.50
+|   |   |   |--- Edad <= 42.50
+|   |   |   |   |--- Sexo_Masculino <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Sexo_Masculino >  0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- Edad >  42.50
+|   |   |   |   |--- class: 0
+|   |   |--- HoraKey >  7.50
+|   |   |   |--- HoraKey <= 18.50
+|   |   |   |   |--- Zona_Oeste <= 0.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Zona_Oeste >  0.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |--- HoraKey >  18.50
+|   |   |   |   |--- Edad <= 26.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Edad >  26.50
+|   |   |   |   |   |--- class: 1
+|   |--- Edad >  50.50
+|   |   |--- Edad <= 67.50
+|   |   |   |--- FranjaHoraria_3. Tarde (12-17) <= 0.50
+|   |   |   |   |--- Zona_Oeste <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Zona_Oeste >  0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- FranjaHoraria_3. Tarde (12-17) >  0.50
+|   |   |   |   |--- Zona_Norte <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Zona_Norte >  0.50
+|   |   |   |   |   |--- class: 0
+|   |   |--- Edad >  67.50
+|   |   |   |--- Edad <= 86.50
+|   |   |   |   |--- TipoVia_CALLE <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- TipoVia_CALLE >  0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- Edad >  86.50
+|   |   |   |   |--- class: 1

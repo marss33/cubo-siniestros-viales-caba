@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Proyecto C# (Visual Studio 2026 / 2022) que construye por codigo el cubo OLAP multidimensional
+    "Siniestros Viales" y los modelos de mineria de datos en SQL Server Analysis Services, usando
+    AMO (Analysis Management Objects) y ADOMD.NET, las librerias oficiales de Microsoft.
+  -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>CuboSiniestrosViales</RootNamespace>
+    <AssemblyName>CuboSiniestrosViales</AssemblyName>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Product>TP Base de Datos Aplicada - Siniestros Viales CABA</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- AMO: crear y procesar bases, dimensiones, cubos y estructuras de mineria -->
+    <PackageReference Include="Microsoft.AnalysisServices.retail.amd64" Version="19.84.1" />
+    <!-- ADOMD.NET: consultas MDX (cubo) y DMX (mineria) -->
+    <PackageReference Include="Microsoft.AnalysisServices.AdomdClient.retail.amd64" Version="19.84.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+
+</Project>

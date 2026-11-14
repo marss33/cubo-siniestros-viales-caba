@@ -1,0 +1,107 @@
+﻿
+==== 1. Totales por anio con indice base 2019
+                                  
++
+   Cantidad Siniestros        Total Victimas     Victimas Mortales   % Graves o MortalesIndice Anual Base 2019Variacion Interanual %
+2019                                              10.155                11.886                   104                 4,69%                100,00                      
+2020                                               6.061                 6.936                    82                 3,66%                 59,68               -40,32%
+2021                                               7.818                 9.053                    96                 5,81%                 76,99                28,99%
+2022                                               9.536                10.647                   111                 6,60%                 93,90                21,97%
+2023                                               9.927                11.075                   106                 4,63%                 97,75                 4,10%
+2024                                              10.569                12.481                   113                 5,92%                104,08                 6,47%
+2025                                              11.752                13.115                    91                 6,61%                115,73                11,19%
+
+==== 2. Serie mensual: valor, acumulado e indice base 100 (primeros 14 meses)
+                                  
++
+   Cantidad Siniestros Siniestros Acumulados       Indice Base 100Indice Acumulado Base 100
+Enero 2019                                           750                   750                100,00                100,00
+Febrero 2019                                         801                 1.551                106,80                206,80
+Marzo 2019                                           960                 2.511                128,00                334,80
+Abril 2019                                           967                 3.478                128,93                463,73
+Mayo 2019                                          1.049                 4.527                139,87                603,60
+Junio 2019                                           896                 5.423                119,47                723,07
+Julio 2019                                           937                 6.360                124,93                848,00
+Agosto 2019                                          912                 7.272                121,60                969,60
+Septiembre 2019                                      895                 8.167                119,33               1088,93
+Octubre 2019                                         891                 9.058                118,80               1207,73
+Noviembre 2019                                       555                 9.613                 74,00               1281,73
+Diciembre 2019                                       542                10.155                 72,27               1354,00
+Enero 2020                                           679                10.834                 90,53               1444,53
+Febrero 2020                                         728                11.562                 97,07               1541,60
+
+==== 3. Ultimos 3 meses (valor acumulado final)
+                                  
++
+   Cantidad Siniestros Siniestros Acumulados       Indice Base 100Indice Acumulado Base 100
+Octubre 2025                                       1.125                63.580                150,00               8477,33
+Noviembre 2025                                     1.099                64.679                146,53               8623,87
+Diciembre 2025                                     1.139                65.818                151,87               8775,73
+
+==== 4. Zona > Comuna
+                                  
++
+   Cantidad Siniestros     Victimas Mortales   % Graves o Mortales
+All                                               65.818                   703                 5,54%
+Centro                                            18.156                   169                 3,96%
+Comuna 01                                          7.241                    75                 4,39%
+Comuna 03                                          4.858                    43                 3,62%
+Comuna 05                                          3.285                    31                 3,84%
+Comuna 06                                          2.772                    20                 3,57%
+Norte                                             15.121                   154                 5,71%
+Comuna 02                                          2.350                    24                 4,98%
+Comuna 12                                          4.310                    43                 5,78%
+Comuna 13                                          3.965                    45                 5,90%
+Comuna 14                                          4.496                    42                 5,85%
+Oeste                                             12.521                   129                 4,86%
+Comuna 10                                          3.776                    53                 4,61%
+Comuna 11                                          3.531                    31                 5,27%
+Comuna 15                                          5.214                    45                 4,78%
+SIN DATO                                           3.552                     0                16,72%
+SIN DATO                                           3.552                     0                16,72%
+Sur                                               16.468                   251                 5,22%
+Comuna 04                                          4.562                    75                 5,81%
+Comuna 07                                          4.368                    55                 4,74%
+Comuna 08                                          3.088                    65                 5,60%
+Comuna 09                                          4.450                    56                 4,81%
+
+==== 5. Vehiculo de la victima x Gravedad
+                                  
++
+LEVE / Cantidad SiniestrosGRAVE / Cantidad SiniestrosMORTAL / Cantidad Siniestros
+AUTO                                               6.775                   242                    56
+BICICLETA                                          6.815                   222                    54
+CAMION                                               237                     9                     4
+MIXTO                                                474                    22                     2
+MONOPATIN                                            196                    10                     1
+MOTO                                              22.713                 1.557                   285
+MOVIL                                                524                     4                     3
+OTRO                                                 125                     4                      
+PEATON                                             8.384                   762                   269
+SIN DATO                                          10.903                    26                      
+TAXI                                                 801                     8                     1
+TRANSPORTE PUBLICO                                 3.560                    67                     6
+UTILITARIO                                           667                    22                     8
+
+==== 6. Letalidad por rango etario y sexo (grupo de medida Victimas)
+                                  
++
+Femenino / Cantidad VictimasFemenino / Letalidad %Masculino / Cantidad VictimasMasculino / Letalidad %SIN DATO / Cantidad VictimasSIN DATO / Letalidad %
+SIN DATO                                           2.541                 0,20%                 4.527                 0,55%                16.305                 0,01%
+00-14                                                658                 0,46%                   824                 0,97%                    62                 0,00%
+15-24                                              2.497                 0,76%                 5.626                 1,40%                   102                 0,00%
+25-34                                              4.449                 0,52%                11.065                 1,15%                   220                 0,00%
+35-44                                              3.347                 0,54%                 7.721                 1,36%                   177                 0,00%
+45-54                                              2.540                 0,75%                 4.515                 1,28%                   114                 0,00%
+55-64                                              1.791                 1,45%                 2.293                 1,88%                    63                 0,00%
+65 y mas                                           2.055                 3,16%                 1.650                 4,79%                    51                 0,00%
+
+==== 7. Franja horaria: fin de semana vs dia habil
+                                  
++
+Dia habil / Cantidad SiniestrosDia habil / % Graves o MortalesFin de semana / Cantidad SiniestrosFin de semana / % Graves o Mortales
+1. Madrugada (00-05)                               3.172                11,35%                 2.085                10,36%
+2. Manana (06-11)                                 13.260                 4,97%                 2.826                 8,53%
+3. Tarde (12-17)                                  21.970                 4,32%                 4.504                 4,53%
+4. Noche (18-23)                                  13.721                 5,30%                 4.199                 6,14%
+SIN DATO                                              55                34,55%                    26                38,46%

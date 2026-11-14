@@ -1,0 +1,109 @@
+|--- VehiculoVictima_PEATON <= 0.50
+|   |--- VehiculoVictima_MOTO <= 0.50
+|   |   |--- Contraparte_OBJETO FIJO <= 0.50
+|   |   |   |--- HoraKey <= 7.50
+|   |   |   |   |--- TotalVictimas <= 2.50
+|   |   |   |   |   |--- Contraparte_AUTO <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Contraparte_AUTO >  0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- TotalVictimas >  2.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- HoraKey >  7.50
+|   |   |   |   |--- Contexto_1. Pre-pandemia <= 0.50
+|   |   |   |   |   |--- VehiculoVictima_TRANSPORTE PUBLICO <= 0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- VehiculoVictima_TRANSPORTE PUBLICO >  0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |--- Contexto_1. Pre-pandemia >  0.50
+|   |   |   |   |   |--- Estacion_Verano <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- Estacion_Verano >  0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |--- Contraparte_OBJETO FIJO >  0.50
+|   |   |   |--- TipoVia_CALLE <= 0.50
+|   |   |   |   |--- HoraKey <= 9.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- HoraKey >  9.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- TipoVia_CALLE >  0.50
+|   |   |   |   |--- class: 1
+|   |--- VehiculoVictima_MOTO >  0.50
+|   |   |--- HoraKey <= 6.50
+|   |   |   |--- HoraKey <= 1.50
+|   |   |   |   |--- Contraparte_AUTO <= 0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Contraparte_AUTO >  0.50
+|   |   |   |   |   |--- HoraKey <= 0.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HoraKey >  0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- HoraKey >  1.50
+|   |   |   |   |--- Contraparte_AUTO <= 0.50
+|   |   |   |   |   |--- TipoVia_AVENIDA <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- TipoVia_AVENIDA >  0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Contraparte_AUTO >  0.50
+|   |   |   |   |   |--- TipoDia_Dia habil <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- TipoDia_Dia habil >  0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |--- HoraKey >  6.50
+|   |   |   |--- Contraparte_CAMION <= 0.50
+|   |   |   |   |--- Contraparte_OBJETO FIJO <= 0.50
+|   |   |   |   |   |--- TotalVictimas <= 1.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- TotalVictimas >  1.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Contraparte_OBJETO FIJO >  0.50
+|   |   |   |   |   |--- TipoDia_Dia habil <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- TipoDia_Dia habil >  0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |--- Contraparte_CAMION >  0.50
+|   |   |   |   |--- Estacion_Primavera <= 0.50
+|   |   |   |   |   |--- TipoVia_CALLE <= 0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- TipoVia_CALLE >  0.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Estacion_Primavera >  0.50
+|   |   |   |   |   |--- class: 1
+|--- VehiculoVictima_PEATON >  0.50
+|   |--- Contraparte_TRANSPORTE PUBLICO <= 0.50
+|   |   |--- Contexto_1. Pre-pandemia <= 0.50
+|   |   |   |--- Contraparte_TAXI <= 0.50
+|   |   |   |   |--- Comuna_Comuna 06 <= 0.50
+|   |   |   |   |   |--- HoraKey <= 6.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HoraKey >  6.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- Comuna_Comuna 06 >  0.50
+|   |   |   |   |   |--- HoraKey <= 14.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |   |   |--- HoraKey >  14.50
+|   |   |   |   |   |   |--- class: 0
+|   |   |   |--- Contraparte_TAXI >  0.50
+|   |   |   |   |--- TipoVia_AVENIDA <= 0.50
+|   |   |   |   |   |--- class: 0
+|   |   |   |   |--- TipoVia_AVENIDA >  0.50
+|   |   |   |   |   |--- class: 0
+|   |   |--- Contexto_1. Pre-pandemia >  0.50
+|   |   |   |--- Contraparte_AUTO <= 0.50
+|   |   |   |   |--- class: 1
+|   |   |   |--- Contraparte_AUTO >  0.50
+|   |   |   |   |--- class: 1
+|   |--- Contraparte_TRANSPORTE PUBLICO >  0.50
+|   |   |--- Comuna_Comuna 01 <= 0.50
+|   |   |   |--- DiaSemanaNombre_Miercoles <= 0.50
+|   |   |   |   |--- TipoVia_CALLE <= 0.50
+|   |   |   |   |   |--- HoraKey <= 11.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |   |--- HoraKey >  11.50
+|   |   |   |   |   |   |--- class: 1
+|   |   |   |   |--- TipoVia_CALLE >  0.50
+|   |   |   |   |   |--- class: 1
+|   |   |   |--- DiaSemanaNombre_Miercoles >  0.50
+|   |   |   |   |--- class: 1
+|   |   |--- Comuna_Comuna 01 >  0.50
+|   |   |   |--- class: 1

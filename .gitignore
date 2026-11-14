@@ -1,0 +1,27 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.cache
+packages/
+TestResults/
+
+# Salida del programa C# en ejecucion (incluye el nombre de usuario de Windows en el rol de lectura)
+resultados_ejecucion.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Instalador de SQL Server 2019 (muy pesado, se descarga aparte)
+ssas/SQL2019_media/
+
+# Logs (pueden contener rutas y usuarios locales)
+*.log
+log_*.txt
+
+# Archivos temporales de Office
+~$*

@@ -1,0 +1,3806 @@
+<Create AllowOverwrite="true" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ObjectDefinition>
+    <Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500">
+      <ID>SiniestrosVialesOLAP</ID>
+      <Name>SiniestrosVialesOLAP</Name>
+      <ddl200:CompatibilityLevel>1100</ddl200:CompatibilityLevel>
+      <Dimensions>
+        <Dimension>
+          <ID>Tiempo</ID>
+          <Name>Tiempo</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <Type>Time</Type>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Fecha</ID>
+              <Name>Fecha</Name>
+              <Type>Date</Type>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>FechaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimTiempo</TableID>
+                  <ColumnID>Fecha</ColumnID>
+                </Source>
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Mes</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Mes</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Mes del Anio</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Mes del Anio</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Dia de la Semana</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Dia de la Semana</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Tipo de Dia</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Tipo de Dia</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Estacion</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Estacion</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Contexto</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Contexto</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Mes</ID>
+              <Name>Mes</Name>
+              <Type>Months</Type>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>AnioMes</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimTiempo</TableID>
+                  <ColumnID>AnioMesNombre</ColumnID>
+                </Source>
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Trimestre</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Trimestre</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Trimestre</ID>
+              <Name>Trimestre</Name>
+              <Type>Quarters</Type>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>TrimestreNombre</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Semestre</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Semestre</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Semestre</ID>
+              <Name>Semestre</Name>
+              <Type>HalfYears</Type>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>SemestreNombre</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Anio</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Anio</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Anio</ID>
+              <Name>Anio</Name>
+              <Type>Years</Type>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>SmallInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>Anio</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Mes del Anio</ID>
+              <Name>Mes del Anio</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>MesNumero</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimTiempo</TableID>
+                  <ColumnID>MesNombre</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+            </Attribute>
+            <Attribute>
+              <ID>Dia de la Semana</ID>
+              <Name>Dia de la Semana</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>DiaSemanaNumero</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimTiempo</TableID>
+                  <ColumnID>DiaSemanaNombre</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+            </Attribute>
+            <Attribute>
+              <ID>Tipo de Dia</ID>
+              <Name>Tipo de Dia</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>TipoDia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <ID>Estacion</ID>
+              <Name>Estacion</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>Estacion</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <ID>Contexto</ID>
+              <Name>Contexto</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTiempo</TableID>
+                    <ColumnID>Contexto</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Calendario</ID>
+              <Name>Calendario</Name>
+              <Levels>
+                <Level>
+                  <ID>Anio</ID>
+                  <Name>Anio</Name>
+                  <SourceAttributeID>Anio</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Semestre</ID>
+                  <Name>Semestre</Name>
+                  <SourceAttributeID>Semestre</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Trimestre</ID>
+                  <Name>Trimestre</Name>
+                  <SourceAttributeID>Trimestre</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Mes</ID>
+                  <Name>Mes</Name>
+                  <SourceAttributeID>Mes</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Fecha</ID>
+                  <Name>Fecha</Name>
+                  <SourceAttributeID>Fecha</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Hora</ID>
+          <Name>Hora</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Hora</ID>
+              <Name>Hora</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>SmallInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimHora</TableID>
+                    <ColumnID>HoraKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimHora</TableID>
+                  <ColumnID>Hora</ColumnID>
+                </Source>
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Franja Horaria</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Franja Horaria</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Hora Pico</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Hora Pico</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Luz</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Luz</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Franja Horaria</ID>
+              <Name>Franja Horaria</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimHora</TableID>
+                    <ColumnID>FranjaHoraria</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Hora Pico</ID>
+              <Name>Hora Pico</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimHora</TableID>
+                    <ColumnID>HoraPico</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+            <Attribute>
+              <ID>Luz</ID>
+              <Name>Luz</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimHora</TableID>
+                    <ColumnID>Luz</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Franja - Hora</ID>
+              <Name>Franja - Hora</Name>
+              <Levels>
+                <Level>
+                  <ID>Franja Horaria</ID>
+                  <Name>Franja Horaria</Name>
+                  <SourceAttributeID>Franja Horaria</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceAttributeID>Hora</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Comuna</ID>
+          <Name>Comuna</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Comuna</ID>
+              <Name>Comuna</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimComuna</TableID>
+                    <ColumnID>ComunaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimComuna</TableID>
+                  <ColumnID>Comuna</ColumnID>
+                </Source>
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Zona</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Zona</Name>
+                </AttributeRelationship>
+                <AttributeRelationship>
+                  <AttributeID>Barrios</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Barrios</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Zona</ID>
+              <Name>Zona</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimComuna</TableID>
+                    <ColumnID>Zona</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Barrios</ID>
+              <Name>Barrios</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimComuna</TableID>
+                    <ColumnID>Barrios</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Zona - Comuna</ID>
+              <Name>Zona - Comuna</Name>
+              <Levels>
+                <Level>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceAttributeID>Zona</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Comuna</ID>
+                  <Name>Comuna</Name>
+                  <SourceAttributeID>Comuna</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Tipo de Via</ID>
+          <Name>Tipo de Via</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Tipo de Via</ID>
+              <Name>Tipo de Via</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTipoVia</TableID>
+                    <ColumnID>TipoViaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimTipoVia</TableID>
+                  <ColumnID>TipoVia</ColumnID>
+                </Source>
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Categoria de Via</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Categoria de Via</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Categoria de Via</ID>
+              <Name>Categoria de Via</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimTipoVia</TableID>
+                    <ColumnID>CategoriaVia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Categoria - Tipo de Via</ID>
+              <Name>Categoria - Tipo de Via</Name>
+              <Levels>
+                <Level>
+                  <ID>Categoria de Via</ID>
+                  <Name>Categoria de Via</Name>
+                  <SourceAttributeID>Categoria de Via</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Tipo de Via</ID>
+                  <Name>Tipo de Via</Name>
+                  <SourceAttributeID>Tipo de Via</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Vehiculo</ID>
+          <Name>Vehiculo</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Vehiculo</ID>
+              <Name>Vehiculo</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimVehiculo</TableID>
+                    <ColumnID>VehiculoKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimVehiculo</TableID>
+                  <ColumnID>Vehiculo</ColumnID>
+                </Source>
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Categoria de Vehiculo</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Categoria de Vehiculo</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Categoria de Vehiculo</ID>
+              <Name>Categoria de Vehiculo</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimVehiculo</TableID>
+                    <ColumnID>CategoriaVehiculo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Categoria - Vehiculo</ID>
+              <Name>Categoria - Vehiculo</Name>
+              <Levels>
+                <Level>
+                  <ID>Categoria de Vehiculo</ID>
+                  <Name>Categoria de Vehiculo</Name>
+                  <SourceAttributeID>Categoria de Vehiculo</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Vehiculo</ID>
+                  <Name>Vehiculo</Name>
+                  <SourceAttributeID>Vehiculo</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Gravedad</ID>
+          <Name>Gravedad</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Gravedad</ID>
+              <Name>Gravedad</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimGravedad</TableID>
+                    <ColumnID>GravedadKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimGravedad</TableID>
+                  <ColumnID>Gravedad</ColumnID>
+                </Source>
+              </NameColumn>
+              <AttributeRelationships>
+                <AttributeRelationship>
+                  <AttributeID>Grupo Gravedad</AttributeID>
+                  <RelationshipType>Rigid</RelationshipType>
+                  <Name>Grupo Gravedad</Name>
+                </AttributeRelationship>
+              </AttributeRelationships>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+            <Attribute>
+              <ID>Grupo Gravedad</ID>
+              <Name>Grupo Gravedad</Name>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimGravedad</TableID>
+                    <ColumnID>GrupoGravedad</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <OrderBy>Key</OrderBy>
+              <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+            </Attribute>
+          </Attributes>
+          <Hierarchies>
+            <Hierarchy>
+              <ID>Grupo - Gravedad</ID>
+              <Name>Grupo - Gravedad</Name>
+              <Levels>
+                <Level>
+                  <ID>Grupo Gravedad</ID>
+                  <Name>Grupo Gravedad</Name>
+                  <SourceAttributeID>Grupo Gravedad</SourceAttributeID>
+                </Level>
+                <Level>
+                  <ID>Gravedad</ID>
+                  <Name>Gravedad</Name>
+                  <SourceAttributeID>Gravedad</SourceAttributeID>
+                </Level>
+              </Levels>
+            </Hierarchy>
+          </Hierarchies>
+        </Dimension>
+        <Dimension>
+          <ID>Sexo</ID>
+          <Name>Sexo</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Sexo</ID>
+              <Name>Sexo</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimSexo</TableID>
+                    <ColumnID>SexoKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimSexo</TableID>
+                  <ColumnID>Sexo</ColumnID>
+                </Source>
+              </NameColumn>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Rango Etario</ID>
+          <Name>Rango Etario</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Rango Etario</ID>
+              <Name>Rango Etario</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimRangoEtario</TableID>
+                    <ColumnID>RangoEtarioKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimRangoEtario</TableID>
+                  <ColumnID>RangoEtario</ColumnID>
+                </Source>
+              </NameColumn>
+              <OrderBy>Key</OrderBy>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension>
+          <ID>Rol Victima</ID>
+          <Name>Rol Victima</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <ErrorConfiguration>
+            <KeyDuplicate>ReportAndStop</KeyDuplicate>
+          </ErrorConfiguration>
+          <Language>11274</Language>
+          <Attributes>
+            <Attribute>
+              <ID>Rol</ID>
+              <Name>Rol</Name>
+              <Usage>Key</Usage>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_DimRolVictima</TableID>
+                    <ColumnID>RolKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <NameColumn>
+                <DataType>WChar</DataType>
+                <DataSize>200</DataSize>
+                <Source xsi:type="ColumnBinding">
+                  <TableID>dbo_DimRolVictima</TableID>
+                  <ColumnID>Rol</ColumnID>
+                </Source>
+              </NameColumn>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Cubes>
+        <Cube>
+          <ID>Siniestros Viales</ID>
+          <Name>Siniestros Viales</Name>
+          <Language>11274</Language>
+          <Dimensions>
+            <Dimension>
+              <ID>Tiempo</ID>
+              <Name>Tiempo</Name>
+              <DimensionID>Tiempo</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Fecha</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Mes</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Trimestre</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Semestre</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Anio</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Mes del Anio</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Dia de la Semana</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Tipo de Dia</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Estacion</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Contexto</AttributeID>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Calendario</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>Hora</ID>
+              <Name>Hora</Name>
+              <DimensionID>Hora</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Hora</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Franja Horaria</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Hora Pico</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Luz</AttributeID>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Franja - Hora</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>Comuna</ID>
+              <Name>Comuna</Name>
+              <DimensionID>Comuna</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Comuna</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Zona</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Barrios</AttributeID>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Zona - Comuna</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>Tipo de Via</ID>
+              <Name>Tipo de Via</Name>
+              <DimensionID>Tipo de Via</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Tipo de Via</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Categoria de Via</AttributeID>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Categoria - Tipo de Via</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>Vehiculo Victima</ID>
+              <Name>Vehiculo Victima</Name>
+              <DimensionID>Vehiculo</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Vehiculo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Categoria de Vehiculo</AttributeID>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Categoria - Vehiculo</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>Contraparte</ID>
+              <Name>Contraparte</Name>
+              <DimensionID>Vehiculo</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Vehiculo</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Categoria de Vehiculo</AttributeID>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Categoria - Vehiculo</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>Gravedad</ID>
+              <Name>Gravedad</Name>
+              <DimensionID>Gravedad</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Gravedad</AttributeID>
+                </Attribute>
+                <Attribute>
+                  <AttributeID>Grupo Gravedad</AttributeID>
+                </Attribute>
+              </Attributes>
+              <Hierarchies>
+                <Hierarchy>
+                  <HierarchyID>Grupo - Gravedad</HierarchyID>
+                </Hierarchy>
+              </Hierarchies>
+            </Dimension>
+            <Dimension>
+              <ID>Sexo</ID>
+              <Name>Sexo</Name>
+              <DimensionID>Sexo</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Sexo</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <ID>Rango Etario</ID>
+              <Name>Rango Etario</Name>
+              <DimensionID>Rango Etario</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Rango Etario</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+            <Dimension>
+              <ID>Rol Victima</ID>
+              <Name>Rol Victima</Name>
+              <DimensionID>Rol Victima</DimensionID>
+              <Attributes>
+                <Attribute>
+                  <AttributeID>Rol</AttributeID>
+                </Attribute>
+              </Attributes>
+            </Dimension>
+          </Dimensions>
+          <CubePermissions>
+            <CubePermission>
+              <ID>CubePermission</ID>
+              <Name>CubePermission</Name>
+              <RoleID>Lectores</RoleID>
+              <Read>Allowed</Read>
+              <ReadSourceData>None</ReadSourceData>
+            </CubePermission>
+          </CubePermissions>
+          <MeasureGroups>
+            <MeasureGroup>
+              <ID>Siniestros</ID>
+              <Name>Siniestros</Name>
+              <Measures>
+                <Measure>
+                  <ID>Cantidad Siniestros</ID>
+                  <Name>Cantidad Siniestros</Name>
+                  <Source>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_FactSiniestro</TableID>
+                      <ColumnID>CantSiniestros</ColumnID>
+                    </Source>
+                  </Source>
+                  <FormatString>#,##0</FormatString>
+                </Measure>
+                <Measure>
+                  <ID>Total Victimas</ID>
+                  <Name>Total Victimas</Name>
+                  <Source>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_FactSiniestro</TableID>
+                      <ColumnID>TotalVictimas</ColumnID>
+                    </Source>
+                  </Source>
+                  <FormatString>#,##0</FormatString>
+                </Measure>
+                <Measure>
+                  <ID>Victimas Leves</ID>
+                  <Name>Victimas Leves</Name>
+                  <Source>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_FactSiniestro</TableID>
+                      <ColumnID>VictimasLeves</ColumnID>
+                    </Source>
+                  </Source>
+                  <FormatString>#,##0</FormatString>
+                </Measure>
+                <Measure>
+                  <ID>Victimas Graves</ID>
+                  <Name>Victimas Graves</Name>
+                  <Source>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_FactSiniestro</TableID>
+                      <ColumnID>VictimasGraves</ColumnID>
+                    </Source>
+                  </Source>
+                  <FormatString>#,##0</FormatString>
+                </Measure>
+                <Measure>
+                  <ID>Victimas Mortales</ID>
+                  <Name>Victimas Mortales</Name>
+                  <Source>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_FactSiniestro</TableID>
+                      <ColumnID>VictimasMortales</ColumnID>
+                    </Source>
+                  </Source>
+                  <FormatString>#,##0</FormatString>
+                </Measure>
+              </Measures>
+              <StorageMode>Molap</StorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+              <Dimensions>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Tiempo</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fecha</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>Integer</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactSiniestro</TableID>
+                            <ColumnID>FechaKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Hora</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Hora</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>SmallInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactSiniestro</TableID>
+                            <ColumnID>HoraKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Comuna</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Comuna</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactSiniestro</TableID>
+                            <ColumnID>ComunaKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Tipo de Via</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Tipo de Via</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactSiniestro</TableID>
+                            <ColumnID>TipoViaKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Vehiculo Victima</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Vehiculo</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactSiniestro</TableID>
+                            <ColumnID>VehiculoVictimaKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Contraparte</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Vehiculo</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactSiniestro</TableID>
+                            <ColumnID>ContraparteKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Gravedad</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Gravedad</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactSiniestro</TableID>
+                            <ColumnID>GravedadKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+              <Partitions>
+                <Partition>
+                  <ID>Siniestros</ID>
+                  <Name>Siniestros</Name>
+                  <Source xsi:type="TableBinding">
+                    <DataSourceID>DS SiniestrosVialesDW</DataSourceID>
+                    <DbSchemaName>dbo</DbSchemaName>
+                    <DbTableName>FactSiniestro</DbTableName>
+                  </Source>
+                  <StorageMode>Molap</StorageMode>
+                  <ProcessingMode>Regular</ProcessingMode>
+                </Partition>
+              </Partitions>
+            </MeasureGroup>
+            <MeasureGroup>
+              <ID>Victimas</ID>
+              <Name>Victimas</Name>
+              <Measures>
+                <Measure>
+                  <ID>Cantidad Victimas</ID>
+                  <Name>Cantidad Victimas</Name>
+                  <Source>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_FactVictima</TableID>
+                      <ColumnID>CantVictimas</ColumnID>
+                    </Source>
+                  </Source>
+                  <FormatString>#,##0</FormatString>
+                </Measure>
+                <Measure>
+                  <ID>Cantidad Fallecidos</ID>
+                  <Name>Cantidad Fallecidos</Name>
+                  <Source>
+                    <DataType>Integer</DataType>
+                    <Source xsi:type="ColumnBinding">
+                      <TableID>dbo_FactVictima</TableID>
+                      <ColumnID>CantFallecidos</ColumnID>
+                    </Source>
+                  </Source>
+                  <FormatString>#,##0</FormatString>
+                </Measure>
+              </Measures>
+              <StorageMode>Molap</StorageMode>
+              <ProcessingMode>Regular</ProcessingMode>
+              <Dimensions>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Tiempo</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Fecha</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>Integer</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>FechaKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Hora</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Hora</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>SmallInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>HoraKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Comuna</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Comuna</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>ComunaKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Tipo de Via</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Tipo de Via</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>TipoViaKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Vehiculo Victima</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Vehiculo</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>VehiculoKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Contraparte</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Vehiculo</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>ContraparteKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Gravedad</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Gravedad</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>GravedadKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Sexo</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Sexo</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>SexoKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Rango Etario</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rango Etario</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>RangoEtarioKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+                <Dimension xsi:type="RegularMeasureGroupDimension">
+                  <CubeDimensionID>Rol Victima</CubeDimensionID>
+                  <Attributes>
+                    <Attribute>
+                      <AttributeID>Rol</AttributeID>
+                      <KeyColumns>
+                        <KeyColumn>
+                          <DataType>UnsignedTinyInt</DataType>
+                          <Source xsi:type="ColumnBinding">
+                            <TableID>dbo_FactVictima</TableID>
+                            <ColumnID>RolKey</ColumnID>
+                          </Source>
+                        </KeyColumn>
+                      </KeyColumns>
+                      <Type>Granularity</Type>
+                    </Attribute>
+                  </Attributes>
+                </Dimension>
+              </Dimensions>
+              <Partitions>
+                <Partition>
+                  <ID>Victimas</ID>
+                  <Name>Victimas</Name>
+                  <Source xsi:type="TableBinding">
+                    <DataSourceID>DS SiniestrosVialesDW</DataSourceID>
+                    <DbSchemaName>dbo</DbSchemaName>
+                    <DbTableName>FactVictima</DbTableName>
+                  </Source>
+                  <StorageMode>Molap</StorageMode>
+                  <ProcessingMode>Regular</ProcessingMode>
+                </Partition>
+              </Partitions>
+            </MeasureGroup>
+          </MeasureGroups>
+          <Source>
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <MdxScripts>
+            <MdxScript>
+              <ID>MdxScript</ID>
+              <Name>MdxScript</Name>
+              <Commands>
+                <Command>
+                  <Text>CALCULATE;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Siniestros Graves o Mortales] AS
+    ([Measures].[Cantidad Siniestros], [Gravedad].[Grupo Gravedad].&amp;[Grave o mortal]),
+    FORMAT_STRING = "#,##0", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[% Graves o Mortales] AS
+    IIF([Measures].[Cantidad Siniestros] = 0, NULL,
+        [Measures].[Siniestros Graves o Mortales] / [Measures].[Cantidad Siniestros]),
+    FORMAT_STRING = "0.00%", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Victimas por Siniestro] AS
+    IIF([Measures].[Cantidad Siniestros] = 0, NULL, [Measures].[Total Victimas] / [Measures].[Cantidad Siniestros]),
+    FORMAT_STRING = "0.000", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Letalidad %] AS
+    IIF([Measures].[Cantidad Victimas] = 0, NULL, [Measures].[Cantidad Fallecidos] / [Measures].[Cantidad Victimas]),
+    FORMAT_STRING = "0.00%", VISIBLE = 1;
+
+/* Valor acumulable: suma desde el primer periodo hasta el periodo actual (cualquier nivel del calendario) */
+CREATE MEMBER CURRENTCUBE.[Measures].[Siniestros Acumulados] AS
+    SUM({NULL : [Tiempo].[Calendario].CurrentMember}, [Measures].[Cantidad Siniestros]),
+    FORMAT_STRING = "#,##0", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Mortales Acumulados] AS
+    SUM({NULL : [Tiempo].[Calendario].CurrentMember}, [Measures].[Victimas Mortales]),
+    FORMAT_STRING = "#,##0", VISIBLE = 1;
+
+/* Numero indice base 100 = enero 2019 */
+CREATE MEMBER CURRENTCUBE.[Measures].[Indice Base 100] AS
+    IIF([Tiempo].[Calendario].CurrentMember.Level IS [Tiempo].[Calendario].[Mes],
+        [Measures].[Cantidad Siniestros] /
+        ([Measures].[Cantidad Siniestros], [Tiempo].[Calendario].[Mes].&amp;[2019-01]) * 100, NULL),
+    FORMAT_STRING = "0.00", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Indice Acumulado Base 100] AS
+    IIF([Tiempo].[Calendario].CurrentMember.Level IS [Tiempo].[Calendario].[Mes],
+        [Measures].[Siniestros Acumulados] /
+        ([Measures].[Cantidad Siniestros], [Tiempo].[Calendario].[Mes].&amp;[2019-01]) * 100, NULL),
+    FORMAT_STRING = "0.00", VISIBLE = 1;
+
+/* Indice anual base 2019 = 100 */
+CREATE MEMBER CURRENTCUBE.[Measures].[Indice Anual Base 2019] AS
+    IIF([Tiempo].[Calendario].CurrentMember.Level IS [Tiempo].[Calendario].[Anio],
+        [Measures].[Cantidad Siniestros] /
+        ([Measures].[Cantidad Siniestros], [Tiempo].[Calendario].[Anio].&amp;[2019]) * 100, NULL),
+    FORMAT_STRING = "0.00", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Variacion Interanual %] AS
+    IIF(([Measures].[Cantidad Siniestros], ParallelPeriod([Tiempo].[Calendario].[Anio], 1, [Tiempo].[Calendario].CurrentMember)) = 0, NULL,
+        [Measures].[Cantidad Siniestros] /
+        ([Measures].[Cantidad Siniestros], ParallelPeriod([Tiempo].[Calendario].[Anio], 1, [Tiempo].[Calendario].CurrentMember)) - 1),
+    FORMAT_STRING = "0.00%", VISIBLE = 1;</Text>
+                </Command>
+              </Commands>
+            </MdxScript>
+          </MdxScripts>
+        </Cube>
+      </Cubes>
+      <MiningStructures>
+        <MiningStructure>
+          <ID>MS Gravedad Siniestros</ID>
+          <Name>MS Gravedad Siniestros</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <Columns>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>SiniestroID</ID>
+              <Name>SiniestroID</Name>
+              <IsKey>true</IsKey>
+              <Type>Text</Type>
+              <Content>Key</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>SiniestroID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>FranjaHoraria</ID>
+              <Name>FranjaHoraria</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>FranjaHoraria</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>TipoDia</ID>
+              <Name>TipoDia</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>TipoDia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>DiaSemana</ID>
+              <Name>DiaSemana</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>DiaSemana</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Estacion</ID>
+              <Name>Estacion</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Estacion</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Contexto</ID>
+              <Name>Contexto</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Contexto</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Comuna</ID>
+              <Name>Comuna</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Comuna</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Zona</ID>
+              <Name>Zona</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Zona</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>TipoVia</ID>
+              <Name>TipoVia</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>TipoVia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>VehiculoVictima</ID>
+              <Name>VehiculoVictima</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>VehiculoVictima</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Contraparte</ID>
+              <Name>Contraparte</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Contraparte</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Gravedad</ID>
+              <Name>Gravedad</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Gravedad</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Hora</ID>
+              <Name>Hora</Name>
+              <Type>Long</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>SmallInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Hora</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>TotalVictimas</ID>
+              <Name>TotalVictimas</Name>
+              <Type>Long</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>TotalVictimas</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+          </Columns>
+          <MiningModels>
+            <MiningModel>
+              <ID>Arbol de Decision - Gravedad</ID>
+              <Name>Arbol de Decision - Gravedad</Name>
+              <Algorithm>Microsoft_Decision_Trees</Algorithm>
+              <Columns>
+                <Column>
+                  <ID>SiniestroID</ID>
+                  <Name>SiniestroID</Name>
+                  <SourceColumnID>SiniestroID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>DiaSemana</ID>
+                  <Name>DiaSemana</Name>
+                  <SourceColumnID>DiaSemana</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Estacion</ID>
+                  <Name>Estacion</Name>
+                  <SourceColumnID>Estacion</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contexto</ID>
+                  <Name>Contexto</Name>
+                  <SourceColumnID>Contexto</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Comuna</ID>
+                  <Name>Comuna</Name>
+                  <SourceColumnID>Comuna</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>VehiculoVictima</ID>
+                  <Name>VehiculoVictima</Name>
+                  <SourceColumnID>VehiculoVictima</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contraparte</ID>
+                  <Name>Contraparte</Name>
+                  <SourceColumnID>Contraparte</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Gravedad</ID>
+                  <Name>Gravedad</Name>
+                  <SourceColumnID>Gravedad</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceColumnID>Hora</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TotalVictimas</ID>
+                  <Name>TotalVictimas</Name>
+                  <SourceColumnID>TotalVictimas</SourceColumnID>
+                </Column>
+              </Columns>
+              <AllowDrillThrough>true</AllowDrillThrough>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                  <AllowDrillThrough>true</AllowDrillThrough>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+            <MiningModel>
+              <ID>Naive Bayes - Gravedad</ID>
+              <Name>Naive Bayes - Gravedad</Name>
+              <Algorithm>Microsoft_Naive_Bayes</Algorithm>
+              <Columns>
+                <Column>
+                  <ID>SiniestroID</ID>
+                  <Name>SiniestroID</Name>
+                  <SourceColumnID>SiniestroID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>DiaSemana</ID>
+                  <Name>DiaSemana</Name>
+                  <SourceColumnID>DiaSemana</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Estacion</ID>
+                  <Name>Estacion</Name>
+                  <SourceColumnID>Estacion</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contexto</ID>
+                  <Name>Contexto</Name>
+                  <SourceColumnID>Contexto</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Comuna</ID>
+                  <Name>Comuna</Name>
+                  <SourceColumnID>Comuna</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>VehiculoVictima</ID>
+                  <Name>VehiculoVictima</Name>
+                  <SourceColumnID>VehiculoVictima</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contraparte</ID>
+                  <Name>Contraparte</Name>
+                  <SourceColumnID>Contraparte</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Gravedad</ID>
+                  <Name>Gravedad</Name>
+                  <SourceColumnID>Gravedad</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceColumnID>Hora</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TotalVictimas</ID>
+                  <Name>TotalVictimas</Name>
+                  <SourceColumnID>TotalVictimas</SourceColumnID>
+                </Column>
+              </Columns>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+            <MiningModel>
+              <ID>Regresion Logistica - Gravedad</ID>
+              <Name>Regresion Logistica - Gravedad</Name>
+              <Algorithm>Microsoft_Logistic_Regression</Algorithm>
+              <Columns>
+                <Column>
+                  <ID>SiniestroID</ID>
+                  <Name>SiniestroID</Name>
+                  <SourceColumnID>SiniestroID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>DiaSemana</ID>
+                  <Name>DiaSemana</Name>
+                  <SourceColumnID>DiaSemana</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Estacion</ID>
+                  <Name>Estacion</Name>
+                  <SourceColumnID>Estacion</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contexto</ID>
+                  <Name>Contexto</Name>
+                  <SourceColumnID>Contexto</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Comuna</ID>
+                  <Name>Comuna</Name>
+                  <SourceColumnID>Comuna</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>VehiculoVictima</ID>
+                  <Name>VehiculoVictima</Name>
+                  <SourceColumnID>VehiculoVictima</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contraparte</ID>
+                  <Name>Contraparte</Name>
+                  <SourceColumnID>Contraparte</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Gravedad</ID>
+                  <Name>Gravedad</Name>
+                  <SourceColumnID>Gravedad</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceColumnID>Hora</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TotalVictimas</ID>
+                  <Name>TotalVictimas</Name>
+                  <SourceColumnID>TotalVictimas</SourceColumnID>
+                </Column>
+              </Columns>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+            <MiningModel>
+              <ID>Red Neuronal - Gravedad</ID>
+              <Name>Red Neuronal - Gravedad</Name>
+              <Algorithm>Microsoft_Neural_Network</Algorithm>
+              <Columns>
+                <Column>
+                  <ID>SiniestroID</ID>
+                  <Name>SiniestroID</Name>
+                  <SourceColumnID>SiniestroID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>DiaSemana</ID>
+                  <Name>DiaSemana</Name>
+                  <SourceColumnID>DiaSemana</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Estacion</ID>
+                  <Name>Estacion</Name>
+                  <SourceColumnID>Estacion</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contexto</ID>
+                  <Name>Contexto</Name>
+                  <SourceColumnID>Contexto</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Comuna</ID>
+                  <Name>Comuna</Name>
+                  <SourceColumnID>Comuna</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>VehiculoVictima</ID>
+                  <Name>VehiculoVictima</Name>
+                  <SourceColumnID>VehiculoVictima</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contraparte</ID>
+                  <Name>Contraparte</Name>
+                  <SourceColumnID>Contraparte</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Gravedad</ID>
+                  <Name>Gravedad</Name>
+                  <SourceColumnID>Gravedad</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceColumnID>Hora</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TotalVictimas</ID>
+                  <Name>TotalVictimas</Name>
+                  <SourceColumnID>TotalVictimas</SourceColumnID>
+                </Column>
+              </Columns>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+            <MiningModel>
+              <ID>Clustering - Siniestros</ID>
+              <Name>Clustering - Siniestros</Name>
+              <Algorithm>Microsoft_Clustering</Algorithm>
+              <AlgorithmParameters>
+                <AlgorithmParameter>
+                  <Name>CLUSTER_COUNT</Name>
+                  <Value xsi:type="xsd:int">6</Value>
+                </AlgorithmParameter>
+              </AlgorithmParameters>
+              <Columns>
+                <Column>
+                  <ID>SiniestroID</ID>
+                  <Name>SiniestroID</Name>
+                  <SourceColumnID>SiniestroID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>DiaSemana</ID>
+                  <Name>DiaSemana</Name>
+                  <SourceColumnID>DiaSemana</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Estacion</ID>
+                  <Name>Estacion</Name>
+                  <SourceColumnID>Estacion</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contexto</ID>
+                  <Name>Contexto</Name>
+                  <SourceColumnID>Contexto</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Comuna</ID>
+                  <Name>Comuna</Name>
+                  <SourceColumnID>Comuna</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>VehiculoVictima</ID>
+                  <Name>VehiculoVictima</Name>
+                  <SourceColumnID>VehiculoVictima</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Contraparte</ID>
+                  <Name>Contraparte</Name>
+                  <SourceColumnID>Contraparte</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Gravedad</ID>
+                  <Name>Gravedad</Name>
+                  <SourceColumnID>Gravedad</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceColumnID>Hora</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TotalVictimas</ID>
+                  <Name>TotalVictimas</Name>
+                  <SourceColumnID>TotalVictimas</SourceColumnID>
+                </Column>
+              </Columns>
+              <AllowDrillThrough>true</AllowDrillThrough>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                  <AllowDrillThrough>true</AllowDrillThrough>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+          </MiningModels>
+          <MiningStructurePermissions>
+            <MiningStructurePermission>
+              <ID>MiningStructurePermission</ID>
+              <Name>MiningStructurePermission</Name>
+              <RoleID>Lectores</RoleID>
+              <Read>Allowed</Read>
+              <AllowDrillThrough>true</AllowDrillThrough>
+            </MiningStructurePermission>
+          </MiningStructurePermissions>
+          <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+          <ddl100_100:HoldoutSeed>42</ddl100_100:HoldoutSeed>
+        </MiningStructure>
+        <MiningStructure>
+          <ID>MS Asociacion Siniestros</ID>
+          <Name>MS Asociacion Siniestros</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <Columns>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>SiniestroID</ID>
+              <Name>SiniestroID</Name>
+              <IsKey>true</IsKey>
+              <Type>Text</Type>
+              <Content>Key</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>SiniestroID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>FranjaHoraria</ID>
+              <Name>FranjaHoraria</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>FranjaHoraria</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>TipoDia</ID>
+              <Name>TipoDia</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>TipoDia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>TipoVia</ID>
+              <Name>TipoVia</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>TipoVia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>VehiculoVictima</ID>
+              <Name>VehiculoVictima</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>VehiculoVictima</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Contraparte</ID>
+              <Name>Contraparte</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Contraparte</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Zona</ID>
+              <Name>Zona</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Zona</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Gravedad</ID>
+              <Name>Gravedad</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Siniestros</TableID>
+                    <ColumnID>Gravedad</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+          </Columns>
+          <MiningModels>
+            <MiningModel>
+              <ID>Reglas de Asociacion</ID>
+              <Name>Reglas de Asociacion</Name>
+              <Algorithm>Microsoft_Association_Rules</Algorithm>
+              <AlgorithmParameters>
+                <AlgorithmParameter>
+                  <Name>MINIMUM_SUPPORT</Name>
+                  <Value xsi:type="xsd:double">0.002</Value>
+                </AlgorithmParameter>
+                <AlgorithmParameter>
+                  <Name>MAXIMUM_ITEMSET_SIZE</Name>
+                  <Value xsi:type="xsd:int">4</Value>
+                </AlgorithmParameter>
+                <AlgorithmParameter>
+                  <Name>MINIMUM_PROBABILITY</Name>
+                  <Value xsi:type="xsd:double">0.1</Value>
+                </AlgorithmParameter>
+              </AlgorithmParameters>
+              <Columns>
+                <Column>
+                  <ID>SiniestroID</ID>
+                  <Name>SiniestroID</Name>
+                  <SourceColumnID>SiniestroID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>VehiculoVictima</ID>
+                  <Name>VehiculoVictima</Name>
+                  <SourceColumnID>VehiculoVictima</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Contraparte</ID>
+                  <Name>Contraparte</Name>
+                  <SourceColumnID>Contraparte</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Gravedad</ID>
+                  <Name>Gravedad</Name>
+                  <SourceColumnID>Gravedad</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+              </Columns>
+              <AllowDrillThrough>true</AllowDrillThrough>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                  <AllowDrillThrough>true</AllowDrillThrough>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+          </MiningModels>
+          <MiningStructurePermissions>
+            <MiningStructurePermission>
+              <ID>MiningStructurePermission</ID>
+              <Name>MiningStructurePermission</Name>
+              <RoleID>Lectores</RoleID>
+              <Read>Allowed</Read>
+              <AllowDrillThrough>true</AllowDrillThrough>
+            </MiningStructurePermission>
+          </MiningStructurePermissions>
+        </MiningStructure>
+        <MiningStructure>
+          <ID>MS Serie Mensual</ID>
+          <Name>MS Serie Mensual</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <Columns>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Mes</ID>
+              <Name>Mes</Name>
+              <IsKey>true</IsKey>
+              <Type>Date</Type>
+              <Content>Key Time</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_SerieMensual</TableID>
+                    <ColumnID>Mes</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Siniestros</ID>
+              <Name>Siniestros</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_SerieMensual</TableID>
+                    <ColumnID>Siniestros</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Mortales</ID>
+              <Name>Mortales</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_SerieMensual</TableID>
+                    <ColumnID>Mortales</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+          </Columns>
+          <MiningModels>
+            <MiningModel>
+              <ID>Serie de Tiempo - Siniestros</ID>
+              <Name>Serie de Tiempo - Siniestros</Name>
+              <Algorithm>Microsoft_Time_Series</Algorithm>
+              <AlgorithmParameters>
+                <AlgorithmParameter>
+                  <Name>PERIODICITY_HINT</Name>
+                  <Value xsi:type="xsd:string">{12}</Value>
+                </AlgorithmParameter>
+              </AlgorithmParameters>
+              <Columns>
+                <Column>
+                  <ID>Mes</ID>
+                  <Name>Mes</Name>
+                  <SourceColumnID>Mes</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>Siniestros</ID>
+                  <Name>Siniestros</Name>
+                  <SourceColumnID>Siniestros</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+                <Column>
+                  <ID>Mortales</ID>
+                  <Name>Mortales</Name>
+                  <SourceColumnID>Mortales</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+              </Columns>
+              <AllowDrillThrough>true</AllowDrillThrough>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                  <AllowDrillThrough>true</AllowDrillThrough>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+          </MiningModels>
+          <MiningStructurePermissions>
+            <MiningStructurePermission>
+              <ID>MiningStructurePermission</ID>
+              <Name>MiningStructurePermission</Name>
+              <RoleID>Lectores</RoleID>
+              <Read>Allowed</Read>
+              <AllowDrillThrough>true</AllowDrillThrough>
+            </MiningStructurePermission>
+          </MiningStructurePermissions>
+        </MiningStructure>
+        <MiningStructure>
+          <ID>MS Victima Fatal</ID>
+          <Name>MS Victima Fatal</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <Columns>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>VictimaID</ID>
+              <Name>VictimaID</Name>
+              <IsKey>true</IsKey>
+              <Type>Long</Type>
+              <Content>Key</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>VictimaID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Edad</ID>
+              <Name>Edad</Name>
+              <Type>Long</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>Edad</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Hora</ID>
+              <Name>Hora</Name>
+              <Type>Long</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>SmallInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>Hora</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>RangoEtario</ID>
+              <Name>RangoEtario</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>RangoEtario</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Sexo</ID>
+              <Name>Sexo</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>Sexo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Vehiculo</ID>
+              <Name>Vehiculo</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>Vehiculo</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>TipoVia</ID>
+              <Name>TipoVia</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>TipoVia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>FranjaHoraria</ID>
+              <Name>FranjaHoraria</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>FranjaHoraria</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>TipoDia</ID>
+              <Name>TipoDia</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>TipoDia</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Zona</ID>
+              <Name>Zona</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>Zona</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Desenlace</ID>
+              <Name>Desenlace</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_Victimas</TableID>
+                    <ColumnID>Desenlace</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+          </Columns>
+          <MiningModels>
+            <MiningModel>
+              <ID>Arbol de Decision - Victima Fatal</ID>
+              <Name>Arbol de Decision - Victima Fatal</Name>
+              <Algorithm>Microsoft_Decision_Trees</Algorithm>
+              <Columns>
+                <Column>
+                  <ID>VictimaID</ID>
+                  <Name>VictimaID</Name>
+                  <SourceColumnID>VictimaID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>Edad</ID>
+                  <Name>Edad</Name>
+                  <SourceColumnID>Edad</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceColumnID>Hora</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>RangoEtario</ID>
+                  <Name>RangoEtario</Name>
+                  <SourceColumnID>RangoEtario</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Sexo</ID>
+                  <Name>Sexo</Name>
+                  <SourceColumnID>Sexo</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Vehiculo</ID>
+                  <Name>Vehiculo</Name>
+                  <SourceColumnID>Vehiculo</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Desenlace</ID>
+                  <Name>Desenlace</Name>
+                  <SourceColumnID>Desenlace</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+              </Columns>
+              <AllowDrillThrough>true</AllowDrillThrough>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                  <AllowDrillThrough>true</AllowDrillThrough>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+            <MiningModel>
+              <ID>Naive Bayes - Victima Fatal</ID>
+              <Name>Naive Bayes - Victima Fatal</Name>
+              <Algorithm>Microsoft_Naive_Bayes</Algorithm>
+              <Columns>
+                <Column>
+                  <ID>VictimaID</ID>
+                  <Name>VictimaID</Name>
+                  <SourceColumnID>VictimaID</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>Hora</ID>
+                  <Name>Hora</Name>
+                  <SourceColumnID>Hora</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>RangoEtario</ID>
+                  <Name>RangoEtario</Name>
+                  <SourceColumnID>RangoEtario</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Sexo</ID>
+                  <Name>Sexo</Name>
+                  <SourceColumnID>Sexo</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Vehiculo</ID>
+                  <Name>Vehiculo</Name>
+                  <SourceColumnID>Vehiculo</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoVia</ID>
+                  <Name>TipoVia</Name>
+                  <SourceColumnID>TipoVia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>FranjaHoraria</ID>
+                  <Name>FranjaHoraria</Name>
+                  <SourceColumnID>FranjaHoraria</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>TipoDia</ID>
+                  <Name>TipoDia</Name>
+                  <SourceColumnID>TipoDia</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>Desenlace</ID>
+                  <Name>Desenlace</Name>
+                  <SourceColumnID>Desenlace</SourceColumnID>
+                  <Usage>Predict</Usage>
+                </Column>
+              </Columns>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+          </MiningModels>
+          <MiningStructurePermissions>
+            <MiningStructurePermission>
+              <ID>MiningStructurePermission</ID>
+              <Name>MiningStructurePermission</Name>
+              <RoleID>Lectores</RoleID>
+              <Read>Allowed</Read>
+              <AllowDrillThrough>true</AllowDrillThrough>
+            </MiningStructurePermission>
+          </MiningStructurePermissions>
+          <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+          <ddl100_100:HoldoutSeed>42</ddl100_100:HoldoutSeed>
+        </MiningStructure>
+        <MiningStructure>
+          <ID>MS Perfil Comunas</ID>
+          <Name>MS Perfil Comunas</Name>
+          <Source xsi:type="DataSourceViewBinding">
+            <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+          </Source>
+          <Columns>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Comuna</ID>
+              <Name>Comuna</Name>
+              <IsKey>true</IsKey>
+              <Type>Text</Type>
+              <Content>Key</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>Comuna</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>Zona</ID>
+              <Name>Zona</Name>
+              <Type>Text</Type>
+              <Content>Discrete</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>WChar</DataType>
+                  <DataSize>200</DataSize>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>Zona</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>SiniestrosAnuales</ID>
+              <Name>SiniestrosAnuales</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>SiniestrosAnuales</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctMoto</ID>
+              <Name>PctMoto</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctMoto</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctPeaton</ID>
+              <Name>PctPeaton</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctPeaton</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctBicicleta</ID>
+              <Name>PctBicicleta</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctBicicleta</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctNocturno</ID>
+              <Name>PctNocturno</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctNocturno</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctFinDeSemana</ID>
+              <Name>PctFinDeSemana</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctFinDeSemana</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctViaRapida</ID>
+              <Name>PctViaRapida</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctViaRapida</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctTransportePesado</ID>
+              <Name>PctTransportePesado</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctTransportePesado</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+            <Column xsi:type="ScalarMiningStructureColumn">
+              <ID>PctGraveMortal</ID>
+              <Name>PctGraveMortal</Name>
+              <Type>Double</Type>
+              <Content>Continuous</Content>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Double</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_vmin_PerfilComunas</TableID>
+                    <ColumnID>PctGraveMortal</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+            </Column>
+          </Columns>
+          <MiningModels>
+            <MiningModel>
+              <ID>Clustering - Comunas</ID>
+              <Name>Clustering - Comunas</Name>
+              <Algorithm>Microsoft_Clustering</Algorithm>
+              <AlgorithmParameters>
+                <AlgorithmParameter>
+                  <Name>MINIMUM_SUPPORT</Name>
+                  <Value xsi:type="xsd:int">1</Value>
+                </AlgorithmParameter>
+                <AlgorithmParameter>
+                  <Name>CLUSTER_COUNT</Name>
+                  <Value xsi:type="xsd:int">4</Value>
+                </AlgorithmParameter>
+              </AlgorithmParameters>
+              <Columns>
+                <Column>
+                  <ID>Comuna</ID>
+                  <Name>Comuna</Name>
+                  <SourceColumnID>Comuna</SourceColumnID>
+                  <Usage>Key</Usage>
+                </Column>
+                <Column>
+                  <ID>Zona</ID>
+                  <Name>Zona</Name>
+                  <SourceColumnID>Zona</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>SiniestrosAnuales</ID>
+                  <Name>SiniestrosAnuales</Name>
+                  <SourceColumnID>SiniestrosAnuales</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctMoto</ID>
+                  <Name>PctMoto</Name>
+                  <SourceColumnID>PctMoto</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctPeaton</ID>
+                  <Name>PctPeaton</Name>
+                  <SourceColumnID>PctPeaton</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctBicicleta</ID>
+                  <Name>PctBicicleta</Name>
+                  <SourceColumnID>PctBicicleta</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctNocturno</ID>
+                  <Name>PctNocturno</Name>
+                  <SourceColumnID>PctNocturno</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctFinDeSemana</ID>
+                  <Name>PctFinDeSemana</Name>
+                  <SourceColumnID>PctFinDeSemana</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctViaRapida</ID>
+                  <Name>PctViaRapida</Name>
+                  <SourceColumnID>PctViaRapida</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctTransportePesado</ID>
+                  <Name>PctTransportePesado</Name>
+                  <SourceColumnID>PctTransportePesado</SourceColumnID>
+                </Column>
+                <Column>
+                  <ID>PctGraveMortal</ID>
+                  <Name>PctGraveMortal</Name>
+                  <SourceColumnID>PctGraveMortal</SourceColumnID>
+                </Column>
+              </Columns>
+              <AllowDrillThrough>true</AllowDrillThrough>
+              <MiningModelPermissions>
+                <MiningModelPermission>
+                  <ID>MiningModelPermission</ID>
+                  <Name>MiningModelPermission</Name>
+                  <RoleID>Lectores</RoleID>
+                  <Read>Allowed</Read>
+                  <AllowDrillThrough>true</AllowDrillThrough>
+                </MiningModelPermission>
+              </MiningModelPermissions>
+            </MiningModel>
+          </MiningModels>
+          <MiningStructurePermissions>
+            <MiningStructurePermission>
+              <ID>MiningStructurePermission</ID>
+              <Name>MiningStructurePermission</Name>
+              <RoleID>Lectores</RoleID>
+              <Read>Allowed</Read>
+              <AllowDrillThrough>true</AllowDrillThrough>
+            </MiningStructurePermission>
+          </MiningStructurePermissions>
+        </MiningStructure>
+      </MiningStructures>
+      <DataSources>
+        <DataSource xsi:type="RelationalDataSource">
+          <ID>DS SiniestrosVialesDW</ID>
+          <Name>DS SiniestrosVialesDW</Name>
+          <ConnectionString>Provider=MSOLEDBSQL.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=SiniestrosVialesDW;TrustServerCertificate=True</ConnectionString>
+          <ImpersonationInfo>
+            <ImpersonationMode>ImpersonateServiceAccount</ImpersonationMode>
+          </ImpersonationInfo>
+          <Timeout>PT0S</Timeout>
+        </DataSource>
+      </DataSources>
+      <DataSourceViews>
+        <DataSourceView>
+          <ID>DSV SiniestrosVialesDW</ID>
+          <Name>DSV SiniestrosVialesDW</Name>
+          <DataSourceID>DS SiniestrosVialesDW</DataSourceID>
+          <Schema>
+            <xs:schema id="DSV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+              <xs:element name="DSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+                <xs:complexType>
+                  <xs:choice minOccurs="0" maxOccurs="unbounded">
+                    <xs:element name="dbo_DimTiempo" msprop:DbTableName="DimTiempo" msprop:FriendlyName="DimTiempo" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="FechaKey" type="xs:int" />
+                          <xs:element name="Fecha" type="xs:dateTime" />
+                          <xs:element name="Anio" type="xs:short" />
+                          <xs:element name="Semestre" type="xs:unsignedByte" />
+                          <xs:element name="SemestreNombre">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Trimestre" type="xs:unsignedByte" />
+                          <xs:element name="TrimestreNombre">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="MesNumero" type="xs:unsignedByte" />
+                          <xs:element name="MesNombre">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="12" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="AnioMes">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="7" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="AnioMesNombre">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Dia" type="xs:unsignedByte" />
+                          <xs:element name="DiaSemanaNumero" type="xs:unsignedByte" />
+                          <xs:element name="DiaSemanaNombre">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TipoDia">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="15" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Estacion">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Contexto">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimHora" msprop:DbTableName="DimHora" msprop:FriendlyName="DimHora" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="HoraKey" type="xs:short" />
+                          <xs:element name="Hora">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="15" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="FranjaHoraria">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="HoraPico">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Luz">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimComuna" msprop:DbTableName="DimComuna" msprop:FriendlyName="DimComuna" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="ComunaKey" type="xs:unsignedByte" />
+                          <xs:element name="Comuna">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="12" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Zona">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Barrios">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="120" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimTipoVia" msprop:DbTableName="DimTipoVia" msprop:FriendlyName="DimTipoVia" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="TipoViaKey" type="xs:unsignedByte" />
+                          <xs:element name="TipoVia">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CategoriaVia">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="15" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimVehiculo" msprop:DbTableName="DimVehiculo" msprop:FriendlyName="DimVehiculo" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="VehiculoKey" type="xs:unsignedByte" />
+                          <xs:element name="Vehiculo">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="CategoriaVehiculo">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimGravedad" msprop:DbTableName="DimGravedad" msprop:FriendlyName="DimGravedad" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="GravedadKey" type="xs:unsignedByte" />
+                          <xs:element name="Gravedad">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="GrupoGravedad">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimSexo" msprop:DbTableName="DimSexo" msprop:FriendlyName="DimSexo" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SexoKey" type="xs:unsignedByte" />
+                          <xs:element name="Sexo">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimRangoEtario" msprop:DbTableName="DimRangoEtario" msprop:FriendlyName="DimRangoEtario" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RangoEtarioKey" type="xs:unsignedByte" />
+                          <xs:element name="RangoEtario">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_DimRolVictima" msprop:DbTableName="DimRolVictima" msprop:FriendlyName="DimRolVictima" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="RolKey" type="xs:unsignedByte" />
+                          <xs:element name="Rol">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="12" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_FactSiniestro" msprop:DbTableName="FactSiniestro" msprop:FriendlyName="FactSiniestro" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SiniestroID">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="FechaKey" type="xs:int" />
+                          <xs:element name="HoraKey" type="xs:short" />
+                          <xs:element name="ComunaKey" type="xs:unsignedByte" />
+                          <xs:element name="TipoViaKey" type="xs:unsignedByte" />
+                          <xs:element name="VehiculoVictimaKey" type="xs:unsignedByte" />
+                          <xs:element name="ContraparteKey" type="xs:unsignedByte" />
+                          <xs:element name="GravedadKey" type="xs:unsignedByte" />
+                          <xs:element name="CantSiniestros" type="xs:int" />
+                          <xs:element name="TotalVictimas" type="xs:int" />
+                          <xs:element name="VictimasLeves" type="xs:int" />
+                          <xs:element name="VictimasGraves" type="xs:int" />
+                          <xs:element name="VictimasMortales" type="xs:int" />
+                          <xs:element name="Latitud" type="xs:decimal" minOccurs="0" />
+                          <xs:element name="Longitud" type="xs:decimal" minOccurs="0" />
+                          <xs:element name="Direccion" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="200" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Participantes" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="60" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_FactVictima" msprop:DbTableName="FactVictima" msprop:FriendlyName="FactVictima" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="VictimaID" type="xs:int" />
+                          <xs:element name="SiniestroID">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="FechaKey" type="xs:int" />
+                          <xs:element name="HoraKey" type="xs:short" />
+                          <xs:element name="ComunaKey" type="xs:unsignedByte" />
+                          <xs:element name="TipoViaKey" type="xs:unsignedByte" />
+                          <xs:element name="VehiculoKey" type="xs:unsignedByte" />
+                          <xs:element name="ContraparteKey" type="xs:unsignedByte" />
+                          <xs:element name="SexoKey" type="xs:unsignedByte" />
+                          <xs:element name="RangoEtarioKey" type="xs:unsignedByte" />
+                          <xs:element name="RolKey" type="xs:unsignedByte" />
+                          <xs:element name="GravedadKey" type="xs:unsignedByte" />
+                          <xs:element name="Edad" type="xs:unsignedByte" minOccurs="0" />
+                          <xs:element name="CantVictimas" type="xs:int" />
+                          <xs:element name="CantFallecidos" type="xs:int" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_vmin_Siniestros" msprop:DbTableName="vmin_Siniestros" msprop:FriendlyName="vmin_Siniestros" msprop:TableType="View" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="SiniestroID">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Hora" type="xs:short" />
+                          <xs:element name="FranjaHoraria">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TipoDia">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="15" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="DiaSemana">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Estacion">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Contexto">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Comuna">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="12" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Zona">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TipoVia">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="VehiculoVictima">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Contraparte">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TotalVictimas" type="xs:int" />
+                          <xs:element name="Gravedad" msdata:ReadOnly="true" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="14" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_vmin_Victimas" msprop:DbTableName="vmin_Victimas" msprop:FriendlyName="vmin_Victimas" msprop:TableType="View" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="VictimaID" type="xs:int" />
+                          <xs:element name="Edad" msdata:ReadOnly="true" type="xs:int" minOccurs="0" />
+                          <xs:element name="RangoEtario">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Sexo">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Vehiculo">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TipoVia">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="20" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Hora" type="xs:short" />
+                          <xs:element name="FranjaHoraria">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="25" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="TipoDia">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="15" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Zona">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Desenlace" msdata:ReadOnly="true" minOccurs="0">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_vmin_SerieMensual" msprop:DbTableName="vmin_SerieMensual" msprop:FriendlyName="vmin_SerieMensual" msprop:TableType="View" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Mes" msdata:ReadOnly="true" type="xs:dateTime" minOccurs="0" />
+                          <xs:element name="Siniestros" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="Mortales" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="Victimas" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="dbo_vmin_PerfilComunas" msprop:DbTableName="vmin_PerfilComunas" msprop:FriendlyName="vmin_PerfilComunas" msprop:TableType="View" msprop:DbSchemaName="dbo">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Comuna">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="12" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="Zona">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:string">
+                                <xs:maxLength value="10" />
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                          <xs:element name="SiniestrosAnuales" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctMoto" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctPeaton" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctBicicleta" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctNocturno" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctFinDeSemana" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctViaRapida" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctTransportePesado" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                          <xs:element name="PctGraveMortal" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:choice>
+                </xs:complexType>
+                <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimTiempo" />
+                  <xs:field xpath="FechaKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimHora_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimHora" />
+                  <xs:field xpath="HoraKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimComuna_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimComuna" />
+                  <xs:field xpath="ComunaKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimTipoVia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimTipoVia" />
+                  <xs:field xpath="TipoViaKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimVehiculo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimVehiculo" />
+                  <xs:field xpath="VehiculoKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimGravedad_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimGravedad" />
+                  <xs:field xpath="GravedadKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimSexo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimSexo" />
+                  <xs:field xpath="SexoKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimRangoEtario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimRangoEtario" />
+                  <xs:field xpath="RangoEtarioKey" />
+                </xs:unique>
+                <xs:unique name="dbo_DimRolVictima_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_DimRolVictima" />
+                  <xs:field xpath="RolKey" />
+                </xs:unique>
+                <xs:unique name="dbo_FactSiniestro_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_FactSiniestro" />
+                  <xs:field xpath="SiniestroID" />
+                </xs:unique>
+                <xs:unique name="dbo_FactVictima_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+                  <xs:selector xpath=".//dbo_FactVictima" />
+                  <xs:field xpath="VictimaID" />
+                </xs:unique>
+              </xs:element>
+              <xs:annotation>
+                <xs:appinfo>
+                  <msdata:Relationship name="FS_Tiempo" msdata:parent="dbo_DimTiempo" msdata:child="dbo_FactSiniestro" msdata:parentkey="FechaKey" msdata:childkey="FechaKey" />
+                  <msdata:Relationship name="FS_Hora" msdata:parent="dbo_DimHora" msdata:child="dbo_FactSiniestro" msdata:parentkey="HoraKey" msdata:childkey="HoraKey" />
+                  <msdata:Relationship name="FS_Comuna" msdata:parent="dbo_DimComuna" msdata:child="dbo_FactSiniestro" msdata:parentkey="ComunaKey" msdata:childkey="ComunaKey" />
+                  <msdata:Relationship name="FS_TipoVia" msdata:parent="dbo_DimTipoVia" msdata:child="dbo_FactSiniestro" msdata:parentkey="TipoViaKey" msdata:childkey="TipoViaKey" />
+                  <msdata:Relationship name="FS_VehVict" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactSiniestro" msdata:parentkey="VehiculoKey" msdata:childkey="VehiculoVictimaKey" />
+                  <msdata:Relationship name="FS_Contra" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactSiniestro" msdata:parentkey="VehiculoKey" msdata:childkey="ContraparteKey" />
+                  <msdata:Relationship name="FS_Gravedad" msdata:parent="dbo_DimGravedad" msdata:child="dbo_FactSiniestro" msdata:parentkey="GravedadKey" msdata:childkey="GravedadKey" />
+                  <msdata:Relationship name="FV_Tiempo" msdata:parent="dbo_DimTiempo" msdata:child="dbo_FactVictima" msdata:parentkey="FechaKey" msdata:childkey="FechaKey" />
+                  <msdata:Relationship name="FV_Hora" msdata:parent="dbo_DimHora" msdata:child="dbo_FactVictima" msdata:parentkey="HoraKey" msdata:childkey="HoraKey" />
+                  <msdata:Relationship name="FV_Comuna" msdata:parent="dbo_DimComuna" msdata:child="dbo_FactVictima" msdata:parentkey="ComunaKey" msdata:childkey="ComunaKey" />
+                  <msdata:Relationship name="FV_TipoVia" msdata:parent="dbo_DimTipoVia" msdata:child="dbo_FactVictima" msdata:parentkey="TipoViaKey" msdata:childkey="TipoViaKey" />
+                  <msdata:Relationship name="FV_Vehiculo" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactVictima" msdata:parentkey="VehiculoKey" msdata:childkey="VehiculoKey" />
+                  <msdata:Relationship name="FV_Contra" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactVictima" msdata:parentkey="VehiculoKey" msdata:childkey="ContraparteKey" />
+                  <msdata:Relationship name="FV_Gravedad" msdata:parent="dbo_DimGravedad" msdata:child="dbo_FactVictima" msdata:parentkey="GravedadKey" msdata:childkey="GravedadKey" />
+                  <msdata:Relationship name="FV_Sexo" msdata:parent="dbo_DimSexo" msdata:child="dbo_FactVictima" msdata:parentkey="SexoKey" msdata:childkey="SexoKey" />
+                  <msdata:Relationship name="FV_Rango" msdata:parent="dbo_DimRangoEtario" msdata:child="dbo_FactVictima" msdata:parentkey="RangoEtarioKey" msdata:childkey="RangoEtarioKey" />
+                  <msdata:Relationship name="FV_Rol" msdata:parent="dbo_DimRolVictima" msdata:child="dbo_FactVictima" msdata:parentkey="RolKey" msdata:childkey="RolKey" />
+                </xs:appinfo>
+              </xs:annotation>
+            </xs:schema>
+            <DSV xmlns="" />
+          </Schema>
+        </DataSourceView>
+      </DataSourceViews>
+      <Roles>
+        <Role>
+          <ID>Lectores</ID>
+          <Name>Lectores</Name>
+        </Role>
+      </Roles>
+      <DatabasePermissions>
+        <DatabasePermission>
+          <ID>DatabasePermission</ID>
+          <Name>DatabasePermission</Name>
+          <RoleID>Lectores</RoleID>
+          <Read>Allowed</Read>
+        </DatabasePermission>
+      </DatabasePermissions>
+    </Database>
+  </ObjectDefinition>
+</Create>

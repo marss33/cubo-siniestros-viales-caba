@@ -1,0 +1,709 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9baf39dc-731f-4350-b5a6-2bf21602470f" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Siniestros Viales</ID>
+  <Name>Siniestros Viales</Name>
+  <Language>11274</Language>
+  <Dimensions>
+    <Dimension>
+      <ID>Tiempo</ID>
+      <Name>Tiempo</Name>
+      <DimensionID>Tiempo</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Fecha</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Mes</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Trimestre</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Semestre</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Anio</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Mes del Anio</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Dia de la Semana</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Tipo de Dia</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Estacion</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Contexto</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Calendario</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension>
+      <ID>Hora</ID>
+      <Name>Hora</Name>
+      <DimensionID>Hora</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Hora</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Franja Horaria</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Hora Pico</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Luz</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Franja - Hora</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension>
+      <ID>Comuna</ID>
+      <Name>Comuna</Name>
+      <DimensionID>Comuna</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Comuna</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Zona</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Barrios</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Zona - Comuna</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension>
+      <ID>Tipo de Via</ID>
+      <Name>Tipo de Via</Name>
+      <DimensionID>Tipo de Via</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Tipo de Via</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Categoria de Via</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Categoria - Tipo de Via</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension>
+      <ID>Vehiculo Victima</ID>
+      <Name>Vehiculo Victima</Name>
+      <DimensionID>Vehiculo</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Vehiculo</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Categoria de Vehiculo</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Categoria - Vehiculo</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension>
+      <ID>Contraparte</ID>
+      <Name>Contraparte</Name>
+      <DimensionID>Vehiculo</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Vehiculo</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Categoria de Vehiculo</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Categoria - Vehiculo</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension>
+      <ID>Gravedad</ID>
+      <Name>Gravedad</Name>
+      <DimensionID>Gravedad</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Gravedad</AttributeID>
+        </Attribute>
+        <Attribute>
+          <AttributeID>Grupo Gravedad</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy>
+          <HierarchyID>Grupo - Gravedad</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension>
+      <ID>Sexo</ID>
+      <Name>Sexo</Name>
+      <DimensionID>Sexo</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Sexo</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension>
+      <ID>Rango Etario</ID>
+      <Name>Rango Etario</Name>
+      <DimensionID>Rango Etario</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Rango Etario</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension>
+      <ID>Rol Victima</ID>
+      <Name>Rol Victima</Name>
+      <DimensionID>Rol Victima</DimensionID>
+      <Attributes>
+        <Attribute>
+          <AttributeID>Rol</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <CubePermissions>
+    <CubePermission>
+      <ID>CubePermission</ID>
+      <Name>CubePermission</Name>
+      <RoleID>Lectores</RoleID>
+      <Read>Allowed</Read>
+      <ReadSourceData>None</ReadSourceData>
+    </CubePermission>
+  </CubePermissions>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Siniestros</ID>
+      <Name>Siniestros</Name>
+      <Measures>
+        <Measure>
+          <ID>Cantidad Siniestros</ID>
+          <Name>Cantidad Siniestros</Name>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_FactSiniestro</TableID>
+              <ColumnID>CantSiniestros</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Total Victimas</ID>
+          <Name>Total Victimas</Name>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_FactSiniestro</TableID>
+              <ColumnID>TotalVictimas</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Victimas Leves</ID>
+          <Name>Victimas Leves</Name>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_FactSiniestro</TableID>
+              <ColumnID>VictimasLeves</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Victimas Graves</ID>
+          <Name>Victimas Graves</Name>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_FactSiniestro</TableID>
+              <ColumnID>VictimasGraves</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Victimas Mortales</ID>
+          <Name>Victimas Mortales</Name>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_FactSiniestro</TableID>
+              <ColumnID>VictimasMortales</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Tiempo</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Fecha</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactSiniestro</TableID>
+                    <ColumnID>FechaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Hora</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Hora</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>SmallInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactSiniestro</TableID>
+                    <ColumnID>HoraKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Comuna</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Comuna</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactSiniestro</TableID>
+                    <ColumnID>ComunaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Tipo de Via</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Tipo de Via</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactSiniestro</TableID>
+                    <ColumnID>TipoViaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Vehiculo Victima</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Vehiculo</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactSiniestro</TableID>
+                    <ColumnID>VehiculoVictimaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Contraparte</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Vehiculo</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactSiniestro</TableID>
+                    <ColumnID>ContraparteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Gravedad</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Gravedad</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactSiniestro</TableID>
+                    <ColumnID>GravedadKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions>
+        <Partition>
+          <ID>Siniestros</ID>
+          <Name>Siniestros</Name>
+          <Source xsi:type="TableBinding">
+            <DataSourceID>DS SiniestrosVialesDW</DataSourceID>
+            <DbSchemaName>dbo</DbSchemaName>
+            <DbTableName>FactSiniestro</DbTableName>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Victimas</ID>
+      <Name>Victimas</Name>
+      <Measures>
+        <Measure>
+          <ID>Cantidad Victimas</ID>
+          <Name>Cantidad Victimas</Name>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_FactVictima</TableID>
+              <ColumnID>CantVictimas</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+        <Measure>
+          <ID>Cantidad Fallecidos</ID>
+          <Name>Cantidad Fallecidos</Name>
+          <Source>
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding">
+              <TableID>dbo_FactVictima</TableID>
+              <ColumnID>CantFallecidos</ColumnID>
+            </Source>
+          </Source>
+          <FormatString>#,##0</FormatString>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Tiempo</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Fecha</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>FechaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Hora</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Hora</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>SmallInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>HoraKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Comuna</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Comuna</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>ComunaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Tipo de Via</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Tipo de Via</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>TipoViaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Vehiculo Victima</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Vehiculo</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>VehiculoKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Contraparte</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Vehiculo</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>ContraparteKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Gravedad</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Gravedad</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>GravedadKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Sexo</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Sexo</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>SexoKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Rango Etario</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Rango Etario</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>RangoEtarioKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension">
+          <CubeDimensionID>Rol Victima</CubeDimensionID>
+          <Attributes>
+            <Attribute>
+              <AttributeID>Rol</AttributeID>
+              <KeyColumns>
+                <KeyColumn>
+                  <DataType>UnsignedTinyInt</DataType>
+                  <Source xsi:type="ColumnBinding">
+                    <TableID>dbo_FactVictima</TableID>
+                    <ColumnID>RolKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions>
+        <Partition>
+          <ID>Victimas</ID>
+          <Name>Victimas</Name>
+          <Source xsi:type="TableBinding">
+            <DataSourceID>DS SiniestrosVialesDW</DataSourceID>
+            <DbSchemaName>dbo</DbSchemaName>
+            <DbTableName>FactVictima</DbTableName>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source>
+    <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript>
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <Commands>
+        <Command>
+          <Text>CALCULATE;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Siniestros Graves o Mortales] AS
+    ([Measures].[Cantidad Siniestros], [Gravedad].[Grupo Gravedad].&amp;[Grave o mortal]),
+    FORMAT_STRING = "#,##0", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[% Graves o Mortales] AS
+    IIF([Measures].[Cantidad Siniestros] = 0, NULL,
+[Measures].[Siniestros Graves o Mortales] / [Measures].[Cantidad Siniestros]),
+    FORMAT_STRING = "0.00%", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Victimas por Siniestro] AS
+    IIF([Measures].[Cantidad Siniestros] = 0, NULL, [Measures].[Total Victimas] / [Measures].[Cantidad Siniestros]),
+    FORMAT_STRING = "0.000", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Letalidad %] AS
+    IIF([Measures].[Cantidad Victimas] = 0, NULL, [Measures].[Cantidad Fallecidos] / [Measures].[Cantidad Victimas]),
+    FORMAT_STRING = "0.00%", VISIBLE = 1;
+
+/* Valor acumulable: suma desde el primer periodo hasta el periodo actual (cualquier nivel del calendario) */
+CREATE MEMBER CURRENTCUBE.[Measures].[Siniestros Acumulados] AS
+    SUM({NULL : [Tiempo].[Calendario].CurrentMember}, [Measures].[Cantidad Siniestros]),
+    FORMAT_STRING = "#,##0", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Mortales Acumulados] AS
+    SUM({NULL : [Tiempo].[Calendario].CurrentMember}, [Measures].[Victimas Mortales]),
+    FORMAT_STRING = "#,##0", VISIBLE = 1;
+
+/* Numero indice base 100 = enero 2019 */
+CREATE MEMBER CURRENTCUBE.[Measures].[Indice Base 100] AS
+    IIF([Tiempo].[Calendario].CurrentMember.Level IS [Tiempo].[Calendario].[Mes],
+[Measures].[Cantidad Siniestros] /
+([Measures].[Cantidad Siniestros], [Tiempo].[Calendario].[Mes].&amp;[2019-01]) * 100, NULL),
+    FORMAT_STRING = "0.00", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Indice Acumulado Base 100] AS
+    IIF([Tiempo].[Calendario].CurrentMember.Level IS [Tiempo].[Calendario].[Mes],
+[Measures].[Siniestros Acumulados] /
+([Measures].[Cantidad Siniestros], [Tiempo].[Calendario].[Mes].&amp;[2019-01]) * 100, NULL),
+    FORMAT_STRING = "0.00", VISIBLE = 1;
+
+/* Indice anual base 2019 = 100 */
+CREATE MEMBER CURRENTCUBE.[Measures].[Indice Anual Base 2019] AS
+    IIF([Tiempo].[Calendario].CurrentMember.Level IS [Tiempo].[Calendario].[Anio],
+[Measures].[Cantidad Siniestros] /
+([Measures].[Cantidad Siniestros], [Tiempo].[Calendario].[Anio].&amp;[2019]) * 100, NULL),
+    FORMAT_STRING = "0.00", VISIBLE = 1;
+
+CREATE MEMBER CURRENTCUBE.[Measures].[Variacion Interanual %] AS
+    IIF(([Measures].[Cantidad Siniestros], ParallelPeriod([Tiempo].[Calendario].[Anio], 1, [Tiempo].[Calendario].CurrentMember)) = 0, NULL,
+[Measures].[Cantidad Siniestros] /
+([Measures].[Cantidad Siniestros], ParallelPeriod([Tiempo].[Calendario].[Anio], 1, [Tiempo].[Calendario].CurrentMember)) - 1),
+    FORMAT_STRING = "0.00%", VISIBLE = 1;</Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+</Cube>

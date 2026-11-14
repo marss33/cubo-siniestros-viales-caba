@@ -1,0 +1,99 @@
+﻿<Project xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <ProductVersion>17.0.0.0</ProductVersion>
+  <SchemaVersion>9.0.2.10</SchemaVersion>
+  <Database>
+    <Name>SiniestrosVialesOLAP.database</Name>
+    <FullPath>SiniestrosVialesOLAP.database</FullPath>
+  </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>Siniestros Viales.cube</Name>
+      <FullPath>Siniestros Viales.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>Siniestros Viales.partitions</Name>
+          <FullPath>Siniestros Viales.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Tiempo.dim</Name>
+      <FullPath>Tiempo.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Hora.dim</Name>
+      <FullPath>Hora.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Comuna.dim</Name>
+      <FullPath>Comuna.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Tipo de Via.dim</Name>
+      <FullPath>Tipo de Via.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Vehiculo.dim</Name>
+      <FullPath>Vehiculo.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Gravedad.dim</Name>
+      <FullPath>Gravedad.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Sexo.dim</Name>
+      <FullPath>Sexo.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Rango Etario.dim</Name>
+      <FullPath>Rango Etario.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Rol Victima.dim</Name>
+      <FullPath>Rol Victima.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>DS SiniestrosVialesDW.ds</Name>
+      <FullPath>DS SiniestrosVialesDW.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>DSV SiniestrosVialesDW.dsv</Name>
+      <FullPath>DSV SiniestrosVialesDW.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
+  <Roles>
+    <ProjectItem>
+      <Name>Lectores.role</Name>
+      <FullPath>Lectores.role</FullPath>
+    </ProjectItem>
+  </Roles>
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <TargetServer>localhost\SSAS2019</TargetServer>
+        <TargetDatabase>SiniestrosVialesOLAP_Diseno</TargetDatabase>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>DS SiniestrosVialesDW</Id>
+            <Name>DS SiniestrosVialesDW</Name>
+            <Value xsi:type="xsd:string">Provider=MSOLEDBSQL.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=SiniestrosVialesDW;TrustServerCertificate=True</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>DS SiniestrosVialesDW</Id>
+            <Name>DS SiniestrosVialesDW</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

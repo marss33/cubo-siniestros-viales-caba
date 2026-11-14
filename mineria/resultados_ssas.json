@@ -1,0 +1,1041 @@
+﻿{
+    "clusters_comunas":  [
+                             {
+                                 "Comuna":  "Comuna 01",
+                                 "Zona":  "Centro",
+                                 "Cluster":  "Cluster 2",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 02",
+                                 "Zona":  "Norte",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 03",
+                                 "Zona":  "Centro",
+                                 "Cluster":  "Cluster 2",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 04",
+                                 "Zona":  "Sur",
+                                 "Cluster":  "Cluster 2",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 05",
+                                 "Zona":  "Centro",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 06",
+                                 "Zona":  "Centro",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 07",
+                                 "Zona":  "Sur",
+                                 "Cluster":  "Cluster 2",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 08",
+                                 "Zona":  "Sur",
+                                 "Cluster":  "Cluster 4",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 09",
+                                 "Zona":  "Sur",
+                                 "Cluster":  "Cluster 3",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 10",
+                                 "Zona":  "Oeste",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 11",
+                                 "Zona":  "Oeste",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 12",
+                                 "Zona":  "Norte",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 13",
+                                 "Zona":  "Norte",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 14",
+                                 "Zona":  "Norte",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             },
+                             {
+                                 "Comuna":  "Comuna 15",
+                                 "Zona":  "Oeste",
+                                 "Cluster":  "Cluster 1",
+                                 "Probabilidad":  1
+                             }
+                         ],
+    "asociacion_total_reglas":  12860,
+    "arbol_hojas":  [
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0100",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027TRANSPORTE PUBLICO\u0027 and Contraparte = \u0027OBJETO FIJO\u0027",
+                            "NODE_SUPPORT":  24,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.41695059625212949
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0b00",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027PEATON\u0027 and Contraparte = \u0027TRANSPORTE PUBLICO\u0027",
+                            "NODE_SUPPORT":  607,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.24220947618283337
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0a00",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027MOTO\u0027 and Contraparte = \u0027OBJETO FIJO\u0027",
+                            "NODE_SUPPORT":  395,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.21524902324736178
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0a0100",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027MOTO\u0027 and Contraparte = \u0027CAMION\u0027",
+                            "NODE_SUPPORT":  532,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.16546512972743743
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0200",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027BICICLETA\u0027 and Contraparte = \u0027CAMION\u0027",
+                            "NODE_SUPPORT":  123,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.14657722594891878
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0900",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027AUTO\u0027 and Contraparte = \u0027OBJETO FIJO\u0027",
+                            "NODE_SUPPORT":  193,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.14522854638655017
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0a010101",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027MOTO\u0027 and Contraparte not = \u0027OBJETO FIJO\u0027 and Contraparte not = \u0027CAMION\u0027 and TotalVictimas not = 1",
+                            "NODE_SUPPORT":  995,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.13102409638554216
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0a01010000",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027MOTO\u0027 and Contraparte not = \u0027OBJETO FIJO\u0027 and Contraparte not = \u0027CAMION\u0027 and TotalVictimas = 1 and FranjaHoraria = \u00271. Madrugada (00-05)\u0027",
+                            "NODE_SUPPORT":  746,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.12333112902360995
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a0b01",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027PEATON\u0027 and Contraparte not = \u0027TRANSPORTE PUBLICO\u0027",
+                            "NODE_SUPPORT":  4213,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.10786860867967374
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a04",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027CAMION\u0027",
+                            "NODE_SUPPORT":  108,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.0880281690140845
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a05",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027OTRO\u0027",
+                            "NODE_SUPPORT":  55,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.082079343365253063
+                        },
+                        {
+                            "NODE_UNIQUE_NAME":  "00000000a07",
+                            "NODE_DESCRIPTION":  "VehiculoVictima = \u0027UTILITARIO\u0027",
+                            "NODE_SUPPORT":  337,
+                            "ATTRIBUTE_VALUE":  "GRAVE O MORTAL",
+                            "PROBABILITY":  0.057994086877416424
+                        }
+                    ],
+    "pronostico_mortales":  [
+                                {
+                                    "$TIME":  "\/Date(1767236400000)\/",
+                                    "Mortales":  8.3669896461223559
+                                },
+                                {
+                                    "$TIME":  "\/Date(1769914800000)\/",
+                                    "Mortales":  8.1285655758878228
+                                },
+                                {
+                                    "$TIME":  "\/Date(1772334000000)\/",
+                                    "Mortales":  8.582081021278567
+                                },
+                                {
+                                    "$TIME":  "\/Date(1775012400000)\/",
+                                    "Mortales":  8.1126526685340643
+                                },
+                                {
+                                    "$TIME":  "\/Date(1777604400000)\/",
+                                    "Mortales":  8.538176347896627
+                                },
+                                {
+                                    "$TIME":  "\/Date(1780282800000)\/",
+                                    "Mortales":  8.1618552996144373
+                                },
+                                {
+                                    "$TIME":  "\/Date(1782874800000)\/",
+                                    "Mortales":  8.5515735716309109
+                                },
+                                {
+                                    "$TIME":  "\/Date(1785553200000)\/",
+                                    "Mortales":  8.11665591867058
+                                },
+                                {
+                                    "$TIME":  "\/Date(1788231600000)\/",
+                                    "Mortales":  8.5399982114657149
+                                },
+                                {
+                                    "$TIME":  "\/Date(1790823600000)\/",
+                                    "Mortales":  8.0663614848616376
+                                },
+                                {
+                                    "$TIME":  "\/Date(1793502000000)\/",
+                                    "Mortales":  8.4890857143605274
+                                },
+                                {
+                                    "$TIME":  "\/Date(1796094000000)\/",
+                                    "Mortales":  8.0935291514278447
+                                }
+                            ],
+    "arbol_total_hojas":  20,
+    "precision_victima":  [
+                              {
+                                  "ModelName":  "Arbol de Decision - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "True Positive",
+                                  "Value":  0
+                              },
+                              {
+                                  "ModelName":  "Arbol de Decision - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "False Positive",
+                                  "Value":  0
+                              },
+                              {
+                                  "ModelName":  "Arbol de Decision - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "True Negative",
+                                  "Value":  9907
+                              },
+                              {
+                                  "ModelName":  "Arbol de Decision - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "False Negative",
+                                  "Value":  217
+                              },
+                              {
+                                  "ModelName":  "Arbol de Decision - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Likelihood",
+                                  "Measure":  "Log Score",
+                                  "Value":  -0.097327181272433158
+                              },
+                              {
+                                  "ModelName":  "Arbol de Decision - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Likelihood",
+                                  "Measure":  "Lift",
+                                  "Value":  0.0062423544828450195
+                              },
+                              {
+                                  "ModelName":  "Arbol de Decision - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Likelihood",
+                                  "Measure":  "Root Mean Square Error",
+                                  "Value":  0.029937315878460286
+                              },
+                              {
+                                  "ModelName":  "Naive Bayes - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "True Positive",
+                                  "Value":  0
+                              },
+                              {
+                                  "ModelName":  "Naive Bayes - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "False Positive",
+                                  "Value":  0
+                              },
+                              {
+                                  "ModelName":  "Naive Bayes - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "True Negative",
+                                  "Value":  9907
+                              },
+                              {
+                                  "ModelName":  "Naive Bayes - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Classification",
+                                  "Measure":  "False Negative",
+                                  "Value":  217
+                              },
+                              {
+                                  "ModelName":  "Naive Bayes - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Likelihood",
+                                  "Measure":  "Log Score",
+                                  "Value":  -0.0914209710840373
+                              },
+                              {
+                                  "ModelName":  "Naive Bayes - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Likelihood",
+                                  "Measure":  "Lift",
+                                  "Value":  0.012148564671249577
+                              },
+                              {
+                                  "ModelName":  "Naive Bayes - Victima Fatal",
+                                  "AttributeName":  "Desenlace",
+                                  "AttributeState":  "FALLECIO",
+                                  "PartitionIndex":  0,
+                                  "PartitionSize":  10124,
+                                  "Test":  "Likelihood",
+                                  "Measure":  "Root Mean Square Error",
+                                  "Value":  0.039869405859095965
+                              }
+                          ],
+    "arbol_victima_hojas":  [
+                                {
+                                    "NODE_UNIQUE_NAME":  "00000000900000101",
+                                    "NODE_DESCRIPTION":  "Edad \u003c 50 and TipoVia = \u0027AUTOPISTA\u0027 and Zona not = \u0027SIN DATO\u0027 and Hora not = 15",
+                                    "NODE_SUPPORT":  397,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.10391952650697285
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "000000009020101",
+                                    "NODE_DESCRIPTION":  "Edad \u003e= 70 and Vehiculo not = \u0027TRANSPORTE PUBLICO\u0027 and Vehiculo not = \u0027AUTO\u0027",
+                                    "NODE_SUPPORT":  827,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.10011238156117577
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "000000009000100",
+                                    "NODE_DESCRIPTION":  "Edad \u003c 50 and TipoVia = \u0027CALLE\u0027 and Hora = 3",
+                                    "NODE_SUPPORT":  55,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.091149370434271876
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "0000000090100",
+                                    "NODE_DESCRIPTION":  "Edad \u003e= 50 and \u003c 70 and Vehiculo = \u0027PEATON\u0027",
+                                    "NODE_SUPPORT":  903,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.059861260357508814
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "000000009000300",
+                                    "NODE_DESCRIPTION":  "Edad \u003c 50 and TipoVia = \u0027AVENIDA\u0027 and FranjaHoraria = \u00271. Madrugada (00-05)\u0027",
+                                    "NODE_SUPPORT":  1028,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.041900813455417144
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "000000009020100",
+                                    "NODE_DESCRIPTION":  "Edad \u003e= 70 and Vehiculo = \u0027AUTO\u0027",
+                                    "NODE_SUPPORT":  162,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.025219665973573009
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "000000009010101",
+                                    "NODE_DESCRIPTION":  "Edad \u003e= 50 and \u003c 70 and Vehiculo not = \u0027PEATON\u0027 and Sexo = \u0027Masculino\u0027",
+                                    "NODE_SUPPORT":  1837,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.019182961859459696
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "0000000090002",
+                                    "NODE_DESCRIPTION":  "Edad \u003c 50 and TipoVia = \u0027AV. GRAL. PAZ\u0027",
+                                    "NODE_SUPPORT":  1217,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.01839702064480811
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "000000009000301",
+                                    "NODE_DESCRIPTION":  "Edad \u003c 50 and TipoVia = \u0027AVENIDA\u0027 and FranjaHoraria not = \u00271. Madrugada (00-05)\u0027",
+                                    "NODE_SUPPORT":  9651,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.012466601710285468
+                                },
+                                {
+                                    "NODE_UNIQUE_NAME":  "000000009000101",
+                                    "NODE_DESCRIPTION":  "Edad \u003c 50 and TipoVia = \u0027CALLE\u0027 and Hora not = 3",
+                                    "NODE_SUPPORT":  6220,
+                                    "ATTRIBUTE_VALUE":  "FALLECIO",
+                                    "PROBABILITY":  0.0069746733331514732
+                                }
+                            ],
+    "precision_gravedad":  [
+                               {
+                                   "ModelName":  "Arbol de Decision - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Positive",
+                                   "Value":  0
+                               },
+                               {
+                                   "ModelName":  "Arbol de Decision - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Positive",
+                                   "Value":  0
+                               },
+                               {
+                                   "ModelName":  "Arbol de Decision - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Negative",
+                                   "Value":  11033
+                               },
+                               {
+                                   "ModelName":  "Arbol de Decision - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Negative",
+                                   "Value":  787
+                               },
+                               {
+                                   "ModelName":  "Arbol de Decision - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Log Score",
+                                   "Value":  -0.22949850129541408
+                               },
+                               {
+                                   "ModelName":  "Arbol de Decision - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Lift",
+                                   "Value":  0.015208197458810097
+                               },
+                               {
+                                   "ModelName":  "Arbol de Decision - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Root Mean Square Error",
+                                   "Value":  0.084927119374193269
+                               },
+                               {
+                                   "ModelName":  "Naive Bayes - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Positive",
+                                   "Value":  34
+                               },
+                               {
+                                   "ModelName":  "Naive Bayes - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Positive",
+                                   "Value":  48
+                               },
+                               {
+                                   "ModelName":  "Naive Bayes - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Negative",
+                                   "Value":  10985
+                               },
+                               {
+                                   "ModelName":  "Naive Bayes - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Negative",
+                                   "Value":  753
+                               },
+                               {
+                                   "ModelName":  "Naive Bayes - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Log Score",
+                                   "Value":  -0.22772539633286695
+                               },
+                               {
+                                   "ModelName":  "Naive Bayes - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Lift",
+                                   "Value":  0.016981302421388747
+                               },
+                               {
+                                   "ModelName":  "Naive Bayes - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Root Mean Square Error",
+                                   "Value":  0.1038444018137456
+                               },
+                               {
+                                   "ModelName":  "Regresion Logistica - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Positive",
+                                   "Value":  13
+                               },
+                               {
+                                   "ModelName":  "Regresion Logistica - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Positive",
+                                   "Value":  9
+                               },
+                               {
+                                   "ModelName":  "Regresion Logistica - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Negative",
+                                   "Value":  11024
+                               },
+                               {
+                                   "ModelName":  "Regresion Logistica - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Negative",
+                                   "Value":  774
+                               },
+                               {
+                                   "ModelName":  "Regresion Logistica - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Log Score",
+                                   "Value":  -0.22503922617377742
+                               },
+                               {
+                                   "ModelName":  "Regresion Logistica - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Lift",
+                                   "Value":  0.019667472580479482
+                               },
+                               {
+                                   "ModelName":  "Regresion Logistica - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Root Mean Square Error",
+                                   "Value":  0.098288351881378716
+                               },
+                               {
+                                   "ModelName":  "Red Neuronal - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Positive",
+                                   "Value":  2
+                               },
+                               {
+                                   "ModelName":  "Red Neuronal - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Positive",
+                                   "Value":  4
+                               },
+                               {
+                                   "ModelName":  "Red Neuronal - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "True Negative",
+                                   "Value":  11029
+                               },
+                               {
+                                   "ModelName":  "Red Neuronal - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Classification",
+                                   "Measure":  "False Negative",
+                                   "Value":  785
+                               },
+                               {
+                                   "ModelName":  "Red Neuronal - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Log Score",
+                                   "Value":  -0.22641743335116232
+                               },
+                               {
+                                   "ModelName":  "Red Neuronal - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Lift",
+                                   "Value":  0.018289265403091778
+                               },
+                               {
+                                   "ModelName":  "Red Neuronal - Gravedad",
+                                   "AttributeName":  "Gravedad",
+                                   "AttributeState":  "GRAVE O MORTAL",
+                                   "PartitionIndex":  0,
+                                   "PartitionSize":  11820,
+                                   "Test":  "Likelihood",
+                                   "Measure":  "Root Mean Square Error",
+                                   "Value":  0.0907804619011716
+                               }
+                           ],
+    "clusters_siniestros":  [
+                                {
+                                    "NODE_CAPTION":  "Cluster 5",
+                                    "NODE_SUPPORT":  4437,
+                                    "PROBABILITY":  0.0910542728170863,
+                                    "NODE_DESCRIPTION":  "TotalVictimas=10 ,\nTotalVictimas=13 ,\nZona=Sur ,\nComuna=Comuna 07 ,\nComuna=Comuna 04 ,\nComuna=Comuna 09 ,\nComuna=Comuna 08 ,\nFranjaHoraria=3. Tarde (12-17) "
+                                },
+                                {
+                                    "NODE_CAPTION":  "Cluster 2",
+                                    "NODE_SUPPORT":  5713,
+                                    "PROBABILITY":  0.086998107903257377,
+                                    "NODE_DESCRIPTION":  "TotalVictimas=14 ,\nTipoDia=Fin de semana ,\nDiaSemana=Domingo ,\nDiaSemana=Sabado ,\nFranjaHoraria=1. Madrugada (00-05) ,\nVehiculoVictima=AUTO ,\nHora=1 ,\nHora=2 "
+                                },
+                                {
+                                    "NODE_CAPTION":  "Cluster 6",
+                                    "NODE_SUPPORT":  2709,
+                                    "PROBABILITY":  0.06795574158686761,
+                                    "NODE_DESCRIPTION":  "FranjaHoraria=2. Manana (06-11) ,\nHora=8 ,\nHora=9 ,\nHora=11 ,\nHora=7 ,\nZona=Sur ,\nHora=10 ,\nZona=Oeste "
+                                },
+                                {
+                                    "NODE_CAPTION":  "Cluster 1",
+                                    "NODE_SUPPORT":  5546,
+                                    "PROBABILITY":  0.066263512994098731,
+                                    "NODE_DESCRIPTION":  "Zona=Norte ,\nComuna=Comuna 12 ,\nComuna=Comuna 14 ,\nComuna=Comuna 13 ,\nComuna=Comuna 02 ,\nTipoDia=Dia habil ,\nFranjaHoraria=4. Noche (18-23) ,\nDiaSemana=Viernes "
+                                },
+                                {
+                                    "NODE_CAPTION":  "Cluster 3",
+                                    "NODE_SUPPORT":  4876,
+                                    "PROBABILITY":  0.059477440179184167,
+                                    "NODE_DESCRIPTION":  "TotalVictimas=15 ,\nZona=Oeste ,\nComuna=Comuna 15 ,\nFranjaHoraria=4. Noche (18-23) ,\nComuna=Comuna 10 ,\nComuna=Comuna 11 ,\nHora=18 ,\nHora=19 "
+                                },
+                                {
+                                    "NODE_CAPTION":  "Cluster 4",
+                                    "NODE_SUPPORT":  4302,
+                                    "PROBABILITY":  0.050042005868495859,
+                                    "NODE_DESCRIPTION":  "TotalVictimas=19 ,\nTotalVictimas=18 ,\nZona=Centro ,\nComuna=Comuna 01 ,\nComuna=Comuna 03 ,\nComuna=Comuna 06 ,\nComuna=Comuna 05 ,\nTipoDia=Dia habil "
+                                }
+                            ],
+    "clusters_comunas_desc":  [
+                                  {
+                                      "NODE_CAPTION":  "Cluster 1",
+                                      "NODE_SUPPORT":  9,
+                                      "NODE_DESCRIPTION":  "Zona=Norte ,\nZona=Oeste ,\nPctViaRapida \u003e17,14204591 ,\n9,5423808261 \u003c=PctBicicleta \u003c=15,2665899501 ,\n9,1628614916 \u003c=PctTransportePesado \u003c=14,4467797969 ,\n335,7142857143 \u003c=SiniestrosAnuales \u003c=772,8226768258 ,\n30,2989578765 \u003c=PctMoto \u003c=44,2459396752 ,\nPctGraveMortal \u003e5,9016393443 ,\nPctFinDeSemana \u003e22,6141650461 ,\nPctNocturno \u003e28,78113879 ,\nPctPeaton \u003e16,5308659025"
+                                  },
+                                  {
+                                      "NODE_CAPTION":  "Cluster 2",
+                                      "NODE_SUPPORT":  4,
+                                      "NODE_DESCRIPTION":  "9,1176200025 \u003c=PctBicicleta \u003c=9,3558390247 ,\n24,5203730747 \u003c=PctNocturno \u003c=25,0800338135 ,\n0,424502746 \u003c=PctViaRapida \u003c=3,5086414606 ,\n14,8490625772 \u003c=PctPeaton \u003c=16,5308659025 ,\n28,8787699636 \u003c=PctMoto \u003c=39,2735877463 ,\nZona=Centro ,\nZona=Sur ,\n19,2750287687 \u003c=PctFinDeSemana \u003c=21,3480050114 ,\n420,0260421291 \u003c=SiniestrosAnuales \u003c=1034,4285714286 ,\n3,5714285714 \u003c=PctGraveMortal \u003c=5,9016393443 ,\nPctTransportePesado \u003e20,2323542306"
+                                  },
+                                  {
+                                      "NODE_CAPTION":  "Cluster 3",
+                                      "NODE_SUPPORT":  1,
+                                      "NODE_DESCRIPTION":  "SiniestrosAnuales =635,7142857143 ,\nPctMoto =38,606741573 ,\nPctPeaton =11,797752809 ,\nPctBicicleta =6,8988764045 ,\nPctNocturno =22,4719101124 ,\nPctFinDeSemana =21,9325842697 ,\nPctViaRapida =18,5168539326 ,\nPctTransportePesado =12,606741573 ,\nPctGraveMortal =4,808988764 ,\nZona=Sur"
+                                  },
+                                  {
+                                      "NODE_CAPTION":  "Cluster 4",
+                                      "NODE_SUPPORT":  1,
+                                      "NODE_DESCRIPTION":  "SiniestrosAnuales =441,1428571429 ,\nPctMoto =36,1398963731 ,\nPctPeaton =11,8199481865 ,\nPctBicicleta =5,5375647668 ,\nPctNocturno =26,0362694301 ,\nPctFinDeSemana =24,3199481865 ,\nPctViaRapida =18,1023316062 ,\nPctTransportePesado =14,9611398964 ,\nPctGraveMortal =5,6023316062 ,\nZona=Sur"
+                                  }
+                              ],
+    "escenarios_victima":  [
+                               {
+                                   "Escenario":  "Peaton de 75 anios, mujer, avenida, noche",
+                                   "Arbol de Decision - Victima Fatal":  0.10011238156117577,
+                                   "Naive Bayes - Victima Fatal":  0.10216530956541077
+                               },
+                               {
+                                   "Escenario":  "Motociclista de 25 anios, varon, autopista, madrugada",
+                                   "Arbol de Decision - Victima Fatal":  0.078001902949571822,
+                                   "Naive Bayes - Victima Fatal":  0.102559374664812
+                               },
+                               {
+                                   "Escenario":  "Ciclista de 30 anios, mujer, calle, tarde",
+                                   "Arbol de Decision - Victima Fatal":  0.0077127980621433919,
+                                   "Naive Bayes - Victima Fatal":  0.0031836581464496582
+                               }
+                           ],
+    "pronostico_siniestros":  [
+                                  {
+                                      "$TIME":  "\/Date(1767236400000)\/",
+                                      "Siniestros":  1084.1811203828277
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1769914800000)\/",
+                                      "Siniestros":  1149.8688992130942
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1772334000000)\/",
+                                      "Siniestros":  1132.3069220667362
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1775012400000)\/",
+                                      "Siniestros":  1186.6029172431854
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1777604400000)\/",
+                                      "Siniestros":  1153.2317516621315
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1780282800000)\/",
+                                      "Siniestros":  1210.0919059745324
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1782874800000)\/",
+                                      "Siniestros":  1179.3801988525952
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1785553200000)\/",
+                                      "Siniestros":  1235.6079322070962
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1788231600000)\/",
+                                      "Siniestros":  1191.6576813391544
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1790823600000)\/",
+                                      "Siniestros":  1256.8937996250734
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1793502000000)\/",
+                                      "Siniestros":  1225.932555604154
+                                  },
+                                  {
+                                      "$TIME":  "\/Date(1796094000000)\/",
+                                      "Siniestros":  1276.2189538656287
+                                  }
+                              ],
+    "reglas_grave":  [
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, VehiculoVictima = PEATON, TipoVia = AVENIDA -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.26315789473684209,
+                             "MSOLAP_NODE_SCORE":  0.60214230875846753,
+                             "NODE_SUPPORT":  165
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, VehiculoVictima = PEATON -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.24125874125874125,
+                             "MSOLAP_NODE_SCORE":  0.56884483078185677,
+                             "NODE_SUPPORT":  207
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, VehiculoVictima = PEATON, TipoDia = Dia habil -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.23004059539918809,
+                             "MSOLAP_NODE_SCORE":  0.54345633421538542,
+                             "NODE_SUPPORT":  170
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = OBJETO FIJO, TipoDia = Fin de semana -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.23324396782841822,
+                             "MSOLAP_NODE_SCORE":  0.54092680360468737,
+                             "NODE_SUPPORT":  87
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = OBJETO FIJO, VehiculoVictima = MOTO -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.22261484098939929,
+                             "MSOLAP_NODE_SCORE":  0.52425147507835812,
+                             "NODE_SUPPORT":  126
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = OBJETO FIJO -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.18009049773755656,
+                             "MSOLAP_NODE_SCORE":  0.43799179818178446,
+                             "NODE_SUPPORT":  199
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = OBJETO FIJO, TipoVia = AVENIDA -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.18353344768439109,
+                             "MSOLAP_NODE_SCORE":  0.4377080550086393,
+                             "NODE_SUPPORT":  107
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "FranjaHoraria = 1. Madrugada (00-05), TipoDia = Fin de semana, VehiculoVictima = MOTO -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.18047882136279927,
+                             "MSOLAP_NODE_SCORE":  0.42963453201646867,
+                             "NODE_SUPPORT":  98
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = CAMION, VehiculoVictima = MOTO -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.16976127320954906,
+                             "MSOLAP_NODE_SCORE":  0.40509128731975175,
+                             "NODE_SUPPORT":  128
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "TipoVia = AUTOPISTA, VehiculoVictima = MOTO -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.16455696202531644,
+                             "MSOLAP_NODE_SCORE":  0.38789002155276764,
+                             "NODE_SUPPORT":  78
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "Contraparte = CAMION, VehiculoVictima = MOTO, TipoDia = Dia habil -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.15965166908563136,
+                             "MSOLAP_NODE_SCORE":  0.376596002871488,
+                             "NODE_SUPPORT":  110
+                         },
+                         {
+                             "NODE_DESCRIPTION":  "FranjaHoraria = 1. Madrugada (00-05), VehiculoVictima = MOTO -\u003e Gravedad = GRAVE O MORTAL",
+                             "NODE_PROBABILITY":  0.15549005158437731,
+                             "MSOLAP_NODE_SCORE":  0.37342860206969619,
+                             "NODE_SUPPORT":  211
+                         }
+                     ],
+    "reglas_top":  [
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, Gravedad = LEVE -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.46628948609146631,
+                           "MSOLAP_NODE_SCORE":  1.4045238216461184,
+                           "NODE_SUPPORT":  1978
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.43266537384184445,
+                           "MSOLAP_NODE_SCORE":  1.3877302821690363,
+                           "NODE_SUPPORT":  2008
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, TipoDia = Dia habil, Gravedad = LEVE -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.46318758815232725,
+                           "MSOLAP_NODE_SCORE":  1.2282751724023333,
+                           "NODE_SUPPORT":  1642
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, TipoDia = Dia habil -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.43130659767141011,
+                           "MSOLAP_NODE_SCORE":  1.2046273599210937,
+                           "NODE_SUPPORT":  1667
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, TipoVia = AVENIDA, Gravedad = LEVE -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.48920123414466921,
+                           "MSOLAP_NODE_SCORE":  1.1735500212786125,
+                           "NODE_SUPPORT":  1427
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, TipoVia = AVENIDA -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.45440300846129739,
+                           "MSOLAP_NODE_SCORE":  1.1466768942418319,
+                           "NODE_SUPPORT":  1450
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, TipoVia = AVENIDA, TipoDia = Dia habil -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.45157657657657657,
+                           "MSOLAP_NODE_SCORE":  1.0673232364788718,
+                           "NODE_SUPPORT":  1203
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "VehiculoVictima = TRANSPORTE PUBLICO -\u003e Contraparte = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.76553564620663361,
+                           "MSOLAP_NODE_SCORE":  1.0288701984361524,
+                           "NODE_SUPPORT":  2008
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "VehiculoVictima = TRANSPORTE PUBLICO, Gravedad = LEVE -\u003e Contraparte = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.77054927931437478,
+                           "MSOLAP_NODE_SCORE":  1.0274435129931454,
+                           "NODE_SUPPORT":  1978
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "Contraparte = TRANSPORTE PUBLICO, FranjaHoraria = 3. Tarde (12-17), Gravedad = LEVE -\u003e VehiculoVictima = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.468682505399568,
+                           "MSOLAP_NODE_SCORE":  1.0010301723198134,
+                           "NODE_SUPPORT":  868
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "VehiculoVictima = TRANSPORTE PUBLICO, TipoDia = Dia habil -\u003e Contraparte = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.7636280348144755,
+                           "MSOLAP_NODE_SCORE":  0.98005733971761455,
+                           "NODE_SUPPORT":  1667
+                       },
+                       {
+                           "NODE_DESCRIPTION":  "VehiculoVictima = TRANSPORTE PUBLICO, TipoDia = Dia habil, Gravedad = LEVE -\u003e Contraparte = TRANSPORTE PUBLICO",
+                           "NODE_PROBABILITY":  0.76728971962616821,
+                           "MSOLAP_NODE_SCORE":  0.97899796778583192,
+                           "NODE_SUPPORT":  1642
+                       }
+                   ],
+    "asociacion_total_itemsets":  4511,
+    "escenarios":  [
+                       {
+                           "Escenario":  "Peaton vs colectivo, avenida, madrugada",
+                           "Arbol de Decision - Gravedad":  0.24220947618283337,
+                           "Naive Bayes - Gravedad":  0.27744268883469653,
+                           "Regresion Logistica - Gravedad":  0.28260719603049744,
+                           "Red Neuronal - Gravedad":  0.37128190651770404
+                       },
+                       {
+                           "Escenario":  "Moto vs objeto fijo, fin de semana, madrugada",
+                           "Arbol de Decision - Gravedad":  0.21524902324736178,
+                           "Naive Bayes - Gravedad":  0.36450102149638725,
+                           "Regresion Logistica - Gravedad":  0.29177196843386533,
+                           "Red Neuronal - Gravedad":  0.26638963663416787
+                       },
+                       {
+                           "Escenario":  "Moto vs auto, Gral. Paz, noche",
+                           "Arbol de Decision - Gravedad":  0.06826175059393487,
+                           "Naive Bayes - Gravedad":  0.076371711481917723,
+                           "Regresion Logistica - Gravedad":  0.063676154333769511,
+                           "Red Neuronal - Gravedad":  0.0334391375055622
+                       },
+                       {
+                           "Escenario":  "Ciclista vs auto, calle, tarde habil",
+                           "Arbol de Decision - Gravedad":  0.035109330814618409,
+                           "Naive Bayes - Gravedad":  0.019052138747477361,
+                           "Regresion Logistica - Gravedad":  0.027958041733775685,
+                           "Red Neuronal - Gravedad":  0.014304950372522151
+                       },
+                       {
+                           "Escenario":  "Auto vs auto, avenida, tarde habil",
+                           "Arbol de Decision - Gravedad":  0.032528116036327381,
+                           "Naive Bayes - Gravedad":  0.027392712521519539,
+                           "Regresion Logistica - Gravedad":  0.018677403518931365,
+                           "Red Neuronal - Gravedad":  0.012070252929016541
+                       }
+                   ]
+}

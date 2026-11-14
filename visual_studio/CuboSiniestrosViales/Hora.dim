@@ -1,0 +1,115 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="7633f84c-f00b-4a32-805b-c16d67027d70" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Hora</ID>
+  <Name>Hora</Name>
+  <Source xsi:type="DataSourceViewBinding">
+    <DataSourceViewID>DSV SiniestrosVialesDW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+  </ErrorConfiguration>
+  <Language>11274</Language>
+  <Attributes>
+    <Attribute>
+      <ID>Hora</ID>
+      <Name>Hora</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>SmallInt</DataType>
+          <Source xsi:type="ColumnBinding">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>HoraKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <NameColumn>
+        <DataType>WChar</DataType>
+        <DataSize>200</DataSize>
+        <Source xsi:type="ColumnBinding">
+          <TableID>dbo_DimHora</TableID>
+          <ColumnID>Hora</ColumnID>
+        </Source>
+      </NameColumn>
+      <AttributeRelationships>
+        <AttributeRelationship>
+          <AttributeID>Franja Horaria</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Franja Horaria</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Hora Pico</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Hora Pico</Name>
+        </AttributeRelationship>
+        <AttributeRelationship>
+          <AttributeID>Luz</AttributeID>
+          <RelationshipType>Rigid</RelationshipType>
+          <Name>Luz</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+    <Attribute>
+      <ID>Franja Horaria</ID>
+      <Name>Franja Horaria</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>FranjaHoraria</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeHierarchyVisible>false</AttributeHierarchyVisible>
+    </Attribute>
+    <Attribute>
+      <ID>Hora Pico</ID>
+      <Name>Hora Pico</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>HoraPico</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Attribute>
+    <Attribute>
+      <ID>Luz</ID>
+      <Name>Luz</Name>
+      <KeyColumns>
+        <KeyColumn>
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>Luz</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy>
+      <ID>Franja - Hora</ID>
+      <Name>Franja - Hora</Name>
+      <Levels>
+        <Level>
+          <ID>Franja Horaria</ID>
+          <Name>Franja Horaria</Name>
+          <SourceAttributeID>Franja Horaria</SourceAttributeID>
+        </Level>
+        <Level>
+          <ID>Hora</ID>
+          <Name>Hora</Name>
+          <SourceAttributeID>Hora</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+</Dimension>

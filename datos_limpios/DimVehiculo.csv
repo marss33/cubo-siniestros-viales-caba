@@ -1,0 +1,17 @@
+VehiculoKey,Vehiculo,CategoriaVehiculo
+0,SIN DATO,Sin dato
+1,PEATON,Usuario vulnerable
+2,BICICLETA,Usuario vulnerable
+3,MONOPATIN,Usuario vulnerable
+4,MOTO,Usuario vulnerable
+5,AUTO,Vehiculo liviano
+6,TAXI,Vehiculo liviano
+7,UTILITARIO,Vehiculo liviano
+8,MOVIL,Vehiculo liviano
+9,CAMION,Vehiculo pesado
+10,TRANSPORTE PUBLICO,Vehiculo pesado
+11,TREN,Vehiculo pesado
+12,OBJETO FIJO,Otros
+13,MULTIPLE,Otros
+14,MIXTO,Otros
+15,OTRO,Otros

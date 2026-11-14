@@ -1,0 +1,590 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c052a116-0ac0-43a6-90b7-283ec39da209" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DSV SiniestrosVialesDW</ID>
+  <Name>DSV SiniestrosVialesDW</Name>
+  <DataSourceID>DS SiniestrosVialesDW</DataSourceID>
+  <Schema>
+    <xs:schema id="DSV" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="DSV" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimTiempo" msprop:DbTableName="DimTiempo" msprop:FriendlyName="DimTiempo" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="FechaKey" type="xs:int" />
+                  <xs:element name="Fecha" type="xs:dateTime" />
+                  <xs:element name="Anio" type="xs:short" />
+                  <xs:element name="Semestre" type="xs:unsignedByte" />
+                  <xs:element name="SemestreNombre">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Trimestre" type="xs:unsignedByte" />
+                  <xs:element name="TrimestreNombre">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MesNumero" type="xs:unsignedByte" />
+                  <xs:element name="MesNombre">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AnioMes">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="7" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="AnioMesNombre">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Dia" type="xs:unsignedByte" />
+                  <xs:element name="DiaSemanaNumero" type="xs:unsignedByte" />
+                  <xs:element name="DiaSemanaNombre">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoDia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Estacion">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Contexto">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimHora" msprop:DbTableName="DimHora" msprop:FriendlyName="DimHora" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="HoraKey" type="xs:short" />
+                  <xs:element name="Hora">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FranjaHoraria">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="HoraPico">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Luz">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimComuna" msprop:DbTableName="DimComuna" msprop:FriendlyName="DimComuna" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ComunaKey" type="xs:unsignedByte" />
+                  <xs:element name="Comuna">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Zona">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Barrios">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="120" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimTipoVia" msprop:DbTableName="DimTipoVia" msprop:FriendlyName="DimTipoVia" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="TipoViaKey" type="xs:unsignedByte" />
+                  <xs:element name="TipoVia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CategoriaVia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimVehiculo" msprop:DbTableName="DimVehiculo" msprop:FriendlyName="DimVehiculo" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VehiculoKey" type="xs:unsignedByte" />
+                  <xs:element name="Vehiculo">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="CategoriaVehiculo">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimGravedad" msprop:DbTableName="DimGravedad" msprop:FriendlyName="DimGravedad" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="GravedadKey" type="xs:unsignedByte" />
+                  <xs:element name="Gravedad">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="GrupoGravedad">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimSexo" msprop:DbTableName="DimSexo" msprop:FriendlyName="DimSexo" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SexoKey" type="xs:unsignedByte" />
+                  <xs:element name="Sexo">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimRangoEtario" msprop:DbTableName="DimRangoEtario" msprop:FriendlyName="DimRangoEtario" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="RangoEtarioKey" type="xs:unsignedByte" />
+                  <xs:element name="RangoEtario">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimRolVictima" msprop:DbTableName="DimRolVictima" msprop:FriendlyName="DimRolVictima" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="RolKey" type="xs:unsignedByte" />
+                  <xs:element name="Rol">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactSiniestro" msprop:DbTableName="FactSiniestro" msprop:FriendlyName="FactSiniestro" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SiniestroID">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FechaKey" type="xs:int" />
+                  <xs:element name="HoraKey" type="xs:short" />
+                  <xs:element name="ComunaKey" type="xs:unsignedByte" />
+                  <xs:element name="TipoViaKey" type="xs:unsignedByte" />
+                  <xs:element name="VehiculoVictimaKey" type="xs:unsignedByte" />
+                  <xs:element name="ContraparteKey" type="xs:unsignedByte" />
+                  <xs:element name="GravedadKey" type="xs:unsignedByte" />
+                  <xs:element name="CantSiniestros" type="xs:int" />
+                  <xs:element name="TotalVictimas" type="xs:int" />
+                  <xs:element name="VictimasLeves" type="xs:int" />
+                  <xs:element name="VictimasGraves" type="xs:int" />
+                  <xs:element name="VictimasMortales" type="xs:int" />
+                  <xs:element name="Latitud" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Longitud" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Direccion" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="200" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Participantes" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="60" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactVictima" msprop:DbTableName="FactVictima" msprop:FriendlyName="FactVictima" msprop:TableType="Table" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VictimaID" type="xs:int" />
+                  <xs:element name="SiniestroID">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FechaKey" type="xs:int" />
+                  <xs:element name="HoraKey" type="xs:short" />
+                  <xs:element name="ComunaKey" type="xs:unsignedByte" />
+                  <xs:element name="TipoViaKey" type="xs:unsignedByte" />
+                  <xs:element name="VehiculoKey" type="xs:unsignedByte" />
+                  <xs:element name="ContraparteKey" type="xs:unsignedByte" />
+                  <xs:element name="SexoKey" type="xs:unsignedByte" />
+                  <xs:element name="RangoEtarioKey" type="xs:unsignedByte" />
+                  <xs:element name="RolKey" type="xs:unsignedByte" />
+                  <xs:element name="GravedadKey" type="xs:unsignedByte" />
+                  <xs:element name="Edad" type="xs:unsignedByte" minOccurs="0" />
+                  <xs:element name="CantVictimas" type="xs:int" />
+                  <xs:element name="CantFallecidos" type="xs:int" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_vmin_Siniestros" msprop:DbTableName="vmin_Siniestros" msprop:FriendlyName="vmin_Siniestros" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="SiniestroID">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Hora" type="xs:short" />
+                  <xs:element name="FranjaHoraria">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoDia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DiaSemana">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Estacion">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Contexto">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Comuna">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Zona">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoVia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="VehiculoVictima">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Contraparte">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TotalVictimas" type="xs:int" />
+                  <xs:element name="Gravedad" msdata:ReadOnly="true" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="14" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_vmin_Victimas" msprop:DbTableName="vmin_Victimas" msprop:FriendlyName="vmin_Victimas" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="VictimaID" type="xs:int" />
+                  <xs:element name="Edad" msdata:ReadOnly="true" type="xs:int" minOccurs="0" />
+                  <xs:element name="RangoEtario">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Sexo">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Vehiculo">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoVia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Hora" type="xs:short" />
+                  <xs:element name="FranjaHoraria">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="25" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="TipoDia">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Zona">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Desenlace" msdata:ReadOnly="true" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_vmin_SerieMensual" msprop:DbTableName="vmin_SerieMensual" msprop:FriendlyName="vmin_SerieMensual" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Mes" msdata:ReadOnly="true" type="xs:dateTime" minOccurs="0" />
+                  <xs:element name="Siniestros" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="Mortales" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="Victimas" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_vmin_PerfilComunas" msprop:DbTableName="vmin_PerfilComunas" msprop:FriendlyName="vmin_PerfilComunas" msprop:TableType="View" msprop:DbSchemaName="dbo">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="Comuna">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="12" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Zona">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="SiniestrosAnuales" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctMoto" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctPeaton" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctBicicleta" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctNocturno" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctFinDeSemana" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctViaRapida" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctTransportePesado" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                  <xs:element name="PctGraveMortal" msdata:ReadOnly="true" type="xs:double" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTiempo" />
+          <xs:field xpath="FechaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimHora_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimHora" />
+          <xs:field xpath="HoraKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimComuna_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimComuna" />
+          <xs:field xpath="ComunaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimTipoVia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimTipoVia" />
+          <xs:field xpath="TipoViaKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimVehiculo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimVehiculo" />
+          <xs:field xpath="VehiculoKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimGravedad_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimGravedad" />
+          <xs:field xpath="GravedadKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimSexo_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimSexo" />
+          <xs:field xpath="SexoKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimRangoEtario_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimRangoEtario" />
+          <xs:field xpath="RangoEtarioKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimRolVictima_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimRolVictima" />
+          <xs:field xpath="RolKey" />
+        </xs:unique>
+        <xs:unique name="dbo_FactSiniestro_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactSiniestro" />
+          <xs:field xpath="SiniestroID" />
+        </xs:unique>
+        <xs:unique name="dbo_FactVictima_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_FactVictima" />
+          <xs:field xpath="VictimaID" />
+        </xs:unique>
+      </xs:element>
+      <xs:annotation>
+        <xs:appinfo>
+          <msdata:Relationship name="FS_Tiempo" msdata:parent="dbo_DimTiempo" msdata:child="dbo_FactSiniestro" msdata:parentkey="FechaKey" msdata:childkey="FechaKey" />
+          <msdata:Relationship name="FS_Hora" msdata:parent="dbo_DimHora" msdata:child="dbo_FactSiniestro" msdata:parentkey="HoraKey" msdata:childkey="HoraKey" />
+          <msdata:Relationship name="FS_Comuna" msdata:parent="dbo_DimComuna" msdata:child="dbo_FactSiniestro" msdata:parentkey="ComunaKey" msdata:childkey="ComunaKey" />
+          <msdata:Relationship name="FS_TipoVia" msdata:parent="dbo_DimTipoVia" msdata:child="dbo_FactSiniestro" msdata:parentkey="TipoViaKey" msdata:childkey="TipoViaKey" />
+          <msdata:Relationship name="FS_VehVict" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactSiniestro" msdata:parentkey="VehiculoKey" msdata:childkey="VehiculoVictimaKey" />
+          <msdata:Relationship name="FS_Contra" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactSiniestro" msdata:parentkey="VehiculoKey" msdata:childkey="ContraparteKey" />
+          <msdata:Relationship name="FS_Gravedad" msdata:parent="dbo_DimGravedad" msdata:child="dbo_FactSiniestro" msdata:parentkey="GravedadKey" msdata:childkey="GravedadKey" />
+          <msdata:Relationship name="FV_Tiempo" msdata:parent="dbo_DimTiempo" msdata:child="dbo_FactVictima" msdata:parentkey="FechaKey" msdata:childkey="FechaKey" />
+          <msdata:Relationship name="FV_Hora" msdata:parent="dbo_DimHora" msdata:child="dbo_FactVictima" msdata:parentkey="HoraKey" msdata:childkey="HoraKey" />
+          <msdata:Relationship name="FV_Comuna" msdata:parent="dbo_DimComuna" msdata:child="dbo_FactVictima" msdata:parentkey="ComunaKey" msdata:childkey="ComunaKey" />
+          <msdata:Relationship name="FV_TipoVia" msdata:parent="dbo_DimTipoVia" msdata:child="dbo_FactVictima" msdata:parentkey="TipoViaKey" msdata:childkey="TipoViaKey" />
+          <msdata:Relationship name="FV_Vehiculo" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactVictima" msdata:parentkey="VehiculoKey" msdata:childkey="VehiculoKey" />
+          <msdata:Relationship name="FV_Contra" msdata:parent="dbo_DimVehiculo" msdata:child="dbo_FactVictima" msdata:parentkey="VehiculoKey" msdata:childkey="ContraparteKey" />
+          <msdata:Relationship name="FV_Gravedad" msdata:parent="dbo_DimGravedad" msdata:child="dbo_FactVictima" msdata:parentkey="GravedadKey" msdata:childkey="GravedadKey" />
+          <msdata:Relationship name="FV_Sexo" msdata:parent="dbo_DimSexo" msdata:child="dbo_FactVictima" msdata:parentkey="SexoKey" msdata:childkey="SexoKey" />
+          <msdata:Relationship name="FV_Rango" msdata:parent="dbo_DimRangoEtario" msdata:child="dbo_FactVictima" msdata:parentkey="RangoEtarioKey" msdata:childkey="RangoEtarioKey" />
+          <msdata:Relationship name="FV_Rol" msdata:parent="dbo_DimRolVictima" msdata:child="dbo_FactVictima" msdata:parentkey="RolKey" msdata:childkey="RolKey" />
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:schema>
+    <DSV xmlns="" />
+  </Schema>
+</DataSourceView>

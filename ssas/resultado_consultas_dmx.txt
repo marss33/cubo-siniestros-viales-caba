@@ -1,0 +1,641 @@
+﻿==== Precision de modelos de gravedad (casos de prueba)
+CALL SystemGetAccuracyResults([MS Gravedad Siniestros], [Arbol de Decision - Gravedad], [Naive Bayes - Gravedad],
+     [Regresion Logistica - Gravedad], [Red Neuronal - Gravedad], 2, 'Gravedad', 'GRAVE O MORTAL')
+
+ModelName                      AttributeName AttributeState PartitionIndex PartitionSize Test           Measure                             Value
+---------                      ------------- -------------- -------------- ------------- ----           -------                             -----
+Arbol de Decision - Gravedad   Gravedad      GRAVE O MORTAL              0         11820 Classification True Positive                           0
+Arbol de Decision - Gravedad   Gravedad      GRAVE O MORTAL              0         11820 Classification False Positive                          0
+Arbol de Decision - Gravedad   Gravedad      GRAVE O MORTAL              0         11820 Classification True Negative                       11033
+Arbol de Decision - Gravedad   Gravedad      GRAVE O MORTAL              0         11820 Classification False Negative                        787
+Arbol de Decision - Gravedad   Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Log Score              -0,229498501295414
+Arbol de Decision - Gravedad   Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Lift                   0,0152081974588101
+Arbol de Decision - Gravedad   Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Root Mean Square Error 0,0849271193741933
+Naive Bayes - Gravedad         Gravedad      GRAVE O MORTAL              0         11820 Classification True Positive                          34
+Naive Bayes - Gravedad         Gravedad      GRAVE O MORTAL              0         11820 Classification False Positive                         48
+Naive Bayes - Gravedad         Gravedad      GRAVE O MORTAL              0         11820 Classification True Negative                       10985
+Naive Bayes - Gravedad         Gravedad      GRAVE O MORTAL              0         11820 Classification False Negative                        753
+Naive Bayes - Gravedad         Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Log Score              -0,227725396332867
+Naive Bayes - Gravedad         Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Lift                   0,0169813024213887
+Naive Bayes - Gravedad         Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Root Mean Square Error  0,103844401813746
+Regresion Logistica - Gravedad Gravedad      GRAVE O MORTAL              0         11820 Classification True Positive                          13
+Regresion Logistica - Gravedad Gravedad      GRAVE O MORTAL              0         11820 Classification False Positive                          9
+Regresion Logistica - Gravedad Gravedad      GRAVE O MORTAL              0         11820 Classification True Negative                       11024
+Regresion Logistica - Gravedad Gravedad      GRAVE O MORTAL              0         11820 Classification False Negative                        774
+Regresion Logistica - Gravedad Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Log Score              -0,225039226173777
+Regresion Logistica - Gravedad Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Lift                   0,0196674725804795
+Regresion Logistica - Gravedad Gravedad      GRAVE O MORTAL              0         11820 Likelihood     Root Mean Square Error 0,0982883518813787
+Red Neuronal - Gravedad        Gravedad      GRAVE O MORTAL              0         11820 Classification True Positive                           2
+Red Neuronal - Gravedad        Gravedad      GRAVE O MORTAL              0         11820 Classification False Positive                          4
+Red Neuronal - Gravedad        Gravedad      GRAVE O MORTAL              0         11820 Classification True Negative                       11029
+Red Neuronal - Gravedad        Gravedad      GRAVE O MORTAL              0         11820 Classification False Negative                        785
+
+
+
+==== Precision de modelos de victima fatal (casos de prueba)
+CALL SystemGetAccuracyResults([MS Victima Fatal], [Arbol de Decision - Victima Fatal], [Naive Bayes - Victima Fatal], 2, 'Desenlace', 'FALLECIO')
+
+ModelName                         AttributeName AttributeState PartitionIndex PartitionSize Test           Measure                              Value
+---------                         ------------- -------------- -------------- ------------- ----           -------                              -----
+Arbol de Decision - Victima Fatal Desenlace     FALLECIO                    0         10124 Classification True Positive                            0
+Arbol de Decision - Victima Fatal Desenlace     FALLECIO                    0         10124 Classification False Positive                           0
+Arbol de Decision - Victima Fatal Desenlace     FALLECIO                    0         10124 Classification True Negative                         9907
+Arbol de Decision - Victima Fatal Desenlace     FALLECIO                    0         10124 Classification False Negative                         217
+Arbol de Decision - Victima Fatal Desenlace     FALLECIO                    0         10124 Likelihood     Log Score              -0,0973271812724332
+Arbol de Decision - Victima Fatal Desenlace     FALLECIO                    0         10124 Likelihood     Lift                   0,00624235448284502
+Arbol de Decision - Victima Fatal Desenlace     FALLECIO                    0         10124 Likelihood     Root Mean Square Error  0,0299373158784603
+Naive Bayes - Victima Fatal       Desenlace     FALLECIO                    0         10124 Classification True Positive                            0
+Naive Bayes - Victima Fatal       Desenlace     FALLECIO                    0         10124 Classification False Positive                           0
+Naive Bayes - Victima Fatal       Desenlace     FALLECIO                    0         10124 Classification True Negative                         9907
+Naive Bayes - Victima Fatal       Desenlace     FALLECIO                    0         10124 Classification False Negative                         217
+Naive Bayes - Victima Fatal       Desenlace     FALLECIO                    0         10124 Likelihood     Log Score              -0,0914209710840373
+Naive Bayes - Victima Fatal       Desenlace     FALLECIO                    0         10124 Likelihood     Lift                    0,0121485646712496
+Naive Bayes - Victima Fatal       Desenlace     FALLECIO                    0         10124 Likelihood     Root Mean Square Error   0,039869405859096
+
+
+
+==== Hojas del arbol de decision (gravedad)
+SELECT FLATTENED NODE_UNIQUE_NAME, NODE_DESCRIPTION, NODE_SUPPORT,
+  (SELECT ATTRIBUTE_VALUE, [PROBABILITY] FROM NODE_DISTRIBUTION) AS D
+FROM [Arbol de Decision - Gravedad].CONTENT WHERE NODE_TYPE = 4
+
+NODE_UNIQUE_NAME NODE_DESCRIPTION                                                      NODE_SUPPORT ATTRIBUTE_VALUE        PROBABILITY
+---------------- ----------------                                                      ------------ ---------------        -----------
+00000000a00      VehiculoVictima = 'MOVIL'                                                      205 Missing                          0
+00000000a00      VehiculoVictima = 'MOVIL'                                                      205 GRAVE O MORTAL  0,0223797090637822
+00000000a00      VehiculoVictima = 'MOVIL'                                                      205 LEVE             0,977620290936218
+00000000a03      VehiculoVictima = 'TAXI'                                                       354 Missing                          0
+00000000a03      VehiculoVictima = 'TAXI'                                                       354 GRAVE O MORTAL  0,0158077089649199
+00000000a03      VehiculoVictima = 'TAXI'                                                       354 LEVE              0,98419229103508
+00000000a04      VehiculoVictima = 'CAMION'                                                     108 Missing                          0
+00000000a04      VehiculoVictima = 'CAMION'                                                     108 GRAVE O MORTAL  0,0880281690140845
+00000000a04      VehiculoVictima = 'CAMION'                                                     108 LEVE             0,911971830985915
+00000000a05      VehiculoVictima = 'OTRO'                                                        55 Missing                          0
+00000000a05      VehiculoVictima = 'OTRO'                                                        55 GRAVE O MORTAL  0,0820793433652531
+00000000a05      VehiculoVictima = 'OTRO'                                                        55 LEVE             0,917920656634747
+00000000a06      VehiculoVictima = 'MIXTO'                                                      251 Missing                          0
+00000000a06      VehiculoVictima = 'MIXTO'                                                      251 GRAVE O MORTAL  0,0579444952729491
+00000000a06      VehiculoVictima = 'MIXTO'                                                      251 LEVE             0,942055504727051
+00000000a07      VehiculoVictima = 'UTILITARIO'                                                 337 Missing                          0
+00000000a07      VehiculoVictima = 'UTILITARIO'                                                 337 GRAVE O MORTAL  0,0579940868774164
+00000000a07      VehiculoVictima = 'UTILITARIO'                                                 337 LEVE             0,942005913122584
+00000000a08      VehiculoVictima = 'MONOPATIN'                                                  116 Missing                          0
+00000000a08      VehiculoVictima = 'MONOPATIN'                                                  116 GRAVE O MORTAL  0,0308398950131234
+00000000a08      VehiculoVictima = 'MONOPATIN'                                                  116 LEVE             0,969160104986877
+00000000a0b00    VehiculoVictima = 'PEATON' and Contraparte = 'TRANSPORTE PUBLICO'              607 Missing                          0
+00000000a0b00    VehiculoVictima = 'PEATON' and Contraparte = 'TRANSPORTE PUBLICO'              607 GRAVE O MORTAL   0,242209476182833
+00000000a0b00    VehiculoVictima = 'PEATON' and Contraparte = 'TRANSPORTE PUBLICO'              607 LEVE             0,757790523817167
+00000000a0b01    VehiculoVictima = 'PEATON' and Contraparte not = 'TRANSPORTE PUBLICO'         4213 Missing                          0
+
+
+
+==== Hojas del arbol de decision (victima fatal)
+SELECT FLATTENED NODE_UNIQUE_NAME, NODE_DESCRIPTION, NODE_SUPPORT,
+  (SELECT ATTRIBUTE_VALUE, [PROBABILITY] FROM NODE_DISTRIBUTION) AS D
+FROM [Arbol de Decision - Victima Fatal].CONTENT WHERE NODE_TYPE = 4
+
+NODE_UNIQUE_NAME NODE_DESCRIPTION                                                                 NODE_SUPPORT ATTRIBUTE_VALUE          PROBABILITY
+---------------- ----------------                                                                 ------------ ---------------          -----------
+0000000090200    Edad >= 70 and Vehiculo = 'TRANSPORTE PUBLICO'                                            174 Missing                            0
+0000000090200    Edad >= 70 and Vehiculo = 'TRANSPORTE PUBLICO'                                            174 FALLECIO        0,000517464424320828
+0000000090200    Edad >= 70 and Vehiculo = 'TRANSPORTE PUBLICO'                                            174 SOBREVIVIO         0,999482535575679
+000000009020100  Edad >= 70 and Vehiculo = 'AUTO'                                                          162 Missing                            0
+000000009020100  Edad >= 70 and Vehiculo = 'AUTO'                                                          162 FALLECIO           0,025219665973573
+000000009020100  Edad >= 70 and Vehiculo = 'AUTO'                                                          162 SOBREVIVIO         0,974780334026427
+000000009020101  Edad >= 70 and Vehiculo not = 'TRANSPORTE PUBLICO' and Vehiculo not = 'AUTO'              827 Missing                            0
+000000009020101  Edad >= 70 and Vehiculo not = 'TRANSPORTE PUBLICO' and Vehiculo not = 'AUTO'              827 FALLECIO           0,100112381561176
+000000009020101  Edad >= 70 and Vehiculo not = 'TRANSPORTE PUBLICO' and Vehiculo not = 'AUTO'              827 SOBREVIVIO         0,899887618438824
+0000000090100    Edad >= 50 and < 70 and Vehiculo = 'PEATON'                                               903 Missing                            0
+0000000090100    Edad >= 50 and < 70 and Vehiculo = 'PEATON'                                               903 FALLECIO          0,0598612603575088
+0000000090100    Edad >= 50 and < 70 and Vehiculo = 'PEATON'                                               903 SOBREVIVIO         0,940138739642491
+000000009010100  Edad >= 50 and < 70 and Vehiculo not = 'PEATON' and Sexo = 'Femenino'                    1019 Missing                            0
+000000009010100  Edad >= 50 and < 70 and Vehiculo not = 'PEATON' and Sexo = 'Femenino'                    1019 FALLECIO         0,00514826311854419
+000000009010100  Edad >= 50 and < 70 and Vehiculo not = 'PEATON' and Sexo = 'Femenino'                    1019 SOBREVIVIO         0,994851736881456
+000000009010101  Edad >= 50 and < 70 and Vehiculo not = 'PEATON' and Sexo = 'Masculino'                   1837 Missing                            0
+000000009010101  Edad >= 50 and < 70 and Vehiculo not = 'PEATON' and Sexo = 'Masculino'                   1837 FALLECIO          0,0191829618594597
+000000009010101  Edad >= 50 and < 70 and Vehiculo not = 'PEATON' and Sexo = 'Masculino'                   1837 SOBREVIVIO          0,98081703814054
+0000000090002    Edad < 50 and TipoVia = 'AV. GRAL. PAZ'                                                  1217 Missing                            0
+0000000090002    Edad < 50 and TipoVia = 'AV. GRAL. PAZ'                                                  1217 FALLECIO          0,0183970206448081
+0000000090002    Edad < 50 and TipoVia = 'AV. GRAL. PAZ'                                                  1217 SOBREVIVIO         0,981602979355192
+000000009000300  Edad < 50 and TipoVia = 'AVENIDA' and FranjaHoraria = '1. Madrugada (00-05)'             1028 Missing                            0
+000000009000300  Edad < 50 and TipoVia = 'AVENIDA' and FranjaHoraria = '1. Madrugada (00-05)'             1028 FALLECIO          0,0419008134554171
+000000009000300  Edad < 50 and TipoVia = 'AVENIDA' and FranjaHoraria = '1. Madrugada (00-05)'             1028 SOBREVIVIO         0,958099186544583
+000000009000301  Edad < 50 and TipoVia = 'AVENIDA' and FranjaHoraria not = '1. Madrugada (00-05)'         9651 Missing                            0
+
+
+
+==== Escenario: Peaton vs colectivo, avenida, madrugada - Arbol de Decision - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Arbol de Decision - Gravedad] NATURAL PREDICTION JOIN (SELECT 'PEATON' AS [VehiculoVictima], 'TRANSPORTE PUBLICO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,242209476182833
+
+
+
+==== Escenario: Peaton vs colectivo, avenida, madrugada - Naive Bayes - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Naive Bayes - Gravedad] NATURAL PREDICTION JOIN (SELECT 'PEATON' AS [VehiculoVictima], 'TRANSPORTE PUBLICO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,277442688834697
+
+
+
+==== Escenario: Peaton vs colectivo, avenida, madrugada - Regresion Logistica - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Regresion Logistica - Gravedad] NATURAL PREDICTION JOIN (SELECT 'PEATON' AS [VehiculoVictima], 'TRANSPORTE PUBLICO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,282607196030497
+
+
+
+==== Escenario: Peaton vs colectivo, avenida, madrugada - Red Neuronal - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Red Neuronal - Gravedad] NATURAL PREDICTION JOIN (SELECT 'PEATON' AS [VehiculoVictima], 'TRANSPORTE PUBLICO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,371281906517704
+
+
+
+==== Escenario: Moto vs objeto fijo, fin de semana, madrugada - Arbol de Decision - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Arbol de Decision - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'OBJETO FIJO' AS [Contraparte], 'Fin de semana' AS [TipoDia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,215249023247362
+
+
+
+==== Escenario: Moto vs objeto fijo, fin de semana, madrugada - Naive Bayes - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Naive Bayes - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'OBJETO FIJO' AS [Contraparte], 'Fin de semana' AS [TipoDia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,364501021496387
+
+
+
+==== Escenario: Moto vs objeto fijo, fin de semana, madrugada - Regresion Logistica - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Regresion Logistica - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'OBJETO FIJO' AS [Contraparte], 'Fin de semana' AS [TipoDia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,291771968433865
+
+
+
+==== Escenario: Moto vs objeto fijo, fin de semana, madrugada - Red Neuronal - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Red Neuronal - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'OBJETO FIJO' AS [Contraparte], 'Fin de semana' AS [TipoDia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,266389636634168
+
+
+
+==== Escenario: Moto vs auto, Gral. Paz, noche - Arbol de Decision - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Arbol de Decision - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AV. GRAL. PAZ' AS [TipoVia], '4. Noche (18-23)' AS [FranjaHoraria]) AS t
+
+                 P
+                 -
+0,0682617505939349
+
+
+
+==== Escenario: Moto vs auto, Gral. Paz, noche - Naive Bayes - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Naive Bayes - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AV. GRAL. PAZ' AS [TipoVia], '4. Noche (18-23)' AS [FranjaHoraria]) AS t
+
+                 P
+                 -
+0,0763717114819177
+
+
+
+==== Escenario: Moto vs auto, Gral. Paz, noche - Regresion Logistica - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Regresion Logistica - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AV. GRAL. PAZ' AS [TipoVia], '4. Noche (18-23)' AS [FranjaHoraria]) AS t
+
+                 P
+                 -
+0,0636761543337695
+
+
+
+==== Escenario: Moto vs auto, Gral. Paz, noche - Red Neuronal - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Red Neuronal - Gravedad] NATURAL PREDICTION JOIN (SELECT 'MOTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AV. GRAL. PAZ' AS [TipoVia], '4. Noche (18-23)' AS [FranjaHoraria]) AS t
+
+                 P
+                 -
+0,0334391375055622
+
+
+
+==== Escenario: Ciclista vs auto, calle, tarde habil - Arbol de Decision - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Arbol de Decision - Gravedad] NATURAL PREDICTION JOIN (SELECT 'BICICLETA' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'CALLE' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0351093308146184
+
+
+
+==== Escenario: Ciclista vs auto, calle, tarde habil - Naive Bayes - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Naive Bayes - Gravedad] NATURAL PREDICTION JOIN (SELECT 'BICICLETA' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'CALLE' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0190521387474774
+
+
+
+==== Escenario: Ciclista vs auto, calle, tarde habil - Regresion Logistica - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Regresion Logistica - Gravedad] NATURAL PREDICTION JOIN (SELECT 'BICICLETA' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'CALLE' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0279580417337757
+
+
+
+==== Escenario: Ciclista vs auto, calle, tarde habil - Red Neuronal - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Red Neuronal - Gravedad] NATURAL PREDICTION JOIN (SELECT 'BICICLETA' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'CALLE' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0143049503725222
+
+
+
+==== Escenario: Auto vs auto, avenida, tarde habil - Arbol de Decision - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Arbol de Decision - Gravedad] NATURAL PREDICTION JOIN (SELECT 'AUTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0325281160363274
+
+
+
+==== Escenario: Auto vs auto, avenida, tarde habil - Naive Bayes - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Naive Bayes - Gravedad] NATURAL PREDICTION JOIN (SELECT 'AUTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0273927125215195
+
+
+
+==== Escenario: Auto vs auto, avenida, tarde habil - Regresion Logistica - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Regresion Logistica - Gravedad] NATURAL PREDICTION JOIN (SELECT 'AUTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0186774035189314
+
+
+
+==== Escenario: Auto vs auto, avenida, tarde habil - Red Neuronal - Gravedad
+SELECT PredictProbability([Gravedad], 'GRAVE O MORTAL') AS P FROM [Red Neuronal - Gravedad] NATURAL PREDICTION JOIN (SELECT 'AUTO' AS [VehiculoVictima], 'AUTO' AS [Contraparte], 'AVENIDA' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria], 'Dia habil' AS [TipoDia]) AS t
+
+                 P
+                 -
+0,0120702529290165
+
+
+
+==== Escenario victima: Peaton de 75 anios, mujer, avenida, noche - Arbol de Decision - Victima Fatal
+SELECT PredictProbability([Desenlace], 'FALLECIO') AS P FROM [Arbol de Decision - Victima Fatal] NATURAL PREDICTION JOIN (SELECT 75 AS [Edad], '65 y mas' AS [RangoEtario], 'Femenino' AS [Sexo], 'PEATON' AS [Vehiculo], 'AVENIDA' AS [TipoVia], '4. Noche (18-23)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,100112381561176
+
+
+
+==== Escenario victima: Peaton de 75 anios, mujer, avenida, noche - Naive Bayes - Victima Fatal
+SELECT PredictProbability([Desenlace], 'FALLECIO') AS P FROM [Naive Bayes - Victima Fatal] NATURAL PREDICTION JOIN (SELECT 75 AS [Edad], '65 y mas' AS [RangoEtario], 'Femenino' AS [Sexo], 'PEATON' AS [Vehiculo], 'AVENIDA' AS [TipoVia], '4. Noche (18-23)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,102165309565411
+
+
+
+==== Escenario victima: Motociclista de 25 anios, varon, autopista, madrugada - Arbol de Decision - Victima Fatal
+SELECT PredictProbability([Desenlace], 'FALLECIO') AS P FROM [Arbol de Decision - Victima Fatal] NATURAL PREDICTION JOIN (SELECT 25 AS [Edad], '25-34' AS [RangoEtario], 'Masculino' AS [Sexo], 'MOTO' AS [Vehiculo], 'AUTOPISTA' AS [TipoVia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                 P
+                 -
+0,0780019029495718
+
+
+
+==== Escenario victima: Motociclista de 25 anios, varon, autopista, madrugada - Naive Bayes - Victima Fatal
+SELECT PredictProbability([Desenlace], 'FALLECIO') AS P FROM [Naive Bayes - Victima Fatal] NATURAL PREDICTION JOIN (SELECT 25 AS [Edad], '25-34' AS [RangoEtario], 'Masculino' AS [Sexo], 'MOTO' AS [Vehiculo], 'AUTOPISTA' AS [TipoVia], '1. Madrugada (00-05)' AS [FranjaHoraria]) AS t
+
+                P
+                -
+0,102559374664812
+
+
+
+==== Escenario victima: Ciclista de 30 anios, mujer, calle, tarde - Arbol de Decision - Victima Fatal
+SELECT PredictProbability([Desenlace], 'FALLECIO') AS P FROM [Arbol de Decision - Victima Fatal] NATURAL PREDICTION JOIN (SELECT 30 AS [Edad], '25-34' AS [RangoEtario], 'Femenino' AS [Sexo], 'BICICLETA' AS [Vehiculo], 'CALLE' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria]) AS t
+
+                  P
+                  -
+0,00771279806214339
+
+
+
+==== Escenario victima: Ciclista de 30 anios, mujer, calle, tarde - Naive Bayes - Victima Fatal
+SELECT PredictProbability([Desenlace], 'FALLECIO') AS P FROM [Naive Bayes - Victima Fatal] NATURAL PREDICTION JOIN (SELECT 30 AS [Edad], '25-34' AS [RangoEtario], 'Femenino' AS [Sexo], 'BICICLETA' AS [Vehiculo], 'CALLE' AS [TipoVia], '3. Tarde (12-17)' AS [FranjaHoraria]) AS t
+
+                  P
+                  -
+0,00318365814644966
+
+
+
+==== Clusters de siniestros
+SELECT FLATTENED NODE_CAPTION, NODE_SUPPORT, NODE_DESCRIPTION,
+  (SELECT ATTRIBUTE_VALUE, [PROBABILITY] FROM NODE_DISTRIBUTION WHERE ATTRIBUTE_NAME = 'Gravedad') AS D
+FROM [Clustering - Siniestros].CONTENT WHERE NODE_TYPE = 5
+
+NODE_CAPTION NODE_SUPPORT NODE_DESCRIPTION                                                                                                                                                                                                                
+------------ ------------ ----------------                                                                                                                                                                                                                
+Cluster 1            5546 Zona=Norte ,...                                                                                                                                                                                                                 
+Cluster 1            5546 Zona=Norte ,...                                                                                                                                                                                                                 
+Cluster 1            5546 Zona=Norte ,...                                                                                                                                                                                                                 
+Cluster 2            5713 TotalVictimas=14 ,...                                                                                                                                                                                                           
+Cluster 2            5713 TotalVictimas=14 ,...                                                                                                                                                                                                           
+Cluster 2            5713 TotalVictimas=14 ,...                                                                                                                                                                                                           
+Cluster 3            4876 TotalVictimas=15 ,...                                                                                                                                                                                                           
+Cluster 3            4876 TotalVictimas=15 ,...                                                                                                                                                                                                           
+Cluster 3            4876 TotalVictimas=15 ,...                                                                                                                                                                                                           
+Cluster 4            4302 TotalVictimas=19 ,...                                                                                                                                                                                                           
+Cluster 4            4302 TotalVictimas=19 ,...                                                                                                                                                                                                           
+Cluster 4            4302 TotalVictimas=19 ,...                                                                                                                                                                                                           
+Cluster 5            4437 TotalVictimas=10 ,...                                                                                                                                                                                                           
+Cluster 5            4437 TotalVictimas=10 ,...                                                                                                                                                                                                           
+Cluster 5            4437 TotalVictimas=10 ,...                                                                                                                                                                                                           
+Cluster 6            2709 FranjaHoraria=2. Manana (06-11) ,...                                                                                                                                                                                            
+Cluster 6            2709 FranjaHoraria=2. Manana (06-11) ,...                                                                                                                                                                                            
+Cluster 6            2709 FranjaHoraria=2. Manana (06-11) ,...                                                                                                                                                                                            
+
+
+
+==== Cluster de Comuna 01
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Centro' AS [Zona], 1034.42857142857 AS [SiniestrosAnuales], 31.376881646181 AS [PctMoto], 16.530865902499 AS [PctPeaton], 9.252865626294 AS [PctBicicleta], 24.830824471758 AS [PctNocturno], 20.232012153017 AS [PctFinDeSemana], 2.54108548543 AS [PctViaRapida], 15.550338351056 AS [PctTransportePesado], 4.391658610689 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 2 1
+
+
+
+==== Cluster de Comuna 02
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Norte' AS [Zona], 335.714285714285 AS [SiniestrosAnuales], 28.680851063829 AS [PctMoto], 14.680851063829 AS [PctPeaton], 11.063829787234 AS [PctBicicleta], 25.234042553191 AS [PctNocturno], 19.531914893617 AS [PctFinDeSemana], 0.553191489361 AS [PctViaRapida], 11.574468085106 AS [PctTransportePesado], 4.978723404255 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 03
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Centro' AS [Zona], 694 AS [SiniestrosAnuales], 31.947303417044 AS [PctMoto], 15.994236311239 AS [PctPeaton], 9.304240428159 AS [PctBicicleta], 25.010292301358 AS [PctNocturno], 20.584602717167 AS [PctFinDeSemana], 0.658707286949 AS [PctViaRapida], 11.424454508027 AS [PctTransportePesado], 3.622890078221 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 2 1
+
+
+
+==== Cluster de Comuna 04
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Sur' AS [Zona], 651.714285714285 AS [SiniestrosAnuales], 35.160017536168 AS [PctMoto], 15.059184568171 AS [PctPeaton], 9.140727750986 AS [PctBicicleta], 24.725997369574 AS [PctNocturno], 19.333625602805 AS [PctFinDeSemana], 2.148180622533 AS [PctViaRapida], 20.2323542306 AS [PctTransportePesado], 5.808855765015 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 2 1
+
+
+
+==== Cluster de Comuna 05
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Centro' AS [Zona], 469.285714285714 AS [SiniestrosAnuales], 39.147640791476 AS [PctMoto], 15.159817351598 AS [PctPeaton], 13.820395738203 AS [PctBicicleta], 27.24505327245 AS [PctNocturno], 21.674277016742 AS [PctFinDeSemana], 1.004566210045 AS [PctViaRapida], 9.162861491628 AS [PctTransportePesado], 3.835616438356 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 06
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Centro' AS [Zona], 396 AS [SiniestrosAnuales], 38.131313131313 AS [PctMoto], 16.053391053391 AS [PctPeaton], 13.744588744588 AS [PctBicicleta], 25.901875901875 AS [PctNocturno], 19.336219336219 AS [PctFinDeSemana], 0.036075036075 AS [PctViaRapida], 12.806637806637 AS [PctTransportePesado], 3.571428571428 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 07
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Sur' AS [Zona], 624 AS [SiniestrosAnuales], 37.820512820512 AS [PctMoto], 16.117216117216 AS [PctPeaton], 9.249084249084 AS [PctBicicleta], 24.633699633699 AS [PctNocturno], 20.787545787545 AS [PctFinDeSemana], 2.518315018315 AS [PctViaRapida], 13.736263736263 AS [PctTransportePesado], 4.73901098901 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 2 1
+
+
+
+==== Cluster de Comuna 08
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Sur' AS [Zona], 441.142857142857 AS [SiniestrosAnuales], 36.139896373056 AS [PctMoto], 11.819948186528 AS [PctPeaton], 5.537564766839 AS [PctBicicleta], 26.036269430051 AS [PctNocturno], 24.319948186528 AS [PctFinDeSemana], 18.102331606217 AS [PctViaRapida], 14.961139896373 AS [PctTransportePesado], 5.602331606217 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 4 1
+
+
+
+==== Cluster de Comuna 09
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Sur' AS [Zona], 635.714285714285 AS [SiniestrosAnuales], 38.606741573033 AS [PctMoto], 11.797752808988 AS [PctPeaton], 6.898876404494 AS [PctBicicleta], 22.471910112359 AS [PctNocturno], 21.932584269662 AS [PctFinDeSemana], 18.516853932584 AS [PctViaRapida], 12.606741573033 AS [PctTransportePesado], 4.808988764044 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 3 1
+
+
+
+==== Cluster de Comuna 10
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Oeste' AS [Zona], 539.428571428571 AS [SiniestrosAnuales], 40.572033898305 AS [PctMoto], 12.235169491525 AS [PctPeaton], 10.354872881355 AS [PctBicicleta], 22.643008474576 AS [PctNocturno], 19.412076271186 AS [PctFinDeSemana], 11.361228813559 AS [PctViaRapida], 11.202330508474 AS [PctTransportePesado], 4.608050847457 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 11
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Oeste' AS [Zona], 504.428571428571 AS [SiniestrosAnuales], 39.960351175304 AS [PctMoto], 13.990370999716 AS [PctPeaton], 11.158312092891 AS [PctBicicleta], 19.739450580572 AS [PctNocturno], 19.76777116964 AS [PctFinDeSemana], 8.779382611158 AS [PctViaRapida], 11.753044463324 AS [PctTransportePesado], 5.267629566694 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 12
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Norte' AS [Zona], 615.714285714285 AS [SiniestrosAnuales], 44.245939675174 AS [PctMoto], 9.953596287703 AS [PctPeaton], 12.018561484918 AS [PctBicicleta], 22.111368909512 AS [PctNocturno], 20.580046403712 AS [PctFinDeSemana], 18.051044083526 AS [PctViaRapida], 10.371229698375 AS [PctTransportePesado], 5.777262180974 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 13
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Norte' AS [Zona], 566.428571428571 AS [SiniestrosAnuales], 36.645649432534 AS [PctMoto], 14.955863808322 AS [PctPeaton], 14.552332912988 AS [PctBicicleta], 24.3631778058 AS [PctNocturno], 21.689785624211 AS [PctFinDeSemana], 5.094577553593 AS [PctViaRapida], 13.240857503152 AS [PctTransportePesado], 5.901639344262 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 14
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Norte' AS [Zona], 642.285714285714 AS [SiniestrosAnuales], 38.100533807829 AS [PctMoto], 16.214412811387 AS [PctPeaton], 14.435053380782 AS [PctBicicleta], 28.781138790035 AS [PctNocturno], 22.219750889679 AS [PctFinDeSemana], 0.889679715302 AS [PctViaRapida], 13.856761565836 AS [PctTransportePesado], 5.849644128113 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Cluster de Comuna 15
+SELECT Cluster() AS C, ClusterProbability() AS P FROM [Clustering - Comunas] NATURAL PREDICTION JOIN (SELECT 'Oeste' AS [Zona], 744.857142857142 AS [SiniestrosAnuales], 42.942079018028 AS [PctMoto], 14.326812428078 AS [PctPeaton], 15.266589950134 AS [PctBicicleta], 24.7027234369 AS [PctNocturno], 19.275028768699 AS [PctFinDeSemana], 0.057537399309 AS [PctViaRapida], 11.488300728807 AS [PctTransportePesado], 4.775604142692 AS [PctGraveMortal]) AS t
+
+C         P
+-         -
+Cluster 1 1
+
+
+
+==== Clusters de comunas
+SELECT NODE_CAPTION, NODE_SUPPORT, NODE_DESCRIPTION FROM [Clustering - Comunas].CONTENT WHERE NODE_TYPE = 5
+
+NODE_CAPTION NODE_SUPPORT NODE_DESCRIPTION                                                                                                                                                                                                                
+------------ ------------ ----------------                                                                                                                                                                                                                
+Cluster 1               9 Zona=Norte ,...                                                                                                                                                                                                                 
+Cluster 2               4 9,1176200025 <=PctBicicleta <=9,3558390247 ,...                                                                                                                                                                                 
+Cluster 3               1 SiniestrosAnuales =635,7142857143 ,...                                                                                                                                                                                          
+Cluster 4               1 SiniestrosAnuales =441,1428571429 ,...                                                                                                                                                                                          
+
+
+
+==== Reglas de asociacion
+SELECT NODE_DESCRIPTION, NODE_PROBABILITY, MSOLAP_NODE_SCORE, NODE_SUPPORT FROM [Reglas de Asociacion].CONTENT WHERE NODE_TYPE = 8
+
+NODE_DESCRIPTION                                                                                                              NODE_PROBABILITY  MSOLAP_NODE_SCORE NODE_SUPPORT
+----------------                                                                                                              ----------------  ----------------- ------------
+VehiculoVictima = MOVIL, FranjaHoraria = 3. Tarde (12-17) -> Gravedad = LEVE                                                                 1 0,0278228369064938          127
+VehiculoVictima = TAXI, TipoVia = CALLE, TipoDia = Dia habil -> Gravedad = LEVE                                                              1 0,0280514728074043          136
+VehiculoVictima = MOVIL, FranjaHoraria = 3. Tarde (12-17), TipoDia = Dia habil -> Gravedad = LEVE                                            1 0,0272574655089208          109
+VehiculoVictima = MOVIL, Contraparte = AUTO, TipoDia = Dia habil -> Gravedad = LEVE                                                          1 0,0281213873566622          139
+VehiculoVictima = TAXI, Zona = Oeste -> Gravedad = LEVE                                                                                      1 0,0259004962358823           81
+VehiculoVictima = TRANSPORTE PUBLICO, Zona = Sur, FranjaHoraria = 4. Noche (18-23) -> Gravedad = LEVE                                        1 0,0288812101994074          182
+Contraparte = TAXI, VehiculoVictima = PEATON, TipoVia = CALLE -> Gravedad = LEVE                                                             1 0,0279535388885161          132
+VehiculoVictima = TAXI, Zona = Centro, Contraparte = AUTO -> Gravedad = LEVE                                                                 1  0,025835081105335           80
+VehiculoVictima = TAXI, Zona = Centro, TipoDia = Dia habil -> Gravedad = LEVE                                                                1 0,0277955052508066          126
+Contraparte = TAXI, Zona = Sur, TipoVia = CALLE -> Gravedad = LEVE                                                                           1 0,0265288718400589           92
+VehiculoVictima = TRANSPORTE PUBLICO, Contraparte = TRANSPORTE PUBLICO, Zona = Sur -> Gravedad = LEVE                        0,994575045207957 0,0283799942324807          550
+VehiculoVictima = TAXI, Zona = Centro -> Gravedad = LEVE                                                                     0,994413407821229 0,0264080243436651          178
+VehiculoVictima = TAXI, TipoVia = CALLE -> Gravedad = LEVE                                                                   0,994318181818182 0,0263237572015857          175
+VehiculoVictima = MOVIL, Contraparte = AUTO -> Gravedad = LEVE                                                               0,994186046511628 0,0262069888835609          171
+VehiculoVictima = TRANSPORTE PUBLICO, FranjaHoraria = 2. Manana (06-11), TipoVia = CALLE -> Gravedad = LEVE                  0,993827160493827 0,0258907062134624          161
+Contraparte = TAXI, FranjaHoraria = 2. Manana (06-11), TipoVia = CALLE -> Gravedad = LEVE                                    0,993421052631579 0,0255341606471494          151
+Contraparte = TAXI, TipoVia = CALLE, FranjaHoraria = 3. Tarde (12-17) -> Gravedad = LEVE                                     0,993127147766323 0,0268447515208409          289
+VehiculoVictima = TAXI, FranjaHoraria = 3. Tarde (12-17), TipoDia = Dia habil -> Gravedad = LEVE                             0,993006993006993  0,025171910932485          142
+VehiculoVictima = TAXI, FranjaHoraria = 2. Manana (06-11) -> Gravedad = LEVE                                                 0,992805755395683 0,0249962676170616          138
+Contraparte = TAXI, TipoDia = Fin de semana, TipoVia = CALLE -> Gravedad = LEVE                                              0,992424242424242 0,0246639470878572          131
+VehiculoVictima = MOVIL, TipoVia = AVENIDA, TipoDia = Dia habil -> Gravedad = LEVE                                           0,992307692307692 0,0245625883760618          129
+VehiculoVictima = TRANSPORTE PUBLICO, Zona = Oeste, TipoVia = CALLE -> Gravedad = LEVE                                       0,991735537190083  0,024066016931823          120
+Contraparte = TAXI, Zona = Oeste, TipoVia = CALLE -> Gravedad = LEVE                                                         0,991452991452991 0,0238213665517719          116
+VehiculoVictima = TRANSPORTE PUBLICO, Contraparte = TRANSPORTE PUBLICO, FranjaHoraria = 2. Manana (06-11) -> Gravedad = LEVE 0,991319444444444 0,0269848810188073          571
+Contraparte = UTILITARIO, VehiculoVictima = BICICLETA, FranjaHoraria = 4. Noche (18-23) -> Gravedad = LEVE                   0,991150442477876 0,0235597781664976          112
+
+
+
+==== Itemsets
+SELECT NODE_SUPPORT FROM [Reglas de Asociacion].CONTENT WHERE NODE_TYPE = 7
+
+NODE_SUPPORT
+------------
+       36681
+       31252
+       29208
+       23017
+       22661
+       21673
+       20972
+       17817
+       17817
+       17752
+       16847
+       16565
+       16407
+       16154
+       15229
+       14148
+       13903
+       13405
+       13161
+       13153
+       12634
+       12620
+       11896
+       11824
+       11211
+
+
+
+==== Pronostico Siniestros 2026
+SELECT FLATTENED PredictTimeSeries([Siniestros], 12) AS F FROM [Serie de Tiempo - Siniestros]
+
+$TIME                    Siniestros
+-----                    ----------
+1/1/2026 00:00:00  1084,18112038283
+1/2/2026 00:00:00  1149,86889921309
+1/3/2026 00:00:00  1132,30692206674
+1/4/2026 00:00:00  1186,60291724319
+1/5/2026 00:00:00  1153,23175166213
+1/6/2026 00:00:00  1210,09190597453
+1/7/2026 00:00:00   1179,3801988526
+1/8/2026 00:00:00   1235,6079322071
+1/9/2026 00:00:00  1191,65768133915
+1/10/2026 00:00:00 1256,89379962507
+1/11/2026 00:00:00 1225,93255560415
+1/12/2026 00:00:00 1276,21895386563
+
+
+
+==== Pronostico Mortales 2026
+SELECT FLATTENED PredictTimeSeries([Mortales], 12) AS F FROM [Serie de Tiempo - Siniestros]
+
+$TIME                      Mortales
+-----                      --------
+1/1/2026 00:00:00  8,36698964612236
+1/2/2026 00:00:00  8,12856557588782
+1/3/2026 00:00:00  8,58208102127857
+1/4/2026 00:00:00  8,11265266853406
+1/5/2026 00:00:00  8,53817634789663
+1/6/2026 00:00:00  8,16185529961444
+1/7/2026 00:00:00  8,55157357163091
+1/8/2026 00:00:00  8,11665591867058
+1/9/2026 00:00:00  8,53999821146571
+1/10/2026 00:00:00 8,06636148486164
+1/11/2026 00:00:00 8,48908571436053
+1/12/2026 00:00:00 8,09352915142784
+
+
+
