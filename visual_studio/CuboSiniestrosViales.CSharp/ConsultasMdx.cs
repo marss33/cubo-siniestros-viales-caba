@@ -51,6 +51,11 @@ FROM [Siniestros Viales]"),
 SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales] } ON COLUMNS,
        [Tiempo].[Mes del Anio].[Mes del Anio].MEMBERS ON ROWS
 FROM [Siniestros Viales]"),
+            ("Top 5 contrapartes con más víctimas fatales", @"
+SELECT { [Measures].[Victimas Mortales], [Measures].[Cantidad Siniestros], [Measures].[% Graves o Mortales] } ON COLUMNS,
+       TOPCOUNT(FILTER([Contraparte].[Vehiculo].[Vehiculo].MEMBERS, [Contraparte].[Vehiculo].CurrentMember.Name <> ""SIN DATO""),
+                5, [Measures].[Victimas Mortales]) ON ROWS
+FROM [Siniestros Viales]"),
         };
 
         public static void Ejecutar(string servidor)
