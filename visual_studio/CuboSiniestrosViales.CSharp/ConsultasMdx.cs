@@ -47,6 +47,10 @@ SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Meas
          [Measures].[Victimas por Siniestro] } ON COLUMNS,
        [Tiempo].[Contexto].[Contexto].MEMBERS ON ROWS
 FROM [Siniestros Viales]"),
+            ("Estacionalidad mensual (acumulado 2019-2025)", @"
+SELECT { [Measures].[Cantidad Siniestros], [Measures].[Victimas Mortales], [Measures].[% Graves o Mortales] } ON COLUMNS,
+       [Tiempo].[Mes del Anio].[Mes del Anio].MEMBERS ON ROWS
+FROM [Siniestros Viales]"),
         };
 
         public static void Ejecutar(string servidor)
